@@ -17,3 +17,5 @@ app.add_event_handler("startup", connect_to_mongo)
 app.add_event_handler("shutdown", close_mongo_connection)
 
 app.include_router(report.router, prefix="/api/report", tags=["report"])
+
+# use this to run the code : uvicorn app.main:app --reload
