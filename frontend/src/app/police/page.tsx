@@ -1,8 +1,15 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
+import { Search, Shield } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
 
 interface PoliceStation {
   name: string
@@ -17,6 +24,7 @@ const PolicePage: React.FC = () => {
   const [policeStations, setPoliceStations] = useState<PoliceStation[]>([])
   const [showPoliceStations, setShowPoliceStations] = useState(false)
   const mapRef = useRef<L.Map>(null)
+  const [facilityType, setFacilityType] = useState<string | undefined>(undefined)
 
   useEffect(() => {
     const fetchPoliceStations = async () => {
@@ -74,52 +82,110 @@ const PolicePage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 shadow-lg rounded-lg bg-white" style={{ maxWidth: '800px' }}>
-      <h1 className="text-2xl font-bold mb-4">Police Stations Near You</h1>
-      <p className=" mb-4">
-        Find the nearest police stations to your location. Click the buttons below to get your location and show the nearest police stations.
-      </p>
-      <div className="map-container bg-gray-100 rounded-lg overflow-hidden mb-4" style={{ width: '100%', maxWidth: '100%' }}>
-        <div className="get-my-location mb-4">
-          <button
-            className="p-3 bg-blue-600 w-full text-white rounded-lg mb-2"
-            onClick={handleGetMyLocation}
-          >
-            Get My Location
-          </button>
-          <button
-            className="p-3 bg-green-600 w-full text-white rounded-lg"
-            onClick={handleShowPoliceStations}
-          >
-            Show Nearest Police Stations
-          </button>
+    <div className="container mx-auto px-4 py-8">
+      <motion.div
+        className="mb-8 space-y-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1 className="text-3xl font-bold">Police Stations Near You</h1>
+        <p className="text-muted-foreground">
+          Find nearby police stations for assistance and emergency services.
+        </p>
+      </motion.div>
+      <div className="grid gap-6 lg:grid-cols-4">
+        <div className="space-y-6 lg:col-span-1">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2">
+                <Search className="h-5 w-5" />
+                Search & Filter
+              </CardTitle>
+              <CardDescription>Find the police station you need</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="search">Search</Label>
+                <div className="relative">
+                  <Input id="search" placeholder="Search for police stations..." />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Select value={facilityType} onValueChange={setFacilityType}>
+                  <SelectTrigger id="type">
+                    <SelectValue placeholder="Select type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Types</SelectItem>
+                    <SelectItem value="local">Local Police Station</SelectItem>
+                    <SelectItem value="regional">Regional Police Station</SelectItem>
+                    <SelectItem value="specialized">Specialized Unit</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="flex flex-col gap-2 pt-2">
+                <Button onClick={handleGetMyLocation} className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                  Get My Location
+                </Button>
+                <Button onClick={handleShowPoliceStations} className="w-full bg-blue-500 hover:bg-blue-600 text-white">
+                  Show Nearest Police Stations
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-blue-500">
+                <Shield className="h-5 w-5" />
+                Emergency Info
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-lg bg-blue-50 dark:bg-blue-950 p-3 border border-blue-200 dark:border-blue-900">
+                <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold mb-1">
+                  Emergency Services
+                </div>
+                <p className="text-sm text-blue-700 dark:text-blue-300">Call 911 for immediate police assistance</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-        <MapContainer
-          ref={mapRef}
-          style={{ height: '500px', width: '100%' }}
-          center={[51.505, -0.09] as L.LatLngExpression}
-          zoom={13}
-          scrollWheelZoom={true}
+        <motion.div
+          className="space-y-6 lg:col-span-3"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {showMyLocation && myLocation && (
-            <Marker position={myLocation} icon={blueIcon}>
-              <Popup>Your Location</Popup>
-            </Marker>
-          )}
-          {showPoliceStations && policeStations.map((station, index) => (
-            <Marker
-              key={index}
-              position={[station.location.coordinates[1], station.location.coordinates[0]]}
-              icon={redIcon}
-            >
-              <Popup>{station.name}</Popup>
-            </Marker>
-          ))}
-        </MapContainer>
+          <MapContainer
+            ref={mapRef}
+            style={{ height: '500px', width: '100%' }}
+            center={[51.505, -0.09] as L.LatLngExpression}
+            zoom={13}
+            scrollWheelZoom={true}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {showMyLocation && myLocation && (
+              <Marker position={myLocation} icon={blueIcon}>
+                <Popup>Your Location</Popup>
+              </Marker>
+            )}
+            {showPoliceStations && policeStations.map((station, index) => (
+              <Marker
+                key={index}
+                position={[station.location.coordinates[1], station.location.coordinates[0]]}
+                icon={redIcon}
+              >
+                <Popup>{station.name}</Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+        </motion.div>
       </div>
     </div>
   )
