@@ -31,8 +31,8 @@ export default function Home() {
               <Link href="/map" className="text-sm font-medium transition-colors hover:text-primary">
                 Map
               </Link>
-              <Link href="/safety" className="text-sm font-medium transition-colors hover:text-primary">
-                Safety Resources
+              <Link href="/report" className="text-sm font-medium transition-colors hover:text-primary">
+                Report Incidents
               </Link>
               <Link href="/hospitals" className="text-sm font-medium transition-colors hover:text-primary">
                 Hospitals
