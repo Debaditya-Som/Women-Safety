@@ -23,6 +23,7 @@ export default function SelfDefensePage() {
       description: "Learn the proper stance and movement techniques that form the foundation of self-defense.",
       image: "https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=2070&auto=format&fit=crop",
       duration: "10 min",
+      videoUrl: "https://www.youtube.com/watch?v=T7aNSRoDCmg",
     },
     {
       id: 2,
@@ -31,6 +32,7 @@ export default function SelfDefensePage() {
       description: "Techniques to escape when someone grabs your wrist or arm.",
       image: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=2069&auto=format&fit=crop",
       duration: "15 min",
+      videoUrl: "https://www.youtube.com/watch?v=6bExlWzkIHU&pp=ygVUV3Jpc3QgR3JhYiBFc2NhcGVzIDE1IG1pbiBUZWNobmlxdWVzIHRvIGVzY2FwZSB3aGVuIHNvbWVvbmUgZ3JhYnMgeW91ciB3cmlzdCBvciBhcm0u",
     },
     {
       id: 3,
@@ -39,6 +41,7 @@ export default function SelfDefensePage() {
       description: "Defend yourself from frontal attacks with these effective techniques.",
       image: "https://images.unsplash.com/photo-1549824506-bfeba88865d6?q=80&w=2070&auto=format&fit=crop",
       duration: "20 min",
+      videoUrl: "https://www.youtube.com/watch?v=KVpxP3ZZtAc",
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ export default function SelfDefensePage() {
       description: "Learn how to respond when attacked from behind.",
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
       duration: "20 min",
+      videoUrl: "https://www.youtube.com/watch?v=WjRpTNWv7dY",
     },
     {
       id: 5,
@@ -55,6 +59,7 @@ export default function SelfDefensePage() {
       description: "Techniques for defending yourself when on the ground.",
       image: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?q=80&w=2069&auto=format&fit=crop",
       duration: "25 min",
+      videoUrl: "https://www.youtube.com/watch?v=jAh0cU1J5zk&pp=ygVUV3Jpc3QgR3JhYiBFc2NhcGVzIDE1IG1pbiBUZWNobmlxdWVzIHRvIGVzY2FwZSB3aGVuIHNvbWVvbmUgZ3JhYnMgeW91ciB3cmlzdCBvciBhcm0u",
     },
     {
       id: 6,
@@ -63,6 +68,7 @@ export default function SelfDefensePage() {
       description: "How to use common items as improvised self-defense tools.",
       image: "https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?q=80&w=2070&auto=format&fit=crop",
       duration: "15 min",
+      videoUrl: "https://www.youtube.com/watch?v=Ngom9L8CKkU&pp=ygU5SG93IHRvIHVzZSBjb21tb24gaXRlbXMgYXMgaW1wcm92aXNlZCBzZWxmLWRlZmVuc2UgdG9vbHMu",
     },
   ]
 
@@ -125,59 +131,14 @@ export default function SelfDefensePage() {
   ]
 
   return (
-    <div className="mt-8 container mx-auto px-4 py-8">
-          <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-          <div className="flex gap-6 md:gap-10">
-            <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-primary" />
-              <span className="inline-block font-bold">SafetyNet</span>
-            </Link>
-            <nav className="hidden md:flex gap-6">
-              <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
-                Home
-              </Link>
-              <Link href="/map" className="text-sm font-medium transition-colors hover:text-primary">
-                Map
-              </Link>
-              <Link href="/safety" className="text-sm font-medium transition-colors hover:text-primary">
-                Safety Resources
-              </Link>
-              <Link href="/hospitals" className="text-sm font-medium transition-colors hover:text-primary">
-                Hospitals
-              </Link>
-              <Link href="/police" className="text-sm font-medium transition-colors hover:text-primary">
-                Police Stations
-              </Link>
-              <Link href="/self-defense" className="text-sm font-medium transition-colors hover:text-primary">
-                Self-Defense
-              </Link>
-            </nav>
-          </div>
-          <div className="flex flex-1 items-center justify-end space-x-4">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
-              <div className="hidden md:inline-block">
-                <form className="relative">
-                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    type="search"
-                    placeholder="Search..."
-                    className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[300px]"
-                  />
-                </form>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </header>
+    <div className="container mx-auto px-4 py-8">
       <motion.div
         className="mb-8 space-y-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mt-8 ">Self-Defense for Women</h1>
+        <h1 className="text-3xl font-bold">Self-Defense for Women</h1>
         <p className="text-muted-foreground">
           Learn essential self-defense techniques, find local workshops, and access safety resources designed
           specifically for women.
@@ -247,10 +208,12 @@ export default function SelfDefensePage() {
                     <p className="text-muted-foreground">{technique.description}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="default" size="sm" className="w-full gap-1">
-                      <Play className="h-4 w-4" />
-                      Watch Tutorial
-                    </Button>
+                    <Link href={technique.videoUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                      <Button variant="default" size="sm" className="w-full gap-1">
+                        <Play className="h-4 w-4" />
+                        Watch Tutorial
+                      </Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               </motion.div>
@@ -329,7 +292,7 @@ export default function SelfDefensePage() {
                 </Button>
               </div>
               <div className="md:w-1/3">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
                   alt="Group workshop"
                   width={300}
@@ -462,7 +425,7 @@ export default function SelfDefensePage() {
             </Button>
           </div>
           <div className="md:w-1/2">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
               alt="Self-defense guide"
               width={500}
