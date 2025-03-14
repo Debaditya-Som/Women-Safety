@@ -12,6 +12,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
+// Import the PDF download functionality
+import { downloadSelfDefenseGuide } from "@/lib/pdf-generator"
+// Import the PDF preview component
+import { PDFPreviewButton } from "./pdf-preview"
+
 export default function SelfDefensePage() {
   const [activeTab, setActiveTab] = useState("techniques")
 
@@ -32,7 +37,7 @@ export default function SelfDefensePage() {
       description: "Techniques to escape when someone grabs your wrist or arm.",
       image: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=2069&auto=format&fit=crop",
       duration: "15 min",
-      videoUrl: "https://www.youtube.com/watch?v=6bExlWzkIHU&pp=ygVUV3Jpc3QgR3JhYiBFc2NhcGVzIDE1IG1pbiBUZWNobmlxdWVzIHRvIGVzY2FwZSB3aGVuIHNvbWVvbmUgZ3JhYnMgeW91ciB3cmlzdCBvciBhcm0u",
+      videoUrl: "https://www.youtube.com/watch?v=02FG3iQO4Qo",
     },
     {
       id: 3,
@@ -59,7 +64,7 @@ export default function SelfDefensePage() {
       description: "Techniques for defending yourself when on the ground.",
       image: "https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?q=80&w=2069&auto=format&fit=crop",
       duration: "25 min",
-      videoUrl: "https://www.youtube.com/watch?v=jAh0cU1J5zk&pp=ygVUV3Jpc3QgR3JhYiBFc2NhcGVzIDE1IG1pbiBUZWNobmlxdWVzIHRvIGVzY2FwZSB3aGVuIHNvbWVvbmUgZ3JhYnMgeW91ciB3cmlzdCBvciBhcm0u",
+      videoUrl: "https://www.youtube.com/watch?v=JN0VtHez9xI",
     },
     {
       id: 6,
@@ -68,7 +73,7 @@ export default function SelfDefensePage() {
       description: "How to use common items as improvised self-defense tools.",
       image: "https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?q=80&w=2070&auto=format&fit=crop",
       duration: "15 min",
-      videoUrl: "https://www.youtube.com/watch?v=Ngom9L8CKkU&pp=ygU5SG93IHRvIHVzZSBjb21tb24gaXRlbXMgYXMgaW1wcm92aXNlZCBzZWxmLWRlZmVuc2UgdG9vbHMu",
+      videoUrl: "https://www.youtube.com/watch?v=MHAo9D3Mz-o",
     },
   ]
 
@@ -420,9 +425,13 @@ export default function SelfDefensePage() {
               Our comprehensive guide includes detailed techniques, safety tips, and resources for women's self-defense.
               Download it for free and have it available even when offline.
             </p>
-            <Button size="lg" className="gap-1">
-              Download Free Guide
-            </Button>
+            {/* Update the Button in the bottom section to use the download function */}
+            <div className="flex flex-wrap gap-3">
+              <Button size="lg" className="gap-1" onClick={downloadSelfDefenseGuide}>
+                Download Free Guide
+              </Button>
+              <PDFPreviewButton />
+            </div>
           </div>
           <div className="md:w-1/2">
             <Image
@@ -438,4 +447,3 @@ export default function SelfDefensePage() {
     </div>
   )
 }
-
