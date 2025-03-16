@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { MapContainer, TileLayer, Marker, Polyline, useMapEvents, useMap } from "react-leaflet"
 import axios from "axios"
 import { Search, Navigation, MapPin, Compass, Info, X, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import "leaflet/dist/leaflet.css"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -12,6 +13,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils"
 import "leaflet/dist/leaflet.css"
 import L from "leaflet"
+import "leaflet.heat"
+import HeatmapLayer from "@/components/map/MapComponent"
+
 
 // Custom marker icons
 const createIcon = (color: string) => {
@@ -30,6 +34,7 @@ const midColor = "#f59e0b" // Moderate route 🟠
 const unsafeColor = "#ef4444" // Unsafe route 🔴
 
 export default function SafetyMap() {
+  const mapRef = useRef<L.Map | null>(null)
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null)
   const [destination, setDestination] = useState<[number, number] | null>(null)
   const [routes, setRoutes] = useState<any[]>([])
@@ -137,14 +142,12 @@ export default function SafetyMap() {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      {/* Map */}
-      <MapContainer center={userLocation || [51.505, -0.09]} zoom={13} className="h-full w-full z-0">
+      <MapContainer center={userLocation || [51.505, -0.09]} zoom={13} className="h-full w-full z-0" ref={mapRef}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {userLocation && <Marker position={userLocation} icon={createIcon("#3b82f6")} />}
 
         {destination && <Marker position={destination} icon={createIcon("#ef4444")} />}
-
         {routes.map((route, index) => (
           <Polyline
             key={index}
@@ -154,7 +157,7 @@ export default function SafetyMap() {
             opacity={0.7}
           />
         ))}
-
+        {mapRef.current && <HeatmapLayer map={mapRef.current} />}
         <MapClickHandler setDestination={setDestination} />
 
         {userLocation && <CenterMapOnUser position={userLocation} />}
@@ -375,4 +378,3 @@ function CenterMapOnUser({ position }: { position: [number, number] }) {
 
   return null
 }
-
