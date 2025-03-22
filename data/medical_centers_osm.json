@@ -1,0 +1,6709 @@
+[
+    {
+        "name": "Eden Hospital",
+        "coordinates": {
+            "latitude": 22.5727398,
+            "longitude": 88.3600196
+        }
+    },
+    {
+        "name": "Calcutta Medical College & Hospital",
+        "coordinates": {
+            "latitude": 22.5722242,
+            "longitude": 88.3614363
+        }
+    },
+    {
+        "name": "Vidyasagar State General Hospital",
+        "coordinates": {
+            "latitude": 22.4987178,
+            "longitude": 88.3163322
+        }
+    },
+    {
+        "name": "Anandalok",
+        "coordinates": {
+            "latitude": 22.5843732,
+            "longitude": 88.4289579
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.4951399,
+            "longitude": 88.3121663
+        }
+    },
+    {
+        "name": "Hindustan Health Point Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.4580817,
+            "longitude": 88.3836982
+        }
+    },
+    {
+        "name": "Chabi Medical",
+        "coordinates": {
+            "latitude": 22.4908706,
+            "longitude": 88.3106772
+        }
+    },
+    {
+        "name": "XPons Doctor's Clinic",
+        "coordinates": {
+            "latitude": 22.7586464,
+            "longitude": 88.3707083
+        }
+    },
+    {
+        "name": "Peerless Hospital and B.K.Roy Research Center",
+        "coordinates": {
+            "latitude": 22.4809641,
+            "longitude": 88.3938205
+        }
+    },
+    {
+        "name": "Kaliganj Upazila Health Complex",
+        "coordinates": {
+            "latitude": 22.4639038,
+            "longitude": 89.0248954
+        }
+    },
+    {
+        "name": "Shymnagar Upazila Health Complex",
+        "coordinates": {
+            "latitude": 22.3439009,
+            "longitude": 89.1026876
+        }
+    },
+    {
+        "name": "Kalaroa Upazila Health Complex",
+        "coordinates": {
+            "latitude": 22.8605568,
+            "longitude": 89.0359397
+        }
+    },
+    {
+        "name": "Tala Upazila Health Complex",
+        "coordinates": {
+            "latitude": 22.7524226,
+            "longitude": 89.2591267
+        }
+    },
+    {
+        "name": "Jessore 250 bed General Hospital",
+        "coordinates": {
+            "latitude": 23.1689124,
+            "longitude": 89.2090257
+        }
+    },
+    {
+        "name": "Jhikorgacha Upazila Health Complex",
+        "coordinates": {
+            "latitude": 23.1052437,
+            "longitude": 89.1090706
+        }
+    },
+    {
+        "name": "Manirampur Upazila Health Complex",
+        "coordinates": {
+            "latitude": 23.0091121,
+            "longitude": 89.2354315
+        }
+    },
+    {
+        "name": "Kaliganj Upazila Health Complex",
+        "coordinates": {
+            "latitude": 23.4033153,
+            "longitude": 89.142871
+        }
+    },
+    {
+        "name": "Kotchandpur Upazila Health Complex",
+        "coordinates": {
+            "latitude": 23.411486,
+            "longitude": 89.0054199
+        }
+    },
+    {
+        "name": "Chuadanga General Hospital",
+        "coordinates": {
+            "latitude": 23.6356794,
+            "longitude": 88.8473986
+        }
+    },
+    {
+        "name": "Damurhuda Upazila Health Complex",
+        "coordinates": {
+            "latitude": 23.6142025,
+            "longitude": 88.7627066
+        }
+    },
+    {
+        "name": "Subodh Mitra Cancer Hospital and Research Centre",
+        "coordinates": {
+            "latitude": 22.5728078,
+            "longitude": 88.4134692
+        }
+    },
+    {
+        "name": "ASMII Save The Sight Foundation",
+        "coordinates": {
+            "latitude": 22.6225187,
+            "longitude": 88.4506765
+        }
+    },
+    {
+        "name": "Suraksha Diagnostic",
+        "coordinates": {
+            "latitude": 22.5909895,
+            "longitude": 88.4122473
+        }
+    },
+    {
+        "name": "Bidhannagar State General Hospital",
+        "coordinates": {
+            "latitude": 22.5912273,
+            "longitude": 88.4110886
+        }
+    },
+    {
+        "name": "Seba Hospital",
+        "coordinates": {
+            "latitude": 22.5908731,
+            "longitude": 88.4105441
+        }
+    },
+    {
+        "name": "Vasan Eye Care Hospital, Kolkata",
+        "coordinates": {
+            "latitude": 22.5896424,
+            "longitude": 88.4089267
+        }
+    },
+    {
+        "name": "Global Healthcare System",
+        "coordinates": {
+            "latitude": 22.5855232,
+            "longitude": 88.4914262
+        }
+    },
+    {
+        "name": "Chittaranjan Shishu Hospital",
+        "coordinates": {
+            "latitude": 22.5264408,
+            "longitude": 88.3471209
+        }
+    },
+    {
+        "name": "Chittaranjan Seva Sadan",
+        "coordinates": {
+            "latitude": 22.5259264,
+            "longitude": 88.3470069
+        }
+    },
+    {
+        "name": "Chittaranjan National Cancer Institute Hospital",
+        "coordinates": {
+            "latitude": 22.5252694,
+            "longitude": 88.3466423
+        }
+    },
+    {
+        "name": "Centre Point Nursing Home",
+        "coordinates": {
+            "latitude": 22.5291683,
+            "longitude": 88.3451221
+        }
+    },
+    {
+        "name": "Nadia Diagnostics",
+        "coordinates": {
+            "latitude": 23.4050818,
+            "longitude": 88.493483
+        }
+    },
+    {
+        "name": "PKS Clinic",
+        "coordinates": {
+            "latitude": 23.1488347,
+            "longitude": 89.2024068
+        }
+    },
+    {
+        "name": "Samaddar HOmeo Hall",
+        "coordinates": {
+            "latitude": 22.75322,
+            "longitude": 88.5197439
+        }
+    },
+    {
+        "name": "Seva Ckinic-Dr. M Rahaman",
+        "coordinates": {
+            "latitude": 22.7537684,
+            "longitude": 88.5199042
+        }
+    },
+    {
+        "name": "Quadra Medical Services Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5263392,
+            "longitude": 88.3641593
+        }
+    },
+    {
+        "name": "Mayor Chect Clinick",
+        "coordinates": {
+            "latitude": 22.5895694,
+            "longitude": 88.3507269
+        }
+    },
+    {
+        "name": "Divine Care",
+        "coordinates": {
+            "latitude": 22.9679508,
+            "longitude": 88.462962
+        }
+    },
+    {
+        "name": "Medical Unit",
+        "coordinates": {
+            "latitude": 22.9609469,
+            "longitude": 88.5188385
+        }
+    },
+    {
+        "name": "Ekota Hospital",
+        "coordinates": {
+            "latitude": 23.1678178,
+            "longitude": 89.2094689
+        }
+    },
+    {
+        "name": "Vivekananda Mission Asram Netra Niramay Niketan",
+        "coordinates": {
+            "latitude": 22.1423439,
+            "longitude": 88.0905806
+        }
+    },
+    {
+        "name": "Kalyani Eye Care and Laser Clinic",
+        "coordinates": {
+            "latitude": 22.9707724,
+            "longitude": 88.4651161
+        }
+    },
+    {
+        "name": "Royal Vision",
+        "coordinates": {
+            "latitude": 22.9687125,
+            "longitude": 88.4652265
+        }
+    },
+    {
+        "name": "B C Roy Eye Clinic",
+        "coordinates": {
+            "latitude": 22.9686793,
+            "longitude": 88.4652182
+        }
+    },
+    {
+        "name": "Manav Jiban Pharmacy",
+        "coordinates": {
+            "latitude": 22.9734061,
+            "longitude": 88.4556102
+        }
+    },
+    {
+        "name": "Kalyani Nursing Home",
+        "coordinates": {
+            "latitude": 22.9792698,
+            "longitude": 88.4372693
+        }
+    },
+    {
+        "name": "Apollo Pharmacy",
+        "coordinates": {
+            "latitude": 22.9803156,
+            "longitude": 88.437854
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.5812129,
+            "longitude": 88.4254218
+        }
+    },
+    {
+        "name": "Dr Tapas Das, Cardiologist",
+        "coordinates": {
+            "latitude": 22.9683221,
+            "longitude": 88.4641635
+        }
+    },
+    {
+        "name": "Ceragem Physiotherapy center",
+        "coordinates": {
+            "latitude": 22.9681814,
+            "longitude": 88.4644156
+        }
+    },
+    {
+        "name": "Dr Paul's Clinic",
+        "coordinates": {
+            "latitude": 22.5922822,
+            "longitude": 88.4002766
+        }
+    },
+    {
+        "name": "bangur medical center",
+        "coordinates": {
+            "latitude": 22.6109455,
+            "longitude": 88.4082202
+        }
+    },
+    {
+        "name": "Prima Orthopaedic Centre",
+        "coordinates": {
+            "latitude": 22.4731537,
+            "longitude": 88.3079611
+        }
+    },
+    {
+        "name": "Sarangabad School",
+        "coordinates": {
+            "latitude": 22.4920937,
+            "longitude": 88.2127219
+        }
+    },
+    {
+        "name": "Institute Of Neurosciences Kolkata",
+        "coordinates": {
+            "latitude": 22.5470227,
+            "longitude": 88.3620613
+        }
+    },
+    {
+        "name": "B B Eye Foundation VIP ROAD",
+        "coordinates": {
+            "latitude": 22.619577,
+            "longitude": 88.4327899
+        }
+    },
+    {
+        "name": "ESI HOSPITAL, SEALDAH",
+        "coordinates": {
+            "latitude": 22.5728574,
+            "longitude": 88.3730073
+        }
+    },
+    {
+        "name": "Dr. B.N.Bose Sub-divisional Hospital",
+        "coordinates": {
+            "latitude": 22.7515849,
+            "longitude": 88.3710265
+        }
+    },
+    {
+        "name": "Charulata Welfare Centre",
+        "coordinates": {
+            "latitude": 22.4576646,
+            "longitude": 88.3228681
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.5908897,
+            "longitude": 88.3989226
+        }
+    },
+    {
+        "name": "Indonath Kundu",
+        "coordinates": {
+            "latitude": 22.5818122,
+            "longitude": 88.3904367
+        }
+    },
+    {
+        "name": "Romesh Clinic",
+        "coordinates": {
+            "latitude": 23.7726568,
+            "longitude": 88.6379829
+        }
+    },
+    {
+        "name": "Taher Clinic",
+        "coordinates": {
+            "latitude": 23.7716784,
+            "longitude": 88.6423364
+        }
+    },
+    {
+        "name": "Chandi tala health center",
+        "coordinates": {
+            "latitude": 22.4866272,
+            "longitude": 88.3460553
+        }
+    },
+    {
+        "name": "Alimon Nessa Diabetic Hospital.",
+        "coordinates": {
+            "latitude": 23.1071108,
+            "longitude": 89.1077142
+        }
+    },
+    {
+        "name": "Kiron Medical Hall and Clinic",
+        "coordinates": {
+            "latitude": 22.8380161,
+            "longitude": 88.6246801
+        }
+    },
+    {
+        "name": "Shinju Medical Home",
+        "coordinates": {
+            "latitude": 22.349855,
+            "longitude": 88.4372143
+        }
+    },
+    {
+        "name": "Dr. Amalendu Ghosh",
+        "coordinates": {
+            "latitude": 22.5721626,
+            "longitude": 88.0078149
+        }
+    },
+    {
+        "name": "Behala Balananda Brahmachari Hospital and Research Center",
+        "coordinates": {
+            "latitude": 22.5065586,
+            "longitude": 88.3205755
+        }
+    },
+    {
+        "name": "IRIS HOSPITAL",
+        "coordinates": {
+            "latitude": 22.4792072,
+            "longitude": 88.375858
+        }
+    },
+    {
+        "name": "Bidhannagar Sub-Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.5907911,
+            "longitude": 88.410894
+        }
+    },
+    {
+        "name": "PHC, Mundalika",
+        "coordinates": {
+            "latitude": 22.7131422,
+            "longitude": 88.1055727
+        }
+    },
+    {
+        "name": "Paramount Clinic",
+        "coordinates": {
+            "latitude": 22.5248903,
+            "longitude": 88.3493982
+        }
+    },
+    {
+        "name": "Paramount Nursing Home",
+        "coordinates": {
+            "latitude": 22.5239877,
+            "longitude": 88.3486944
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.7932966,
+            "longitude": 88.9660172
+        }
+    },
+    {
+        "name": "Satkhira General Hospital",
+        "coordinates": {
+            "latitude": 22.7225445,
+            "longitude": 89.0686197
+        }
+    },
+    {
+        "name": "Shimul Clinic",
+        "coordinates": {
+            "latitude": 22.7206576,
+            "longitude": 89.0686843
+        }
+    },
+    {
+        "name": "Dr Rafi Ahmed Dental College & Hospital",
+        "coordinates": {
+            "latitude": 22.5627691,
+            "longitude": 88.3679312
+        }
+    },
+    {
+        "name": "UNB building, NRS medical college",
+        "coordinates": {
+            "latitude": 22.5648794,
+            "longitude": 88.3695623
+        }
+    },
+    {
+        "name": "NRS OPD Building",
+        "coordinates": {
+            "latitude": 22.5645047,
+            "longitude": 88.3686937
+        }
+    },
+    {
+        "name": "Bekar Ward, NRS Medical College",
+        "coordinates": {
+            "latitude": 22.5633946,
+            "longitude": 88.3698611
+        }
+    },
+    {
+        "name": "NRS Medical college & Hospital",
+        "coordinates": {
+            "latitude": 22.5652972,
+            "longitude": 88.3691544
+        }
+    },
+    {
+        "name": "Dr Rafi Ahmed Dental College & Hospital, Old Campus",
+        "coordinates": {
+            "latitude": 22.5629472,
+            "longitude": 88.367509
+        }
+    },
+    {
+        "name": "Satkhira Medical College",
+        "coordinates": {
+            "latitude": 22.6901884,
+            "longitude": 89.0468985
+        }
+    },
+    {
+        "name": "Satkhira Medical College",
+        "coordinates": {
+            "latitude": 22.691344,
+            "longitude": 89.045721
+        }
+    },
+    {
+        "name": "Tarulia Upashasthya Kendra",
+        "coordinates": {
+            "latitude": 22.5878701,
+            "longitude": 88.4423075
+        }
+    },
+    {
+        "name": "Obs & Gynaecology Building, NRS",
+        "coordinates": {
+            "latitude": 22.563659,
+            "longitude": 88.3690769
+        }
+    },
+    {
+        "name": "North Dum Dum Municipality Hospital",
+        "coordinates": {
+            "latitude": 22.6609462,
+            "longitude": 88.4355111
+        }
+    },
+    {
+        "name": "Thakur Pukur Cancer Hospital",
+        "coordinates": {
+            "latitude": 22.4590152,
+            "longitude": 88.3195026
+        }
+    },
+    {
+        "name": "Ashoknagar State General Hospital",
+        "coordinates": {
+            "latitude": 22.8479164,
+            "longitude": 88.6179891
+        }
+    },
+    {
+        "name": "P.k.ghosh",
+        "coordinates": {
+            "latitude": 22.958498,
+            "longitude": 88.4021653
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.5012444,
+            "longitude": 88.3602395
+        }
+    },
+    {
+        "name": "Micro Phaco Surgery Centre",
+        "coordinates": {
+            "latitude": 22.5572974,
+            "longitude": 88.3723557
+        }
+    },
+    {
+        "name": "Recovery Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5919688,
+            "longitude": 88.3639514
+        }
+    },
+    {
+        "name": "Bhabani Nursing Home and Diagnostic Clinic",
+        "coordinates": {
+            "latitude": 23.176782,
+            "longitude": 88.5656098
+        }
+    },
+    {
+        "name": "Red Plus Society Nursing Home",
+        "coordinates": {
+            "latitude": 22.4831664,
+            "longitude": 88.3850406
+        }
+    },
+    {
+        "name": "Relief Centre",
+        "coordinates": {
+            "latitude": 22.5339512,
+            "longitude": 88.3409129
+        }
+    },
+    {
+        "name": "Remedy Hospital (Unit Of Remedy Medical Services Pvt Ltd)",
+        "coordinates": {
+            "latitude": 22.4652784,
+            "longitude": 88.3898123
+        }
+    },
+    {
+        "name": "Re - Life Hospital",
+        "coordinates": {
+            "latitude": 22.6845585,
+            "longitude": 88.3544138
+        }
+    },
+    {
+        "name": "New Town Nursing Home And Diagnostic Co (P) Ltd",
+        "coordinates": {
+            "latitude": 22.6149976,
+            "longitude": 88.4321695
+        }
+    },
+    {
+        "name": "Care and Cure Nursing Home",
+        "coordinates": {
+            "latitude": 22.468412,
+            "longitude": 88.0947118
+        }
+    },
+    {
+        "name": "Bivek Nursing Home",
+        "coordinates": {
+            "latitude": 22.5943066,
+            "longitude": 88.3394948
+        }
+    },
+    {
+        "name": "Hare krishna Nursing Home",
+        "coordinates": {
+            "latitude": 22.6047547,
+            "longitude": 88.342891
+        }
+    },
+    {
+        "name": "The May Fair Hospital",
+        "coordinates": {
+            "latitude": 22.624456,
+            "longitude": 88.3785443
+        }
+    },
+    {
+        "name": "Orchid Skin Clinic",
+        "coordinates": {
+            "latitude": 22.5082554,
+            "longitude": 88.3355954
+        }
+    },
+    {
+        "name": "Ranaghat Lions Eye Care Centre",
+        "coordinates": {
+            "latitude": 23.1753427,
+            "longitude": 88.5631481
+        }
+    },
+    {
+        "name": "Dafodil Hospitals",
+        "coordinates": {
+            "latitude": 22.6007751,
+            "longitude": 88.4051065
+        }
+    },
+    {
+        "name": "Rameswara Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5900155,
+            "longitude": 88.3929551
+        }
+    },
+    {
+        "name": "Ramkrishna Medical Complex Nursing Home",
+        "coordinates": {
+            "latitude": 22.5737119,
+            "longitude": 88.3859539
+        }
+    },
+    {
+        "name": "Apex Clinic Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.4889098,
+            "longitude": 88.3235926
+        }
+    },
+    {
+        "name": "Jangipara Rural Hospital",
+        "coordinates": {
+            "latitude": 22.7415728,
+            "longitude": 88.0515924
+        }
+    },
+    {
+        "name": "Basirhat Nursing Home",
+        "coordinates": {
+            "latitude": 22.6668363,
+            "longitude": 88.8930745
+        }
+    },
+    {
+        "name": "Bhagirathi Neotia Woman And Child Care Centre",
+        "coordinates": {
+            "latitude": 22.5474203,
+            "longitude": 88.3592599
+        }
+    },
+    {
+        "name": "Midland Nursing Home",
+        "coordinates": {
+            "latitude": 22.6666317,
+            "longitude": 88.3772635
+        }
+    },
+    {
+        "name": "Sakuntala Nursing Home",
+        "coordinates": {
+            "latitude": 22.4856094,
+            "longitude": 88.2868892
+        }
+    },
+    {
+        "name": "Ramesh Chandra Sen Clinic",
+        "coordinates": {
+            "latitude": 22.5169662,
+            "longitude": 88.3647182
+        }
+    },
+    {
+        "name": "Rama Krishna Mission Seva Pratisthan",
+        "coordinates": {
+            "latitude": 22.5234205,
+            "longitude": 88.3519824
+        }
+    },
+    {
+        "name": "Ramakrishma Sarada Mission Matri Bhavan/Matri Bhavan Hospital",
+        "coordinates": {
+            "latitude": 22.5137804,
+            "longitude": 88.34363
+        }
+    },
+    {
+        "name": "Paradise Nursing Home",
+        "coordinates": {
+            "latitude": 22.6467949,
+            "longitude": 88.3740078
+        }
+    },
+    {
+        "name": "Dakshin Damodar Nursing Home",
+        "coordinates": {
+            "latitude": 23.1099385,
+            "longitude": 87.803194
+        }
+    },
+    {
+        "name": "Seba Nursing Home",
+        "coordinates": {
+            "latitude": 22.2031036,
+            "longitude": 88.1881423
+        }
+    },
+    {
+        "name": "Probal Eye Institute",
+        "coordinates": {
+            "latitude": 22.5198434,
+            "longitude": 88.3474602
+        }
+    },
+    {
+        "name": "R.M.Eye Foundation",
+        "coordinates": {
+            "latitude": 22.894594,
+            "longitude": 88.3972574
+        }
+    },
+    {
+        "name": "Punarjyoti Eye Care",
+        "coordinates": {
+            "latitude": 22.7264738,
+            "longitude": 88.3792772
+        }
+    },
+    {
+        "name": "Green View Clinic And Nursing Home",
+        "coordinates": {
+            "latitude": 22.8913861,
+            "longitude": 88.4195325
+        }
+    },
+    {
+        "name": "Green-View Nursing Home",
+        "coordinates": {
+            "latitude": 22.6937332,
+            "longitude": 88.3754235
+        }
+    },
+    {
+        "name": "Green View Clinic Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5855217,
+            "longitude": 88.2138714
+        }
+    },
+    {
+        "name": "Greenland Nursing Home, South 24 Parganas",
+        "coordinates": {
+            "latitude": 22.1106234,
+            "longitude": 88.3176662
+        }
+    },
+    {
+        "name": "Green View Nursing Home, Medinipur East",
+        "coordinates": {
+            "latitude": 22.4493533,
+            "longitude": 87.8708397
+        }
+    },
+    {
+        "name": "Gulabi Raj Shyamlal Memorial Rotary Eye Hospital",
+        "coordinates": {
+            "latitude": 22.4863466,
+            "longitude": 88.1890865
+        }
+    },
+    {
+        "name": "Greenland Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.2599472,
+            "longitude": 87.8447378
+        }
+    },
+    {
+        "name": "Habra Nursing Home",
+        "coordinates": {
+            "latitude": 22.8388382,
+            "longitude": 88.6522664
+        }
+    },
+    {
+        "name": "Priyamvada Birla Aravind Eye Hospital",
+        "coordinates": {
+            "latitude": 22.5424238,
+            "longitude": 88.3554102
+        }
+    },
+    {
+        "name": "Haldia Seva Sadan",
+        "coordinates": {
+            "latitude": 22.0664967,
+            "longitude": 88.0769366
+        }
+    },
+    {
+        "name": "Happy Life Nursing Home",
+        "coordinates": {
+            "latitude": 22.8568981,
+            "longitude": 88.5314651
+        }
+    },
+    {
+        "name": "Harvard Medicare And Research Institute (P) Ltd.",
+        "coordinates": {
+            "latitude": 22.542529,
+            "longitude": 88.3651547
+        }
+    },
+    {
+        "name": "Hazra Nursing Home",
+        "coordinates": {
+            "latitude": 22.6369156,
+            "longitude": 88.2212435
+        }
+    },
+    {
+        "name": "Health Cure Nursing Home",
+        "coordinates": {
+            "latitude": 22.6036163,
+            "longitude": 88.4026507
+        }
+    },
+    {
+        "name": "Dreamland Nursing Home, Baburbagh",
+        "coordinates": {
+            "latitude": 23.2539123,
+            "longitude": 87.8577518
+        }
+    },
+    {
+        "name": "Life Line Diagnostic Centre And Nursing Home",
+        "coordinates": {
+            "latitude": 22.5477696,
+            "longitude": 88.3542247
+        }
+    },
+    {
+        "name": "L.B.Nursing Home",
+        "coordinates": {
+            "latitude": 22.601137,
+            "longitude": 88.3736761
+        }
+    },
+    {
+        "name": "Serampore Surgical Nursing Home",
+        "coordinates": {
+            "latitude": 22.7543237,
+            "longitude": 88.3426247
+        }
+    },
+    {
+        "name": "People Meditreat Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.58174,
+            "longitude": 88.3232278
+        }
+    },
+    {
+        "name": "Phoenix Hospital And Diagnostic Centre Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6468547,
+            "longitude": 88.4322274
+        }
+    },
+    {
+        "name": "P.G.PolyClinic",
+        "coordinates": {
+            "latitude": 22.5392491,
+            "longitude": 88.3486591
+        }
+    },
+    {
+        "name": "CGHS Polyclinic",
+        "coordinates": {
+            "latitude": 22.5713405,
+            "longitude": 88.416684
+        }
+    },
+    {
+        "name": "Popular Nursing Home, Medinipur East",
+        "coordinates": {
+            "latitude": 22.4107334,
+            "longitude": 87.8649777
+        }
+    },
+    {
+        "name": "Dreamland Nursing Home",
+        "coordinates": {
+            "latitude": 22.6528929,
+            "longitude": 87.7356764
+        }
+    },
+    {
+        "name": "Megha Eye Centre",
+        "coordinates": {
+            "latitude": 23.2473506,
+            "longitude": 87.8647173
+        }
+    },
+    {
+        "name": "Swastik Seva Sadan",
+        "coordinates": {
+            "latitude": 22.5347322,
+            "longitude": 88.3743808
+        }
+    },
+    {
+        "name": "Netaji Subhash Nursing Home and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.5322517,
+            "longitude": 88.3253306
+        }
+    },
+    {
+        "name": "Panihati State General Hospital",
+        "coordinates": {
+            "latitude": 22.6929042,
+            "longitude": 88.3980869
+        }
+    },
+    {
+        "name": "Pandey Sebayan Nursing Home",
+        "coordinates": {
+            "latitude": 22.8404264,
+            "longitude": 88.3615418
+        }
+    },
+    {
+        "name": "Oriental Nursing Home and polyclinic",
+        "coordinates": {
+            "latitude": 23.3942394,
+            "longitude": 88.5034292
+        }
+    },
+    {
+        "name": "Panacea Nursing Home",
+        "coordinates": {
+            "latitude": 22.7670766,
+            "longitude": 88.3714767
+        }
+    },
+    {
+        "name": "Pankajini Nursing Home",
+        "coordinates": {
+            "latitude": 22.7703511,
+            "longitude": 88.1654321
+        }
+    },
+    {
+        "name": "Paradise Diagnostic Centre And Nursing Home",
+        "coordinates": {
+            "latitude": 22.2833075,
+            "longitude": 87.9121001
+        }
+    },
+    {
+        "name": "Shusrusha Nursing Home, Kolkata",
+        "coordinates": {
+            "latitude": 22.5772196,
+            "longitude": 88.3883254
+        }
+    },
+    {
+        "name": "Mayflower Nursing Home",
+        "coordinates": {
+            "latitude": 22.5538559,
+            "longitude": 88.354917
+        }
+    },
+    {
+        "name": "The Orthopaedic And Fracture Clinic",
+        "coordinates": {
+            "latitude": 22.5403082,
+            "longitude": 88.3550012
+        }
+    },
+    {
+        "name": "The Sherwood Nursing Home",
+        "coordinates": {
+            "latitude": 22.5720525,
+            "longitude": 88.3620675
+        }
+    },
+    {
+        "name": "Udayan Nursing Home",
+        "coordinates": {
+            "latitude": 22.4743339,
+            "longitude": 88.3613339
+        }
+    },
+    {
+        "name": "Matrisadan Nursing Home",
+        "coordinates": {
+            "latitude": 22.7199177,
+            "longitude": 87.9827307
+        }
+    },
+    {
+        "name": "Udichi ENT and Head Neck Center",
+        "coordinates": {
+            "latitude": 22.6013091,
+            "longitude": 88.4075772
+        }
+    },
+    {
+        "name": "Udit Nursing Home",
+        "coordinates": {
+            "latitude": 22.5972239,
+            "longitude": 88.3379249
+        }
+    },
+    {
+        "name": "Unipon Hospital and Medical Sciences Pvt.Ltd -Kolkata",
+        "coordinates": {
+            "latitude": 22.5440241,
+            "longitude": 88.2696868
+        }
+    },
+    {
+        "name": "United Nursing Home (P) Ltd.",
+        "coordinates": {
+            "latitude": 22.7495595,
+            "longitude": 88.3510577
+        }
+    },
+    {
+        "name": "Dr Nihar Munshi Eye Foundation",
+        "coordinates": {
+            "latitude": 22.5240061,
+            "longitude": 88.3606586
+        }
+    },
+    {
+        "name": "Capitol Nursing Home",
+        "coordinates": {
+            "latitude": 22.5811797,
+            "longitude": 88.3745605
+        }
+    },
+    {
+        "name": "Uttarpara State General Hospital",
+        "coordinates": {
+            "latitude": 22.663208,
+            "longitude": 88.3435006
+        }
+    },
+    {
+        "name": "DM Hospitals Pvt. Ltd",
+        "coordinates": {
+            "latitude": 22.4660881,
+            "longitude": 88.3105063
+        }
+    },
+    {
+        "name": "Shradha Health Care Pvt. Ltd",
+        "coordinates": {
+            "latitude": 22.5086023,
+            "longitude": 88.3380973
+        }
+    },
+    {
+        "name": "Vasan Eye Care Hospital, Sodepur",
+        "coordinates": {
+            "latitude": 22.6997425,
+            "longitude": 88.3752036
+        }
+    },
+    {
+        "name": "Mamata Nursing Home, Hooghly",
+        "coordinates": {
+            "latitude": 22.7776894,
+            "longitude": 88.3250497
+        }
+    },
+    {
+        "name": "Malancha Nursing Home",
+        "coordinates": {
+            "latitude": 22.8897775,
+            "longitude": 88.4216045
+        }
+    },
+    {
+        "name": "Federation Nursing Home",
+        "coordinates": {
+            "latitude": 22.5794459,
+            "longitude": 88.3750211
+        }
+    },
+    {
+        "name": "Maity Nursing Home (Purbmedinipur)",
+        "coordinates": {
+            "latitude": 22.2241302,
+            "longitude": 87.7785999
+        }
+    },
+    {
+        "name": "Maa Sarada Nursing Home",
+        "coordinates": {
+            "latitude": 22.4075768,
+            "longitude": 87.7453297
+        }
+    },
+    {
+        "name": "Maa Karunamayee Nursing Home",
+        "coordinates": {
+            "latitude": 22.1870672,
+            "longitude": 88.189639
+        }
+    },
+    {
+        "name": "Maa Sarada Nursing Home",
+        "coordinates": {
+            "latitude": 22.6349407,
+            "longitude": 88.4386834
+        }
+    },
+    {
+        "name": "Maa Durga Nursing Home, South 24 Parganas",
+        "coordinates": {
+            "latitude": 22.0817788,
+            "longitude": 88.2469967
+        }
+    },
+    {
+        "name": "Maa Anowara General Hospital",
+        "coordinates": {
+            "latitude": 22.5014708,
+            "longitude": 88.6120856
+        }
+    },
+    {
+        "name": "Nightingale Hospital",
+        "coordinates": {
+            "latitude": 22.546022,
+            "longitude": 88.3515425
+        }
+    },
+    {
+        "name": "New Life Nursing Home, Kolkata",
+        "coordinates": {
+            "latitude": 22.6168954,
+            "longitude": 88.4336328
+        }
+    },
+    {
+        "name": "Night Angel Nursing Home",
+        "coordinates": {
+            "latitude": 22.9474593,
+            "longitude": 88.446824
+        }
+    },
+    {
+        "name": "N G Medicare And Calcutta Hope Infertility Clinic",
+        "coordinates": {
+            "latitude": 22.5187786,
+            "longitude": 88.3591291
+        }
+    },
+    {
+        "name": "Nightingale Nursing Home",
+        "coordinates": {
+            "latitude": 23.2404059,
+            "longitude": 87.8565435
+        }
+    },
+    {
+        "name": "Nilima Matri Sadan",
+        "coordinates": {
+            "latitude": 22.6568859,
+            "longitude": 88.3463068
+        }
+    },
+    {
+        "name": "Ekbalpur Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.534884,
+            "longitude": 88.3250094
+        }
+    },
+    {
+        "name": "Eco Hospital and Diagnostics",
+        "coordinates": {
+            "latitude": 22.7239238,
+            "longitude": 88.4926146
+        }
+    },
+    {
+        "name": "Elite Eyecare and Microsurgery Centre",
+        "coordinates": {
+            "latitude": 22.9686609,
+            "longitude": 88.4661426
+        }
+    },
+    {
+        "name": "Elite Nursing Home",
+        "coordinates": {
+            "latitude": 22.522012,
+            "longitude": 88.3492184
+        }
+    },
+    {
+        "name": "Emily Nursing Home",
+        "coordinates": {
+            "latitude": 22.5784424,
+            "longitude": 88.3917877
+        }
+    },
+    {
+        "name": "EVES Clinic Nursing Home",
+        "coordinates": {
+            "latitude": 22.6184713,
+            "longitude": 88.392064
+        }
+    },
+    {
+        "name": "Eskag Sanjeevani Hospital",
+        "coordinates": {
+            "latitude": 22.6040075,
+            "longitude": 88.3678195
+        }
+    },
+    {
+        "name": "EMLC Eye Microsurgery and Laser Centre",
+        "coordinates": {
+            "latitude": 22.9131363,
+            "longitude": 88.3968477
+        }
+    },
+    {
+        "name": "Eye Care",
+        "coordinates": {
+            "latitude": 22.6987577,
+            "longitude": 88.3866258
+        }
+    },
+    {
+        "name": "Eyeland Microsurgery Centre",
+        "coordinates": {
+            "latitude": 22.7588628,
+            "longitude": 88.373035
+        }
+    },
+    {
+        "name": "Eye Foundation And Research Centre",
+        "coordinates": {
+            "latitude": 22.5807877,
+            "longitude": 88.3880956
+        }
+    },
+    {
+        "name": "Asit Kumar Dey Memorial Crossland Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.7514247,
+            "longitude": 88.3360028
+        }
+    },
+    {
+        "name": "Florid Nursing Home",
+        "coordinates": {
+            "latitude": 22.580763,
+            "longitude": 88.3880688
+        }
+    },
+    {
+        "name": "Fair Health Nursing Home",
+        "coordinates": {
+            "latitude": 22.6941935,
+            "longitude": 88.4671082
+        }
+    },
+    {
+        "name": "Fortis Healthcare",
+        "coordinates": {
+            "latitude": 22.5181685,
+            "longitude": 88.3559132
+        }
+    },
+    {
+        "name": "Farsight Eye Research Centre",
+        "coordinates": {
+            "latitude": 22.539975,
+            "longitude": 88.3618898
+        }
+    },
+    {
+        "name": "Jeevan Jyoti Nursing Home, Kolkata",
+        "coordinates": {
+            "latitude": 22.5835237,
+            "longitude": 88.3613265
+        }
+    },
+    {
+        "name": "Five Point Micro Surgery Centre Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5997713,
+            "longitude": 88.3744177
+        }
+    },
+    {
+        "name": "Bargachia Nursing Home",
+        "coordinates": {
+            "latitude": 22.6628869,
+            "longitude": 88.139196
+        }
+    },
+    {
+        "name": "Implant House Laser and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.5395258,
+            "longitude": 88.3621646
+        }
+    },
+    {
+        "name": "Vivekananda Eye Care Centre",
+        "coordinates": {
+            "latitude": 22.5629144,
+            "longitude": 88.3950521
+        }
+    },
+    {
+        "name": "Pranabananda Seva Sadan",
+        "coordinates": {
+            "latitude": 22.2831433,
+            "longitude": 87.9201277
+        }
+    },
+    {
+        "name": "Fulia Eye Care",
+        "coordinates": {
+            "latitude": 23.2499108,
+            "longitude": 88.4331936
+        }
+    },
+    {
+        "name": "Bharat Sevashram Sangha Hospital",
+        "coordinates": {
+            "latitude": 22.4398748,
+            "longitude": 88.293448
+        }
+    },
+    {
+        "name": "Aurobindo Netralaya",
+        "coordinates": {
+            "latitude": 22.5810552,
+            "longitude": 88.3656241
+        }
+    },
+    {
+        "name": "Gamma Centauri Health Care P Ltd.,",
+        "coordinates": {
+            "latitude": 22.5446657,
+            "longitude": 88.3551662
+        }
+    },
+    {
+        "name": "Astha Nursing Home",
+        "coordinates": {
+            "latitude": 22.4434484,
+            "longitude": 87.7532369
+        }
+    },
+    {
+        "name": "Srabani Nursing Home",
+        "coordinates": {
+            "latitude": 22.6970039,
+            "longitude": 88.4420369
+        }
+    },
+    {
+        "name": "Salt Lake Eye Foundation",
+        "coordinates": {
+            "latitude": 22.5726216,
+            "longitude": 88.4090735
+        }
+    },
+    {
+        "name": "Samrat Nursing Home",
+        "coordinates": {
+            "latitude": 22.1988247,
+            "longitude": 88.1908715
+        }
+    },
+    {
+        "name": "Sana Nursing Home",
+        "coordinates": {
+            "latitude": 22.5417995,
+            "longitude": 88.3612588
+        }
+    },
+    {
+        "name": "Samaritan Clinic (P) Ltd.",
+        "coordinates": {
+            "latitude": 22.5380513,
+            "longitude": 88.35042
+        }
+    },
+    {
+        "name": "Sanjeevani Health and Lifestyle Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5814378,
+            "longitude": 88.4606239
+        }
+    },
+    {
+        "name": "Sanjiban Hospital",
+        "coordinates": {
+            "latitude": 22.4806192,
+            "longitude": 88.1149891
+        }
+    },
+    {
+        "name": "Sanjiban Nursing Home",
+        "coordinates": {
+            "latitude": 22.6513635,
+            "longitude": 87.7358723
+        }
+    },
+    {
+        "name": "Aditya Birla Sankara Nethralaya",
+        "coordinates": {
+            "latitude": 22.4917727,
+            "longitude": 88.4010842
+        }
+    },
+    {
+        "name": "Sankara Jyoti Eye Institute",
+        "coordinates": {
+            "latitude": 22.7172073,
+            "longitude": 88.3695991
+        }
+    },
+    {
+        "name": "Santi Laparoscopy and Fertility Centre",
+        "coordinates": {
+            "latitude": 23.4046024,
+            "longitude": 88.4965521
+        }
+    },
+    {
+        "name": "Santiniketan Nursing Home and Polyclinic",
+        "coordinates": {
+            "latitude": 22.8422383,
+            "longitude": 88.6556742
+        }
+    },
+    {
+        "name": "Santosh Clinic",
+        "coordinates": {
+            "latitude": 22.5065184,
+            "longitude": 88.3489408
+        }
+    },
+    {
+        "name": "Saptarshi Nursing Home",
+        "coordinates": {
+            "latitude": 22.8416698,
+            "longitude": 88.6552343
+        }
+    },
+    {
+        "name": "Saroj Gupta Cancer Centre And Research Institute",
+        "coordinates": {
+            "latitude": 22.4592477,
+            "longitude": 88.3197114
+        }
+    },
+    {
+        "name": "Sarada Seva Sadan",
+        "coordinates": {
+            "latitude": 22.7668367,
+            "longitude": 88.3834232
+        }
+    },
+    {
+        "name": "Satyam Shivam nursing Home and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.4438078,
+            "longitude": 87.6295482
+        }
+    },
+    {
+        "name": "Satyarani Memorial Nursing Home And Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.4396455,
+            "longitude": 88.4431829
+        }
+    },
+    {
+        "name": "Searight Hospital and Welfare Society",
+        "coordinates": {
+            "latitude": 22.4370275,
+            "longitude": 88.2779373
+        }
+    },
+    {
+        "name": "Serum Sristi Nursing Home",
+        "coordinates": {
+            "latitude": 22.596824,
+            "longitude": 88.3718884
+        }
+    },
+    {
+        "name": "Seba Hospital",
+        "coordinates": {
+            "latitude": 22.5911184,
+            "longitude": 88.4111023
+        }
+    },
+    {
+        "name": "Sebayan Nursing Services Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.5857817,
+            "longitude": 88.2260755
+        }
+    },
+    {
+        "name": "Seba Niketan Nursing Home",
+        "coordinates": {
+            "latitude": 22.5619285,
+            "longitude": 88.3636942
+        }
+    },
+    {
+        "name": "Sebalaya Nursing Home",
+        "coordinates": {
+            "latitude": 23.2402198,
+            "longitude": 87.8424458
+        }
+    },
+    {
+        "name": "Second Sight Southend Eye Hospital",
+        "coordinates": {
+            "latitude": 22.3705576,
+            "longitude": 88.4078622
+        }
+    },
+    {
+        "name": "Vijoy Optic and Polyclinic",
+        "coordinates": {
+            "latitude": 22.6817954,
+            "longitude": 88.3864555
+        }
+    },
+    {
+        "name": "Seva Nursing Home, Hooghly",
+        "coordinates": {
+            "latitude": 22.6791882,
+            "longitude": 88.3006167
+        }
+    },
+    {
+        "name": "Mary Immaculate Hospital",
+        "coordinates": {
+            "latitude": 23.3993815,
+            "longitude": 88.4831022
+        }
+    },
+    {
+        "name": "Anjali Aragya Niketan - Rsby",
+        "coordinates": {
+            "latitude": 23.4064243,
+            "longitude": 88.4930253
+        }
+    },
+    {
+        "name": "Belur Sramajibi Swasthya Prakalpa Samity",
+        "coordinates": {
+            "latitude": 22.5782195,
+            "longitude": 88.3304657
+        }
+    },
+    {
+        "name": "Krishnagar Lions Club",
+        "coordinates": {
+            "latitude": 23.4095857,
+            "longitude": 88.4907317
+        }
+    },
+    {
+        "name": "MP Birla Eye Clinic",
+        "coordinates": {
+            "latitude": 22.5428721,
+            "longitude": 88.3561304
+        }
+    },
+    {
+        "name": "Camelia Health And Eye Care",
+        "coordinates": {
+            "latitude": 23.0110541,
+            "longitude": 87.5954499
+        }
+    },
+    {
+        "name": "Watkins Nursing Home",
+        "coordinates": {
+            "latitude": 22.5929943,
+            "longitude": 88.3406983
+        }
+    },
+    {
+        "name": "Ripon Nursing Home",
+        "coordinates": {
+            "latitude": 22.552661,
+            "longitude": 88.3634217
+        }
+    },
+    {
+        "name": "Shyam View Nursing Home PVT.LTD",
+        "coordinates": {
+            "latitude": 23.2465154,
+            "longitude": 87.8583674
+        }
+    },
+    {
+        "name": "Kalpana Maternity and Nursing Home, South 24 Parganas",
+        "coordinates": {
+            "latitude": 22.4390827,
+            "longitude": 88.4364411
+        }
+    },
+    {
+        "name": "Kolkata Women's Clinic",
+        "coordinates": {
+            "latitude": 22.5043682,
+            "longitude": 88.3162104
+        }
+    },
+    {
+        "name": "Anju Eye Nursing Home",
+        "coordinates": {
+            "latitude": 23.1777185,
+            "longitude": 88.5646914
+        }
+    },
+    {
+        "name": "Kamala Ray Hospital",
+        "coordinates": {
+            "latitude": 22.6835179,
+            "longitude": 88.3546673
+        }
+    },
+    {
+        "name": "Kumar Surgical and Laparoscopic Clinic",
+        "coordinates": {
+            "latitude": 22.4730934,
+            "longitude": 88.3633871
+        }
+    },
+    {
+        "name": "New Mahendra Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 23.4080768,
+            "longitude": 88.4914632
+        }
+    },
+    {
+        "name": "Jibandeep Specialist Clinic and Day Care Centre",
+        "coordinates": {
+            "latitude": 22.7235113,
+            "longitude": 88.3754246
+        }
+    },
+    {
+        "name": "Princep Nursing Home",
+        "coordinates": {
+            "latitude": 22.564549,
+            "longitude": 88.357894
+        }
+    },
+    {
+        "name": "Prince Nursing Home, Kolkata",
+        "coordinates": {
+            "latitude": 22.5200708,
+            "longitude": 88.3606486
+        }
+    },
+    {
+        "name": "Parijat Sevalay",
+        "coordinates": {
+            "latitude": 23.2460271,
+            "longitude": 87.8588224
+        }
+    },
+    {
+        "name": "Noor Eye Care",
+        "coordinates": {
+            "latitude": 22.8647739,
+            "longitude": 88.3932104
+        }
+    },
+    {
+        "name": "C.T Nursing Home",
+        "coordinates": {
+            "latitude": 23.261536,
+            "longitude": 87.8394563
+        }
+    },
+    {
+        "name": "Bhadreswar Municipal Hospital",
+        "coordinates": {
+            "latitude": 22.8310988,
+            "longitude": 88.3570138
+        }
+    },
+    {
+        "name": "Institute Of Child Health",
+        "coordinates": {
+            "latitude": 22.5386694,
+            "longitude": 88.3723074
+        }
+    },
+    {
+        "name": "Zenith Super Specialist Hospital",
+        "coordinates": {
+            "latitude": 22.6630636,
+            "longitude": 88.3780661
+        }
+    },
+    {
+        "name": "Swasti Nursing Home",
+        "coordinates": {
+            "latitude": 22.6156902,
+            "longitude": 88.4320465
+        }
+    },
+    {
+        "name": "B.N Basu Memorial Clinic Appolo Nursing Home",
+        "coordinates": {
+            "latitude": 22.5165078,
+            "longitude": 88.3530888
+        }
+    },
+    {
+        "name": "Jeevan Deep Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.2426614,
+            "longitude": 87.8588885
+        }
+    },
+    {
+        "name": "Swadesh Basu Hospital",
+        "coordinates": {
+            "latitude": 22.4580615,
+            "longitude": 88.3063807
+        }
+    },
+    {
+        "name": "Henry Grey Nursing Home and Poly Clinic",
+        "coordinates": {
+            "latitude": 22.8418636,
+            "longitude": 88.6527926
+        }
+    },
+    {
+        "name": "Angel Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5567342,
+            "longitude": 88.3613316
+        }
+    },
+    {
+        "name": "Acharya Srimat Yogesh Brahmachari Charitable Eye Clinic",
+        "coordinates": {
+            "latitude": 22.5176756,
+            "longitude": 88.3713623
+        }
+    },
+    {
+        "name": "Arogya Niketan Pvt. Ltd",
+        "coordinates": {
+            "latitude": 22.6652046,
+            "longitude": 88.341272
+        }
+    },
+    {
+        "name": "Prantik Nursing Home",
+        "coordinates": {
+            "latitude": 23.4027872,
+            "longitude": 88.4912559
+        }
+    },
+    {
+        "name": "Aparna Nursing Home",
+        "coordinates": {
+            "latitude": 22.6435164,
+            "longitude": 88.4236469
+        }
+    },
+    {
+        "name": "Sisu Mangal Nursing Home",
+        "coordinates": {
+            "latitude": 23.2410524,
+            "longitude": 87.8636219
+        }
+    },
+    {
+        "name": "Infirmary Orthopaedic Centre and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5136699,
+            "longitude": 88.3483134
+        }
+    },
+    {
+        "name": "RG Stone Urology And Laparoscopy Hospital, Kolkata",
+        "coordinates": {
+            "latitude": 22.5058109,
+            "longitude": 88.3674172
+        }
+    },
+    {
+        "name": "Sindhi Polyclinic",
+        "coordinates": {
+            "latitude": 22.5544676,
+            "longitude": 88.3544611
+        }
+    },
+    {
+        "name": "Islamia Medical Institute",
+        "coordinates": {
+            "latitude": 22.5427124,
+            "longitude": 88.3664475
+        }
+    },
+    {
+        "name": "Islamia Hospital",
+        "coordinates": {
+            "latitude": 22.5447604,
+            "longitude": 88.3708055
+        }
+    },
+    {
+        "name": "A.H.IVF and Infertility Research Centre [P] Ltd",
+        "coordinates": {
+            "latitude": 22.504121,
+            "longitude": 88.3974566
+        }
+    },
+    {
+        "name": "Indus Nursing Home Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.5672178,
+            "longitude": 88.2719104
+        }
+    },
+    {
+        "name": "Implant's Better Sight Centre Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5373304,
+            "longitude": 88.3641677
+        }
+    },
+    {
+        "name": "Omega Optics",
+        "coordinates": {
+            "latitude": 22.5186369,
+            "longitude": 88.3608012
+        }
+    },
+    {
+        "name": "Mediland Nursing Home",
+        "coordinates": {
+            "latitude": 22.0811959,
+            "longitude": 88.1391035
+        }
+    },
+    {
+        "name": "Antara Psychiatric Centre",
+        "coordinates": {
+            "latitude": 22.3899049,
+            "longitude": 88.4209541
+        }
+    },
+    {
+        "name": "Care and Cure Polyclinic Cum Nursing Home",
+        "coordinates": {
+            "latitude": 22.5927864,
+            "longitude": 88.3238551
+        }
+    },
+    {
+        "name": "Dristi Eye Foundation",
+        "coordinates": {
+            "latitude": 22.5816657,
+            "longitude": 88.3197241
+        }
+    },
+    {
+        "name": "Sushila Clinic",
+        "coordinates": {
+            "latitude": 22.4554384,
+            "longitude": 88.4386868
+        }
+    },
+    {
+        "name": "Micro Point Nursing Home (for total EYE Care)",
+        "coordinates": {
+            "latitude": 22.6367116,
+            "longitude": 88.3524277
+        }
+    },
+    {
+        "name": "H.P.Poddar Memorial Clinic And Nursing Home",
+        "coordinates": {
+            "latitude": 22.5631533,
+            "longitude": 88.3977811
+        }
+    },
+    {
+        "name": "Ideal Clinic and Hospital (Pvt) Ltd",
+        "coordinates": {
+            "latitude": 22.4678202,
+            "longitude": 88.092767
+        }
+    },
+    {
+        "name": "Kolkata Nursing Home",
+        "coordinates": {
+            "latitude": 22.6249162,
+            "longitude": 88.4428636
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Kudghat",
+        "coordinates": {
+            "latitude": 22.4825494,
+            "longitude": 88.3257073
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Mint Colony",
+        "coordinates": {
+            "latitude": 22.5144766,
+            "longitude": 88.3197763
+        }
+    },
+    {
+        "name": "Katwa Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.6424339,
+            "longitude": 88.1268646
+        }
+    },
+    {
+        "name": "Matri Kalyan Nursing Home",
+        "coordinates": {
+            "latitude": 23.6443645,
+            "longitude": 88.1241924
+        }
+    },
+    {
+        "name": "Deshari Complete Eye Care",
+        "coordinates": {
+            "latitude": 22.527795,
+            "longitude": 88.3684555
+        }
+    },
+    {
+        "name": "Sahid Khudiram Bose Hospital",
+        "coordinates": {
+            "latitude": 22.6631818,
+            "longitude": 88.3771062
+        }
+    },
+    {
+        "name": "Restroative Clinic Pvt.Ltd.",
+        "coordinates": {
+            "latitude": 22.7008369,
+            "longitude": 88.3789301
+        }
+    },
+    {
+        "name": "B.K.Dutt Memorial Medical Centre",
+        "coordinates": {
+            "latitude": 22.5188765,
+            "longitude": 88.3717764
+        }
+    },
+    {
+        "name": "Howrah Lions Hospital",
+        "coordinates": {
+            "latitude": 22.5812075,
+            "longitude": 88.3337856
+        }
+    },
+    {
+        "name": "Howrah Lions Hospital-Jaduberia",
+        "coordinates": {
+            "latitude": 22.4822995,
+            "longitude": 88.0933182
+        }
+    },
+    {
+        "name": "Howrah Nursing Home",
+        "coordinates": {
+            "latitude": 22.5802119,
+            "longitude": 88.3296449
+        }
+    },
+    {
+        "name": "Sister Nibedita Hospital",
+        "coordinates": {
+            "latitude": 22.4691289,
+            "longitude": 88.0938634
+        }
+    },
+    {
+        "name": "Amala Nursing Home",
+        "coordinates": {
+            "latitude": 22.9012267,
+            "longitude": 88.3901344
+        }
+    },
+    {
+        "name": "Health Point Hospitals",
+        "coordinates": {
+            "latitude": 22.5310898,
+            "longitude": 88.3532457
+        }
+    },
+    {
+        "name": "New Panacea Hospital",
+        "coordinates": {
+            "latitude": 22.7659536,
+            "longitude": 88.4025919
+        }
+    },
+    {
+        "name": "Kalpataru Nursing Home",
+        "coordinates": {
+            "latitude": 23.2412657,
+            "longitude": 87.8610874
+        }
+    },
+    {
+        "name": "Orchid Nursing Home",
+        "coordinates": {
+            "latitude": 22.5729159,
+            "longitude": 88.3897726
+        }
+    },
+    {
+        "name": "Dr. Das' Nursing Home and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.203588,
+            "longitude": 88.1874229
+        }
+    },
+    {
+        "name": "Care Nursing Home",
+        "coordinates": {
+            "latitude": 22.6644929,
+            "longitude": 88.3482378
+        }
+    },
+    {
+        "name": "Skylark Nursing Home",
+        "coordinates": {
+            "latitude": 23.2411557,
+            "longitude": 87.8476292
+        }
+    },
+    {
+        "name": "Poorva Eye Care",
+        "coordinates": {
+            "latitude": 22.5682569,
+            "longitude": 88.3918507
+        }
+    },
+    {
+        "name": "Payradanga Eye Care Center",
+        "coordinates": {
+            "latitude": 23.1289573,
+            "longitude": 88.5463124
+        }
+    },
+    {
+        "name": "Park Site Nursing Home",
+        "coordinates": {
+            "latitude": 22.5175943,
+            "longitude": 88.3575051
+        }
+    },
+    {
+        "name": "Park Clinic, Kolkata",
+        "coordinates": {
+            "latitude": 22.5415518,
+            "longitude": 88.3530942
+        }
+    },
+    {
+        "name": "Park Nursing Home",
+        "coordinates": {
+            "latitude": 23.2455814,
+            "longitude": 87.860595
+        }
+    },
+    {
+        "name": "Siddhi Multi Speciality Ayurveda Hospital and Research Institute",
+        "coordinates": {
+            "latitude": 22.5031868,
+            "longitude": 88.3414158
+        }
+    },
+    {
+        "name": "SilverLine Eye Hospital",
+        "coordinates": {
+            "latitude": 22.5029093,
+            "longitude": 88.3610965
+        }
+    },
+    {
+        "name": "Southern Nursing Home",
+        "coordinates": {
+            "latitude": 22.5196582,
+            "longitude": 88.3547008
+        }
+    },
+    {
+        "name": "Spandan Hospital",
+        "coordinates": {
+            "latitude": 22.6205424,
+            "longitude": 88.4329529
+        }
+    },
+    {
+        "name": "Spectra Eye Foundation",
+        "coordinates": {
+            "latitude": 22.693581,
+            "longitude": 88.4664792
+        }
+    },
+    {
+        "name": "Sree Krishna Nursing Home",
+        "coordinates": {
+            "latitude": 22.4851657,
+            "longitude": 88.339032
+        }
+    },
+    {
+        "name": "Sri Aurobindo Seva Kendra (EEDF)",
+        "coordinates": {
+            "latitude": 22.5032339,
+            "longitude": 88.3644935
+        }
+    },
+    {
+        "name": "Sri Guru Sangha Chikitsalaya",
+        "coordinates": {
+            "latitude": 23.412404,
+            "longitude": 88.3764026
+        }
+    },
+    {
+        "name": "Srijoni Healing Home",
+        "coordinates": {
+            "latitude": 22.566876,
+            "longitude": 88.3931999
+        }
+    },
+    {
+        "name": "Sri Lakshmi Narayana Trust Maternity Home and Hospital",
+        "coordinates": {
+            "latitude": 22.5353788,
+            "longitude": 88.3518905
+        }
+    },
+    {
+        "name": "SMI Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.562627,
+            "longitude": 88.3187538
+        }
+    },
+    {
+        "name": "Smt. Sarla Pahwa Memorial Eye Centre",
+        "coordinates": {
+            "latitude": 22.5697343,
+            "longitude": 88.3257383
+        }
+    },
+    {
+        "name": "South Calcutta Clinic",
+        "coordinates": {
+            "latitude": 22.520098,
+            "longitude": 88.3617966
+        }
+    },
+    {
+        "name": "South Suburban Clinic",
+        "coordinates": {
+            "latitude": 22.5097756,
+            "longitude": 88.3214307
+        }
+    },
+    {
+        "name": "Shree Vishudhanand Hospital and Research Institute",
+        "coordinates": {
+            "latitude": 22.5819362,
+            "longitude": 88.355944
+        }
+    },
+    {
+        "name": "Shyamnagar Nursing Home",
+        "coordinates": {
+            "latitude": 22.8213099,
+            "longitude": 88.3747315
+        }
+    },
+    {
+        "name": "Alpha Medical Services Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.5925889,
+            "longitude": 88.3421754
+        }
+    },
+    {
+        "name": "Birati Nursing Home Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.6639501,
+            "longitude": 88.4265019
+        }
+    },
+    {
+        "name": "New Nirnoy Nursing Home",
+        "coordinates": {
+            "latitude": 22.5997076,
+            "longitude": 88.3735091
+        }
+    },
+    {
+        "name": "Jibak Nursing Home",
+        "coordinates": {
+            "latitude": 22.6634567,
+            "longitude": 88.1352472
+        }
+    },
+    {
+        "name": "Dolphin Nursing Home",
+        "coordinates": {
+            "latitude": 22.534982,
+            "longitude": 88.3817637
+        }
+    },
+    {
+        "name": "Seva Nursing Home, Medinipur East",
+        "coordinates": {
+            "latitude": 22.2905507,
+            "longitude": 87.9158659
+        }
+    },
+    {
+        "name": "Sevangan Medical Complex",
+        "coordinates": {
+            "latitude": 22.4674584,
+            "longitude": 88.3739229
+        }
+    },
+    {
+        "name": "Sevatirtham Nursing Home",
+        "coordinates": {
+            "latitude": 22.364906,
+            "longitude": 88.4318921
+        }
+    },
+    {
+        "name": "Shakambari Nursing Home",
+        "coordinates": {
+            "latitude": 22.5925956,
+            "longitude": 88.3648288
+        }
+    },
+    {
+        "name": "Shankarnath Dialysis Centre and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5055997,
+            "longitude": 88.3487061
+        }
+    },
+    {
+        "name": "Sharanya Multispeciality Hospital",
+        "coordinates": {
+            "latitude": 23.2203218,
+            "longitude": 87.9069771
+        }
+    },
+    {
+        "name": "Shiny Swadha Eye Care",
+        "coordinates": {
+            "latitude": 22.596013,
+            "longitude": 88.341794
+        }
+    },
+    {
+        "name": "Shree Jain Hospital And Research Centre",
+        "coordinates": {
+            "latitude": 22.5714259,
+            "longitude": 88.3297522
+        }
+    },
+    {
+        "name": "Dakshinee Eye Foundation",
+        "coordinates": {
+            "latitude": 22.4814755,
+            "longitude": 88.3756904
+        }
+    },
+    {
+        "name": "D.B. Eye Foundation",
+        "coordinates": {
+            "latitude": 22.5738494,
+            "longitude": 88.328214
+        }
+    },
+    {
+        "name": "Cure Centre Nursing Home",
+        "coordinates": {
+            "latitude": 22.5017644,
+            "longitude": 88.3629365
+        }
+    },
+    {
+        "name": "Complete Care",
+        "coordinates": {
+            "latitude": 22.5152875,
+            "longitude": 88.3574648
+        }
+    },
+    {
+        "name": "City Nursing Home",
+        "coordinates": {
+            "latitude": 22.885935,
+            "longitude": 87.7828096
+        }
+    },
+    {
+        "name": "Circular Nursing Home",
+        "coordinates": {
+            "latitude": 22.5616486,
+            "longitude": 88.3668593
+        }
+    },
+    {
+        "name": "Chittaranjan Advanced Medical Refferal Institute(Camri) Hospital",
+        "coordinates": {
+            "latitude": 23.220312,
+            "longitude": 87.9100703
+        }
+    },
+    {
+        "name": "Micro-Surgical Eye Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5927849,
+            "longitude": 88.341103
+        }
+    },
+    {
+        "name": "LAB-O-AID",
+        "coordinates": {
+            "latitude": 22.6558773,
+            "longitude": 88.3595957
+        }
+    },
+    {
+        "name": "Revive Nursing Home",
+        "coordinates": {
+            "latitude": 22.6109226,
+            "longitude": 88.4288032
+        }
+    },
+    {
+        "name": "Apollo Nursing Home",
+        "coordinates": {
+            "latitude": 22.9676673,
+            "longitude": 88.4653497
+        }
+    },
+    {
+        "name": "Alokon Eye Care Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.6065947,
+            "longitude": 88.4038757
+        }
+    },
+    {
+        "name": "Mohanananda Brahmachari Sishu Seva Pratisthan",
+        "coordinates": {
+            "latitude": 22.5016929,
+            "longitude": 88.3210942
+        }
+    },
+    {
+        "name": "Genesis Health Point",
+        "coordinates": {
+            "latitude": 22.2798018,
+            "longitude": 87.9213595
+        }
+    },
+    {
+        "name": "Mandakini Nursing Home",
+        "coordinates": {
+            "latitude": 22.5319734,
+            "longitude": 88.3252857
+        }
+    },
+    {
+        "name": "Critical and Trauma Care Hospital",
+        "coordinates": {
+            "latitude": 22.6235465,
+            "longitude": 88.374517
+        }
+    },
+    {
+        "name": "Suraha Nursing Home Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 23.2148411,
+            "longitude": 88.3510606
+        }
+    },
+    {
+        "name": "Swiss Park Nursing Home",
+        "coordinates": {
+            "latitude": 22.5043139,
+            "longitude": 88.3486225
+        }
+    },
+    {
+        "name": "Des Nursing Home",
+        "coordinates": {
+            "latitude": 22.6190928,
+            "longitude": 88.3892624
+        }
+    },
+    {
+        "name": "Deepanjan Nursing Home",
+        "coordinates": {
+            "latitude": 22.3123415,
+            "longitude": 88.6654481
+        }
+    },
+    {
+        "name": "Dreamland Nursing Home (Only Kolkata Police)",
+        "coordinates": {
+            "latitude": 22.5997447,
+            "longitude": 88.3720238
+        }
+    },
+    {
+        "name": "Debsishu Nursing Home Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.593185,
+            "longitude": 88.3414561
+        }
+    },
+    {
+        "name": "Debipur Netralaya Pvt Ltd",
+        "coordinates": {
+            "latitude": 23.1693397,
+            "longitude": 88.0979222
+        }
+    },
+    {
+        "name": "Medi Citi Nursing Home",
+        "coordinates": {
+            "latitude": 22.5325631,
+            "longitude": 88.3266748
+        }
+    },
+    {
+        "name": "Al - Ameen Nursing Home",
+        "coordinates": {
+            "latitude": 22.5007028,
+            "longitude": 88.610455
+        }
+    },
+    {
+        "name": "Netaji Subhash Chandra Bose Cancer Reasearch Inst",
+        "coordinates": {
+            "latitude": 22.4800554,
+            "longitude": 88.4076208
+        }
+    },
+    {
+        "name": "Debdoot Sevayan",
+        "coordinates": {
+            "latitude": 22.5079159,
+            "longitude": 88.3439103
+        }
+    },
+    {
+        "name": "Duttapukur Seva Sadan and Maternity Home",
+        "coordinates": {
+            "latitude": 22.7654344,
+            "longitude": 88.5543886
+        }
+    },
+    {
+        "name": "Das Gupta Nursing Home",
+        "coordinates": {
+            "latitude": 22.7236436,
+            "longitude": 88.3413729
+        }
+    },
+    {
+        "name": "Microlap Nursing Home",
+        "coordinates": {
+            "latitude": 22.5198037,
+            "longitude": 88.3504455
+        }
+    },
+    {
+        "name": "Lions Club of Barddhaman",
+        "coordinates": {
+            "latitude": 23.2429234,
+            "longitude": 87.869797
+        }
+    },
+    {
+        "name": "Bellona Nursing Home And Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.5296568,
+            "longitude": 88.3262127
+        }
+    },
+    {
+        "name": "Sunayan Eye Clinic",
+        "coordinates": {
+            "latitude": 22.66301,
+            "longitude": 88.3461586
+        }
+    },
+    {
+        "name": "Baranagar State General Hospital",
+        "coordinates": {
+            "latitude": 22.6385309,
+            "longitude": 88.3803762
+        }
+    },
+    {
+        "name": "Heritage Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5534735,
+            "longitude": 88.3598238
+        }
+    },
+    {
+        "name": "Jeevan Deep Nursing Home - Ghatal",
+        "coordinates": {
+            "latitude": 22.6533456,
+            "longitude": 87.7364999
+        }
+    },
+    {
+        "name": "A Hamid's Clinic, Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5523295,
+            "longitude": 88.2705381
+        }
+    },
+    {
+        "name": "Chokher Aloy",
+        "coordinates": {
+            "latitude": 22.5768741,
+            "longitude": 88.301756
+        }
+    },
+    {
+        "name": "Gita Seva Sadan, Arambagh",
+        "coordinates": {
+            "latitude": 22.8896139,
+            "longitude": 87.7789714
+        }
+    },
+    {
+        "name": "Dr. Mina Majumder Seva Mandir Pvt. Ltd",
+        "coordinates": {
+            "latitude": 22.5041947,
+            "longitude": 88.3708222
+        }
+    },
+    {
+        "name": "Lions Eye Care Hospital",
+        "coordinates": {
+            "latitude": 23.2422526,
+            "longitude": 87.8621463
+        }
+    },
+    {
+        "name": "Pragati Netralay - Rsby",
+        "coordinates": {
+            "latitude": 23.0750306,
+            "longitude": 88.5285532
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Shyambazar",
+        "coordinates": {
+            "latitude": 22.6000389,
+            "longitude": 88.3735229
+        }
+    },
+    {
+        "name": "Chandannagore (S D ) Hospital",
+        "coordinates": {
+            "latitude": 22.8692195,
+            "longitude": 88.3725494
+        }
+    },
+    {
+        "name": "Merryland Nursing Home",
+        "coordinates": {
+            "latitude": 22.5554132,
+            "longitude": 88.3724515
+        }
+    },
+    {
+        "name": "Mother Nursing Home",
+        "coordinates": {
+            "latitude": 22.676905,
+            "longitude": 88.4456533
+        }
+    },
+    {
+        "name": "Jyotirmoyee Arogya Bhawan",
+        "coordinates": {
+            "latitude": 22.7633089,
+            "longitude": 88.1694069
+        }
+    },
+    {
+        "name": "Swasti Nursing Home",
+        "coordinates": {
+            "latitude": 22.6362261,
+            "longitude": 88.3537633
+        }
+    },
+    {
+        "name": "Disha Eye Care",
+        "coordinates": {
+            "latitude": 22.578847,
+            "longitude": 88.2555755
+        }
+    },
+    {
+        "name": "Asmii Eye Foundation",
+        "coordinates": {
+            "latitude": 22.6626932,
+            "longitude": 88.4085602
+        }
+    },
+    {
+        "name": "Northland Nursing Home",
+        "coordinates": {
+            "latitude": 22.5983673,
+            "longitude": 88.3721741
+        }
+    },
+    {
+        "name": "Mohan Clinic",
+        "coordinates": {
+            "latitude": 22.510522,
+            "longitude": 88.3486564
+        }
+    },
+    {
+        "name": "Subha Laxmi Nursing Home",
+        "coordinates": {
+            "latitude": 22.397649,
+            "longitude": 87.7154841
+        }
+    },
+    {
+        "name": "Blue Print Nursing Home",
+        "coordinates": {
+            "latitude": 22.8420115,
+            "longitude": 88.6213312
+        }
+    },
+    {
+        "name": "Jeevandeep Seva Sadan",
+        "coordinates": {
+            "latitude": 22.8204316,
+            "longitude": 88.2089442
+        }
+    },
+    {
+        "name": "N.G. Nursing Home",
+        "coordinates": {
+            "latitude": 22.5144649,
+            "longitude": 88.3471169
+        }
+    },
+    {
+        "name": "Gobardanga City Nursing Home",
+        "coordinates": {
+            "latitude": 22.8704325,
+            "longitude": 88.7584262
+        }
+    },
+    {
+        "name": "Nemesis Eye Centre",
+        "coordinates": {
+            "latitude": 22.5185965,
+            "longitude": 88.3545157
+        }
+    },
+    {
+        "name": "Mother Teresa (Memorial) Care Home",
+        "coordinates": {
+            "latitude": 22.7509403,
+            "longitude": 88.3716105
+        }
+    },
+    {
+        "name": "Divine Nursing Home",
+        "coordinates": {
+            "latitude": 22.5669126,
+            "longitude": 88.392359
+        }
+    },
+    {
+        "name": "Nayandeep Eye Care",
+        "coordinates": {
+            "latitude": 22.6603165,
+            "longitude": 88.364857
+        }
+    },
+    {
+        "name": "Dum Dum Eye Microsurgery Centre",
+        "coordinates": {
+            "latitude": 22.6300129,
+            "longitude": 88.3853162
+        }
+    },
+    {
+        "name": "Gandhi Memorial Hospital",
+        "coordinates": {
+            "latitude": 22.9664691,
+            "longitude": 88.4727804
+        }
+    },
+    {
+        "name": "Bangur Medicare Research Institute",
+        "coordinates": {
+            "latitude": 22.4573942,
+            "longitude": 88.3045549
+        }
+    },
+    {
+        "name": "RSV Hospital",
+        "coordinates": {
+            "latitude": 22.5030685,
+            "longitude": 88.3447391
+        }
+    },
+    {
+        "name": "Amri Medical Centre",
+        "coordinates": {
+            "latitude": 22.5133932,
+            "longitude": 88.3525456
+        }
+    },
+    {
+        "name": "Amrapali Medical Center and Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5137686,
+            "longitude": 88.3922598
+        }
+    },
+    {
+        "name": "All Asia Medical Institute",
+        "coordinates": {
+            "latitude": 22.524196,
+            "longitude": 88.3617255
+        }
+    },
+    {
+        "name": "Diamond Eye And Health Care Society",
+        "coordinates": {
+            "latitude": 23.0756652,
+            "longitude": 88.2811117
+        }
+    },
+    {
+        "name": "Dhakuria Sree Ramkrishna Sebasram",
+        "coordinates": {
+            "latitude": 22.5111409,
+            "longitude": 88.3732912
+        }
+    },
+    {
+        "name": "Dewan Medicare And Nursing Home",
+        "coordinates": {
+            "latitude": 22.7121661,
+            "longitude": 88.3733891
+        }
+    },
+    {
+        "name": "Ashutosh Nursing Home",
+        "coordinates": {
+            "latitude": 22.5203148,
+            "longitude": 88.3456953
+        }
+    },
+    {
+        "name": "Kolkata Port Trust Centenary Hospital",
+        "coordinates": {
+            "latitude": 22.5177264,
+            "longitude": 88.3214565
+        }
+    },
+    {
+        "name": "Dilkusha Nursing Home",
+        "coordinates": {
+            "latitude": 22.5400643,
+            "longitude": 88.3714922
+        }
+    },
+    {
+        "name": "Mas Clinic And Hospital",
+        "coordinates": {
+            "latitude": 22.2921282,
+            "longitude": 87.915367
+        }
+    },
+    {
+        "name": "Arham Clinics",
+        "coordinates": {
+            "latitude": 22.5710004,
+            "longitude": 88.3587602
+        }
+    },
+    {
+        "name": "Kabiruddin Smrity Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 23.6844243,
+            "longitude": 88.3041116
+        }
+    },
+    {
+        "name": "Jitendra Narayan Ray Hospital",
+        "coordinates": {
+            "latitude": 22.5832265,
+            "longitude": 88.3762866
+        }
+    },
+    {
+        "name": "Kalyani Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.2416289,
+            "longitude": 87.8629607
+        }
+    },
+    {
+        "name": "Matangini Nursing Home,Tamluk",
+        "coordinates": {
+            "latitude": 22.2832939,
+            "longitude": 87.9194554
+        }
+    },
+    {
+        "name": "Star Nursing Home",
+        "coordinates": {
+            "latitude": 22.5695008,
+            "longitude": 88.0145048
+        }
+    },
+    {
+        "name": "Nayonika Eye Care Centre",
+        "coordinates": {
+            "latitude": 23.2453893,
+            "longitude": 87.859283
+        }
+    },
+    {
+        "name": "Mood",
+        "coordinates": {
+            "latitude": 22.5223254,
+            "longitude": 88.3711521
+        }
+    },
+    {
+        "name": "Apex Institute Of Medical Sciences",
+        "coordinates": {
+            "latitude": 22.4848844,
+            "longitude": 88.3904962
+        }
+    },
+    {
+        "name": "Arti Nursing Home",
+        "coordinates": {
+            "latitude": 22.4873919,
+            "longitude": 88.1871003
+        }
+    },
+    {
+        "name": "Arcadia Nursing Home [Pvt.] Ltd.",
+        "coordinates": {
+            "latitude": 22.5859742,
+            "longitude": 88.3260045
+        }
+    },
+    {
+        "name": "Arogyam Nursing Home",
+        "coordinates": {
+            "latitude": 23.4074282,
+            "longitude": 88.4910724
+        }
+    },
+    {
+        "name": "Arogya Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5026069,
+            "longitude": 88.3387953
+        }
+    },
+    {
+        "name": "Arunodaya Health Care Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6816921,
+            "longitude": 88.2812545
+        }
+    },
+    {
+        "name": "Asharam Bhiwaniwala Hospital",
+        "coordinates": {
+            "latitude": 22.5866107,
+            "longitude": 88.3539256
+        }
+    },
+    {
+        "name": "N H Narayana Multispeciality Hospital",
+        "coordinates": {
+            "latitude": 22.5673073,
+            "longitude": 88.2704237
+        }
+    },
+    {
+        "name": "Kolkata Heart Foundation",
+        "coordinates": {
+            "latitude": 22.5366525,
+            "longitude": 88.343991
+        }
+    },
+    {
+        "name": "Calcutta Heart Research Center",
+        "coordinates": {
+            "latitude": 22.5233166,
+            "longitude": 88.3525617
+        }
+    },
+    {
+        "name": "Repose Clinic and Research Centre Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.5304401,
+            "longitude": 88.3687308
+        }
+    },
+    {
+        "name": "Ghatal Lion Eye Hospital",
+        "coordinates": {
+            "latitude": 22.6497744,
+            "longitude": 87.7404843
+        }
+    },
+    {
+        "name": "Wafa Nursing Home",
+        "coordinates": {
+            "latitude": 22.7112758,
+            "longitude": 88.5165554
+        }
+    },
+    {
+        "name": "Disha Eye Hospital Barrackpore",
+        "coordinates": {
+            "latitude": 22.7638138,
+            "longitude": 88.3694452
+        }
+    },
+    {
+        "name": "Netra Kiran Eye Hospital",
+        "coordinates": {
+            "latitude": 22.757605,
+            "longitude": 88.3390552
+        }
+    },
+    {
+        "name": "The Apollo Clinic",
+        "coordinates": {
+            "latitude": 22.5877134,
+            "longitude": 88.4080387
+        }
+    },
+    {
+        "name": "Dr. Baidya's Nursing Home",
+        "coordinates": {
+            "latitude": 22.2040455,
+            "longitude": 88.1860912
+        }
+    },
+    {
+        "name": "Binayak Imaging And Diagnostic Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6302583,
+            "longitude": 88.3847892
+        }
+    },
+    {
+        "name": "Grandview Nursing Home",
+        "coordinates": {
+            "latitude": 22.5197226,
+            "longitude": 88.3632544
+        }
+    },
+    {
+        "name": "Matrisadan Nursing Home",
+        "coordinates": {
+            "latitude": 22.5686798,
+            "longitude": 88.9163815
+        }
+    },
+    {
+        "name": "Health Point Nursing Home and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.7256605,
+            "longitude": 87.9947081
+        }
+    },
+    {
+        "name": "Amulya Jyoti Eye Foundation",
+        "coordinates": {
+            "latitude": 22.5207604,
+            "longitude": 88.3524887
+        }
+    },
+    {
+        "name": "Anandalok Hospital, Salt Lake City",
+        "coordinates": {
+            "latitude": 22.5847892,
+            "longitude": 88.4231722
+        }
+    },
+    {
+        "name": "Anjali Eye Center",
+        "coordinates": {
+            "latitude": 22.5919035,
+            "longitude": 88.3418547
+        }
+    },
+    {
+        "name": "Anupama Eye Care",
+        "coordinates": {
+            "latitude": 22.7014415,
+            "longitude": 88.3863088
+        }
+    },
+    {
+        "name": "Sunayan Eye Care and Surgery",
+        "coordinates": {
+            "latitude": 22.8889377,
+            "longitude": 88.3795381
+        }
+    },
+    {
+        "name": "Sunayan Eye care and Research Center",
+        "coordinates": {
+            "latitude": 22.2782816,
+            "longitude": 87.9233607
+        }
+    },
+    {
+        "name": "Paramananda Mission Health Centre",
+        "coordinates": {
+            "latitude": 23.2770342,
+            "longitude": 88.0725735
+        }
+    },
+    {
+        "name": "Micro Surgery Day Centre",
+        "coordinates": {
+            "latitude": 22.5252905,
+            "longitude": 88.363941
+        }
+    },
+    {
+        "name": "Dr. Ghoshs Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 22.7073952,
+            "longitude": 88.4756497
+        }
+    },
+    {
+        "name": "Mitra Snagh Hospital",
+        "coordinates": {
+            "latitude": 22.5837064,
+            "longitude": 88.3606895
+        }
+    },
+    {
+        "name": "Charring Cross Nursing Home",
+        "coordinates": {
+            "latitude": 22.5767533,
+            "longitude": 88.3934138
+        }
+    },
+    {
+        "name": "Vivekananda Seva Sadan",
+        "coordinates": {
+            "latitude": 22.9173733,
+            "longitude": 88.1185236
+        }
+    },
+    {
+        "name": "Namita Biswas Memorial Eye Hospital",
+        "coordinates": {
+            "latitude": 22.465116,
+            "longitude": 88.404779
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Bidhan Sarani",
+        "coordinates": {
+            "latitude": 22.5901136,
+            "longitude": 88.3689896
+        }
+    },
+    {
+        "name": "Namita Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.8229113,
+            "longitude": 88.3696293
+        }
+    },
+    {
+        "name": "Life Nursing Home",
+        "coordinates": {
+            "latitude": 23.1756173,
+            "longitude": 88.5657762
+        }
+    },
+    {
+        "name": "Mandelia Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5641763,
+            "longitude": 88.321133
+        }
+    },
+    {
+        "name": "Palm Springs",
+        "coordinates": {
+            "latitude": 22.5200298,
+            "longitude": 88.3480369
+        }
+    },
+    {
+        "name": "GD Hospital and Diabetes Institute",
+        "coordinates": {
+            "latitude": 22.5622368,
+            "longitude": 88.3622351
+        }
+    },
+    {
+        "name": "Blue- View Nursing Home",
+        "coordinates": {
+            "latitude": 22.484426,
+            "longitude": 88.0934443
+        }
+    },
+    {
+        "name": "Sunetra Eye and Family Care Centre",
+        "coordinates": {
+            "latitude": 22.4873268,
+            "longitude": 88.3934359
+        }
+    },
+    {
+        "name": "Matri Mangal Pratishthan",
+        "coordinates": {
+            "latitude": 22.5842853,
+            "longitude": 88.3581018
+        }
+    },
+    {
+        "name": "Bankra Central Nursing Home",
+        "coordinates": {
+            "latitude": 22.6118184,
+            "longitude": 88.2752296
+        }
+    },
+    {
+        "name": "Nabajiban Hospital Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5985716,
+            "longitude": 88.3736607
+        }
+    },
+    {
+        "name": "Central Nursing Home, Krishnanagar",
+        "coordinates": {
+            "latitude": 23.4078092,
+            "longitude": 88.4937452
+        }
+    },
+    {
+        "name": "East End Nursing Home",
+        "coordinates": {
+            "latitude": 22.5410414,
+            "longitude": 88.3618113
+        }
+    },
+    {
+        "name": "Mother Teresa Nursing Home",
+        "coordinates": {
+            "latitude": 22.4165871,
+            "longitude": 87.7492324
+        }
+    },
+    {
+        "name": "Sunview Nursing Home",
+        "coordinates": {
+            "latitude": 23.4041132,
+            "longitude": 88.4929901
+        }
+    },
+    {
+        "name": "Garden Reach Nursing Home",
+        "coordinates": {
+            "latitude": 22.5494919,
+            "longitude": 88.2873284
+        }
+    },
+    {
+        "name": "New Sevayan Nursing Home",
+        "coordinates": {
+            "latitude": 22.7176236,
+            "longitude": 88.4888703
+        }
+    },
+    {
+        "name": "BRWS Hospital",
+        "coordinates": {
+            "latitude": 22.4712333,
+            "longitude": 88.3776719
+        }
+    },
+    {
+        "name": "S.E. Nursing Home",
+        "coordinates": {
+            "latitude": 22.8855718,
+            "longitude": 87.7862602
+        }
+    },
+    {
+        "name": "Victoria Hospital, Medinipur East",
+        "coordinates": {
+            "latitude": 22.2864402,
+            "longitude": 87.9181378
+        }
+    },
+    {
+        "name": "Good Samaritan Hospital",
+        "coordinates": {
+            "latitude": 22.5392157,
+            "longitude": 88.3705661
+        }
+    },
+    {
+        "name": "Netram Eye Hospital",
+        "coordinates": {
+            "latitude": 22.6447076,
+            "longitude": 88.4624897
+        }
+    },
+    {
+        "name": "Gay-Land Nursing Home",
+        "coordinates": {
+            "latitude": 22.4578645,
+            "longitude": 88.3013537
+        }
+    },
+    {
+        "name": "Arogya Niketan Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 23.6481557,
+            "longitude": 88.1273085
+        }
+    },
+    {
+        "name": "Chikitsha Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 22.2117627,
+            "longitude": 88.184053
+        }
+    },
+    {
+        "name": "Sab Nursing Home",
+        "coordinates": {
+            "latitude": 22.080282,
+            "longitude": 88.1368456
+        }
+    },
+    {
+        "name": "Medilink Health Care Diagnostic Centre Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.602305,
+            "longitude": 88.3704156
+        }
+    },
+    {
+        "name": "Central Nursing Home, Ranaghat",
+        "coordinates": {
+            "latitude": 23.1762463,
+            "longitude": 88.5651074
+        }
+    },
+    {
+        "name": "We Care Nursing Home And Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.6641431,
+            "longitude": 88.3413641
+        }
+    },
+    {
+        "name": "Dishari (Esopd and Maternity Home)",
+        "coordinates": {
+            "latitude": 22.8693989,
+            "longitude": 88.3503848
+        }
+    },
+    {
+        "name": "Adarsh Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.2409277,
+            "longitude": 87.8511979
+        }
+    },
+    {
+        "name": "The Medicure, Kolkata",
+        "coordinates": {
+            "latitude": 22.5213682,
+            "longitude": 88.3710073
+        }
+    },
+    {
+        "name": "Rog Mookti",
+        "coordinates": {
+            "latitude": 22.7145292,
+            "longitude": 88.4662245
+        }
+    },
+    {
+        "name": "S.C. Bagchi Arogya Sadan Pvt.Ltd.",
+        "coordinates": {
+            "latitude": 22.5858477,
+            "longitude": 88.3035014
+        }
+    },
+    {
+        "name": "Diplomat Nursing Home",
+        "coordinates": {
+            "latitude": 23.2427249,
+            "longitude": 87.8604506
+        }
+    },
+    {
+        "name": "The Lifeline Nursing Homeand Poly Clinic",
+        "coordinates": {
+            "latitude": 23.2548275,
+            "longitude": 87.8561758
+        }
+    },
+    {
+        "name": "Nadia Maternity and Nursing Home",
+        "coordinates": {
+            "latitude": 23.4062272,
+            "longitude": 88.4929522
+        }
+    },
+    {
+        "name": "Pratihar Nursing Home",
+        "coordinates": {
+            "latitude": 22.5002449,
+            "longitude": 88.3182228
+        }
+    },
+    {
+        "name": "Care and Cure Hospital",
+        "coordinates": {
+            "latitude": 22.7238798,
+            "longitude": 88.4738003
+        }
+    },
+    {
+        "name": "Dr. D.S.Chopra",
+        "coordinates": {
+            "latitude": 22.5351718,
+            "longitude": 88.3438583
+        }
+    },
+    {
+        "name": "Revival Nursing Home",
+        "coordinates": {
+            "latitude": 22.5155247,
+            "longitude": 88.379239
+        }
+    },
+    {
+        "name": "Binodini Matri Seva Sadan Nursing Home",
+        "coordinates": {
+            "latitude": 22.1878875,
+            "longitude": 87.981038
+        }
+    },
+    {
+        "name": "Mission Of Mercy Hospital And Research Centre",
+        "coordinates": {
+            "latitude": 22.5478931,
+            "longitude": 88.3602614
+        }
+    },
+    {
+        "name": "New Barrackpur Nursing Home Nursing home",
+        "coordinates": {
+            "latitude": 22.6854271,
+            "longitude": 88.4438688
+        }
+    },
+    {
+        "name": "The Leprosy Mission Permananda Memorial Leprosy Ho",
+        "coordinates": {
+            "latitude": 22.5833714,
+            "longitude": 88.3748181
+        }
+    },
+    {
+        "name": "Netrajyoti Eye Hospital",
+        "coordinates": {
+            "latitude": 23.1671175,
+            "longitude": 88.5634485
+        }
+    },
+    {
+        "name": "Baghajatin State General Hospital",
+        "coordinates": {
+            "latitude": 22.4830661,
+            "longitude": 88.3749845
+        }
+    },
+    {
+        "name": "Sur Clinic Nursing Home",
+        "coordinates": {
+            "latitude": 22.9141432,
+            "longitude": 88.396254
+        }
+    },
+    {
+        "name": "Tulsiram Lakshmi Devi Jaiswal Hospital",
+        "coordinates": {
+            "latitude": 22.6146749,
+            "longitude": 88.3461867
+        }
+    },
+    {
+        "name": "New Vivekananda Nurshing Home",
+        "coordinates": {
+            "latitude": 22.2927249,
+            "longitude": 87.914382
+        }
+    },
+    {
+        "name": "Goodwill Welfare Association Seva Sadan",
+        "coordinates": {
+            "latitude": 22.7289719,
+            "longitude": 88.3855777
+        }
+    },
+    {
+        "name": "New Matri Seva Sadan",
+        "coordinates": {
+            "latitude": 22.7660556,
+            "longitude": 88.2583626
+        }
+    },
+    {
+        "name": "Blue Bell Nursing Home",
+        "coordinates": {
+            "latitude": 22.5847217,
+            "longitude": 88.2322526
+        }
+    },
+    {
+        "name": "Kasturi Medical Centre Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.4556049,
+            "longitude": 88.3046014
+        }
+    },
+    {
+        "name": "Dr.Sarkar Day Eye Care",
+        "coordinates": {
+            "latitude": 22.7240642,
+            "longitude": 88.4743533
+        }
+    },
+    {
+        "name": "Benuban Health Care",
+        "coordinates": {
+            "latitude": 22.6127839,
+            "longitude": 88.2962601
+        }
+    },
+    {
+        "name": "Bhattacharya Orthopaedics and Related Research Centre Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6395434,
+            "longitude": 88.4656236
+        }
+    },
+    {
+        "name": "Bimol Sisu Sadan",
+        "coordinates": {
+            "latitude": 22.6554511,
+            "longitude": 87.7347492
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Dover Lane",
+        "coordinates": {
+            "latitude": 22.5211331,
+            "longitude": 88.3588746
+        }
+    },
+    {
+        "name": "Chinsurah Medicare Nursing Home",
+        "coordinates": {
+            "latitude": 22.8936538,
+            "longitude": 88.3982411
+        }
+    },
+    {
+        "name": "Tapoban Nursing Hoome",
+        "coordinates": {
+            "latitude": 22.8546108,
+            "longitude": 88.7491965
+        }
+    },
+    {
+        "name": "Medicare Clinic Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.5741097,
+            "longitude": 88.3283292
+        }
+    },
+    {
+        "name": "Sterling Hospital, Kolkata",
+        "coordinates": {
+            "latitude": 22.5999558,
+            "longitude": 88.3677826
+        }
+    },
+    {
+        "name": "Calcutta Institute Of Maxill Ofacial Surgery and R",
+        "coordinates": {
+            "latitude": 22.5151731,
+            "longitude": 88.3904963
+        }
+    },
+    {
+        "name": "Burdwan Municipal Health Centre",
+        "coordinates": {
+            "latitude": 23.2286591,
+            "longitude": 87.8515326
+        }
+    },
+    {
+        "name": "Netaji Eye Hospital",
+        "coordinates": {
+            "latitude": 22.4849865,
+            "longitude": 88.28518
+        }
+    },
+    {
+        "name": "Dr. Syamal Kumar Pandey",
+        "coordinates": {
+            "latitude": 22.6212777,
+            "longitude": 88.38925
+        }
+    },
+    {
+        "name": "Love Bailey Nursing Home",
+        "coordinates": {
+            "latitude": 22.4708432,
+            "longitude": 88.3102833
+        }
+    },
+    {
+        "name": "Jodhpur Park Nursing and Maternity Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5065159,
+            "longitude": 88.3636591
+        }
+    },
+    {
+        "name": "Mediview Diagnostic Services Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.9793913,
+            "longitude": 88.4362946
+        }
+    },
+    {
+        "name": "Care Concern Hospital Pvt. Ltd.",
+        "coordinates": {
+            "latitude": 22.7511012,
+            "longitude": 88.334133
+        }
+    },
+    {
+        "name": "B.M.R.C Hospital",
+        "coordinates": {
+            "latitude": 22.7491506,
+            "longitude": 88.3726158
+        }
+    },
+    {
+        "name": "Astha Medical Services Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6296661,
+            "longitude": 88.3788457
+        }
+    },
+    {
+        "name": "TRA General Hospital - Kolkata",
+        "coordinates": {
+            "latitude": 22.5395189,
+            "longitude": 88.3710095
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Santragachi",
+        "coordinates": {
+            "latitude": 22.5939709,
+            "longitude": 88.2800968
+        }
+    },
+    {
+        "name": "Welcare Clinic",
+        "coordinates": {
+            "latitude": 22.9760681,
+            "longitude": 88.4369675
+        }
+    },
+    {
+        "name": "Netra Jyoti Eye Care Centre",
+        "coordinates": {
+            "latitude": 22.6435005,
+            "longitude": 88.3508914
+        }
+    },
+    {
+        "name": "Stallard Eye Clinic",
+        "coordinates": {
+            "latitude": 22.5410681,
+            "longitude": 88.3669069
+        }
+    },
+    {
+        "name": "Lions Club Of Calcutta",
+        "coordinates": {
+            "latitude": 22.5408036,
+            "longitude": 88.3584841
+        }
+    },
+    {
+        "name": "Merina Nursing Home",
+        "coordinates": {
+            "latitude": 23.2198307,
+            "longitude": 88.3504562
+        }
+    },
+    {
+        "name": "Bose X-ray clinic and hospital",
+        "coordinates": {
+            "latitude": 22.9705834,
+            "longitude": 88.4643911
+        }
+    },
+    {
+        "name": "Multi Care Hospital",
+        "coordinates": {
+            "latitude": 22.9704982,
+            "longitude": 88.4644937
+        }
+    },
+    {
+        "name": "Vivekananda Hospital and Research Institute",
+        "coordinates": {
+            "latitude": 22.5113168,
+            "longitude": 88.3049056
+        }
+    },
+    {
+        "name": "Aditya Hospital",
+        "coordinates": {
+            "latitude": 22.6156723,
+            "longitude": 88.4118493
+        }
+    },
+    {
+        "name": "Ayub Ansari Nursing Home",
+        "coordinates": {
+            "latitude": 22.5488373,
+            "longitude": 88.2812016
+        }
+    },
+    {
+        "name": "Rit-Tik Nursing Home",
+        "coordinates": {
+            "latitude": 22.5596522,
+            "longitude": 88.3671007
+        }
+    },
+    {
+        "name": "Calcutta Lions Netra Niketan",
+        "coordinates": {
+            "latitude": 22.4963257,
+            "longitude": 88.358423
+        }
+    },
+    {
+        "name": "Dr. M. N. Chatterjee Memorial Eye Hospital",
+        "coordinates": {
+            "latitude": 22.5781464,
+            "longitude": 88.3741294
+        }
+    },
+    {
+        "name": "Gandhi Mission Trust L.C.Dani Eye Hospital",
+        "coordinates": {
+            "latitude": 22.6067381,
+            "longitude": 87.7247612
+        }
+    },
+    {
+        "name": "Netraloke Eye Hospital- Naihati",
+        "coordinates": {
+            "latitude": 22.8877971,
+            "longitude": 88.4287176
+        }
+    },
+    {
+        "name": "B.C.C.U Hospital",
+        "coordinates": {
+            "latitude": 23.2425631,
+            "longitude": 87.8596948
+        }
+    },
+    {
+        "name": "Garia Eye Clinic and Micro Surgery Centre",
+        "coordinates": {
+            "latitude": 22.4680074,
+            "longitude": 88.379223
+        }
+    },
+    {
+        "name": "Megacity Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.7202554,
+            "longitude": 88.48872
+        }
+    },
+    {
+        "name": "Palview Nursing Home",
+        "coordinates": {
+            "latitude": 22.5843828,
+            "longitude": 88.3033307
+        }
+    },
+    {
+        "name": "Suburban Eye Microsurgery Centre",
+        "coordinates": {
+            "latitude": 22.4726658,
+            "longitude": 88.3072391
+        }
+    },
+    {
+        "name": "Avenue Nursing Home",
+        "coordinates": {
+            "latitude": 22.620653,
+            "longitude": 88.4297505
+        }
+    },
+    {
+        "name": "East Calcutta Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 22.5636355,
+            "longitude": 88.3955385
+        }
+    },
+    {
+        "name": "Neha Eye Centre",
+        "coordinates": {
+            "latitude": 22.7590561,
+            "longitude": 88.3693065
+        }
+    },
+    {
+        "name": "Nayan Jyoti Eye Care Centre",
+        "coordinates": {
+            "latitude": 22.6236674,
+            "longitude": 88.4067275
+        }
+    },
+    {
+        "name": "New Saraju Nursing Home",
+        "coordinates": {
+            "latitude": 22.6299282,
+            "longitude": 88.3795155
+        }
+    },
+    {
+        "name": "Care And Cure Hospital",
+        "coordinates": {
+            "latitude": 22.7236754,
+            "longitude": 88.4737083
+        }
+    },
+    {
+        "name": "Monideepa Nursing Home",
+        "coordinates": {
+            "latitude": 22.2825828,
+            "longitude": 87.9205719
+        }
+    },
+    {
+        "name": "Orbis Eye and Dental Care Centre",
+        "coordinates": {
+            "latitude": 22.6615726,
+            "longitude": 88.384647
+        }
+    },
+    {
+        "name": "Kanak Nursing Home",
+        "coordinates": {
+            "latitude": 22.9245745,
+            "longitude": 88.3863129
+        }
+    },
+    {
+        "name": "Calcutta Pay Clinic and Hospital Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5404476,
+            "longitude": 88.3698897
+        }
+    },
+    {
+        "name": "Netaji Sebayan Hospital",
+        "coordinates": {
+            "latitude": 22.6833374,
+            "longitude": 88.3784706
+        }
+    },
+    {
+        "name": "Disha Eye Hospital-Sheoraphuli",
+        "coordinates": {
+            "latitude": 22.7710139,
+            "longitude": 88.3291849
+        }
+    },
+    {
+        "name": "Subodh Sankar Sebayatan",
+        "coordinates": {
+            "latitude": 23.2423997,
+            "longitude": 87.8469667
+        }
+    },
+    {
+        "name": "New Ambika Nursing Home",
+        "coordinates": {
+            "latitude": 23.2165036,
+            "longitude": 88.3524444
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Salt-Lake (AF)",
+        "coordinates": {
+            "latitude": 22.6010138,
+            "longitude": 88.4188646
+        }
+    },
+    {
+        "name": "Lake Nursing Home",
+        "coordinates": {
+            "latitude": 22.5133053,
+            "longitude": 88.3669719
+        }
+    },
+    {
+        "name": "Nirama Nursing Home",
+        "coordinates": {
+            "latitude": 22.7116342,
+            "longitude": 88.4759715
+        }
+    },
+    {
+        "name": "Aditya Medical Park (A Unit Of Aditya Health Research Foundation Pvt. Ltd.) - Barsat",
+        "coordinates": {
+            "latitude": 22.7090127,
+            "longitude": 88.5410915
+        }
+    },
+    {
+        "name": "Vivekananda Nursing Home",
+        "coordinates": {
+            "latitude": 22.4116125,
+            "longitude": 87.7439511
+        }
+    },
+    {
+        "name": "M.B. Nursing Home",
+        "coordinates": {
+            "latitude": 22.5684451,
+            "longitude": 88.3244542
+        }
+    },
+    {
+        "name": "Dr. Rathikul Hasan",
+        "coordinates": {
+            "latitude": 22.6517423,
+            "longitude": 88.4356847
+        }
+    },
+    {
+        "name": "Lions Seva Eye Hospital",
+        "coordinates": {
+            "latitude": 23.0664385,
+            "longitude": 87.9893343
+        }
+    },
+    {
+        "name": "KD Cure S.C. Das Memorial Medical Center",
+        "coordinates": {
+            "latitude": 22.5077512,
+            "longitude": 88.3648047
+        }
+    },
+    {
+        "name": "Nilkantha Diagnostic Care Center",
+        "coordinates": {
+            "latitude": 22.8742992,
+            "longitude": 88.0114428
+        }
+    },
+    {
+        "name": "M. B. Nursing Home",
+        "coordinates": {
+            "latitude": 22.5400629,
+            "longitude": 88.3710368
+        }
+    },
+    {
+        "name": "Netaji Subhash Chandra Bose Specialised Hospital and Research Centre",
+        "coordinates": {
+            "latitude": 22.6936652,
+            "longitude": 88.4634443
+        }
+    },
+    {
+        "name": "Medline Nursing Home",
+        "coordinates": {
+            "latitude": 22.5051617,
+            "longitude": 88.3483963
+        }
+    },
+    {
+        "name": "Sunflower Nursing Home, Kolkata",
+        "coordinates": {
+            "latitude": 22.5889194,
+            "longitude": 88.3701812
+        }
+    },
+    {
+        "name": "Kayakalpa Sadan Nursing Home",
+        "coordinates": {
+            "latitude": 23.4048215,
+            "longitude": 88.4908296
+        }
+    },
+    {
+        "name": "Domjur Nursing Home",
+        "coordinates": {
+            "latitude": 22.6356834,
+            "longitude": 88.2206648
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Lake-Town",
+        "coordinates": {
+            "latitude": 22.6116506,
+            "longitude": 88.4017099
+        }
+    },
+    {
+        "name": "Mediview Nursing Home Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.5341754,
+            "longitude": 88.3724879
+        }
+    },
+    {
+        "name": "Swasthya Nivas Nursing Home",
+        "coordinates": {
+            "latitude": 22.8189557,
+            "longitude": 88.2192003
+        }
+    },
+    {
+        "name": "Renuka Eye Institute",
+        "coordinates": {
+            "latitude": 22.7089212,
+            "longitude": 88.4747451
+        }
+    },
+    {
+        "name": "Manorama Nursing Home",
+        "coordinates": {
+            "latitude": 22.6532287,
+            "longitude": 88.4188271
+        }
+    },
+    {
+        "name": "Little Hut Nirikshan Kendra",
+        "coordinates": {
+            "latitude": 22.6346479,
+            "longitude": 88.4348881
+        }
+    },
+    {
+        "name": "Salt Lake City Medical Centre",
+        "coordinates": {
+            "latitude": 22.5902195,
+            "longitude": 88.4125239
+        }
+    },
+    {
+        "name": "Paramount Heath Care",
+        "coordinates": {
+            "latitude": 22.7453167,
+            "longitude": 88.3494242
+        }
+    },
+    {
+        "name": "Netra Sevasram",
+        "coordinates": {
+            "latitude": 22.5665163,
+            "longitude": 88.3553157
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Bhownipur-Kalighat",
+        "coordinates": {
+            "latitude": 22.5220804,
+            "longitude": 88.3476297
+        }
+    },
+    {
+        "name": "Bansal Nursing Centre",
+        "coordinates": {
+            "latitude": 22.590742,
+            "longitude": 88.3411409
+        }
+    },
+    {
+        "name": "Marwari Relief Society Hospital",
+        "coordinates": {
+            "latitude": 22.5827281,
+            "longitude": 88.3573455
+        }
+    },
+    {
+        "name": "Don View Nursing Home",
+        "coordinates": {
+            "latitude": 22.5441888,
+            "longitude": 88.3731081
+        }
+    },
+    {
+        "name": "Dr Hari Har Roy Clinic",
+        "coordinates": {
+            "latitude": 22.5977408,
+            "longitude": 88.3453815
+        }
+    },
+    {
+        "name": "Himalaya Vision Care Centre",
+        "coordinates": {
+            "latitude": 22.5174951,
+            "longitude": 88.3545975
+        }
+    },
+    {
+        "name": "Kalidas Mullick Sebayatan",
+        "coordinates": {
+            "latitude": 22.5671621,
+            "longitude": 88.3572811
+        }
+    },
+    {
+        "name": "Orthopaedic Centre",
+        "coordinates": {
+            "latitude": 22.5827554,
+            "longitude": 88.3909348
+        }
+    },
+    {
+        "name": "Lions North Kolkata Hospital and Medical Centre",
+        "coordinates": {
+            "latitude": 22.4817518,
+            "longitude": 88.3543065
+        }
+    },
+    {
+        "name": "R-Fleming Hospital / Zodiac Medicare and Hospital Pvt.Ltd.",
+        "coordinates": {
+            "latitude": 22.5409374,
+            "longitude": 88.389544
+        }
+    },
+    {
+        "name": "Rotary Narayana Nethralaya",
+        "coordinates": {
+            "latitude": 22.5776362,
+            "longitude": 88.4335618
+        }
+    },
+    {
+        "name": "Khanakul Rural Hospital",
+        "coordinates": {
+            "latitude": 22.7031387,
+            "longitude": 87.8490722
+        }
+    },
+    {
+        "name": "Bindubasini Nursing Home",
+        "coordinates": {
+            "latitude": 22.6636975,
+            "longitude": 88.4251323
+        }
+    },
+    {
+        "name": "New Life Nursing Home, Bardhaman",
+        "coordinates": {
+            "latitude": 23.2193975,
+            "longitude": 88.3507419
+        }
+    },
+    {
+        "name": "Charnock Hospital Pvt Ltd",
+        "coordinates": {
+            "latitude": 22.6257664,
+            "longitude": 88.4350772
+        }
+    },
+    {
+        "name": "Kumar Maternity Home",
+        "coordinates": {
+            "latitude": 22.5932877,
+            "longitude": 88.3390568
+        }
+    },
+    {
+        "name": "Chittaranjan Ultrasonography and Echo Clinic, Burdwan",
+        "coordinates": {
+            "latitude": 23.2443892,
+            "longitude": 87.8617443
+        }
+    },
+    {
+        "name": "CGHS Dispensary, Lake Area",
+        "coordinates": {
+            "latitude": 22.5138962,
+            "longitude": 88.3586611
+        }
+    },
+    {
+        "name": "CGHS Wellness Centre Airport Dispensary",
+        "coordinates": {
+            "latitude": 22.6393342,
+            "longitude": 88.4310385
+        }
+    },
+    {
+        "name": "Kalna Eye Care Centre",
+        "coordinates": {
+            "latitude": 23.2169701,
+            "longitude": 88.3521212
+        }
+    },
+    {
+        "name": "National Nursing Home, Nadia",
+        "coordinates": {
+            "latitude": 23.7797352,
+            "longitude": 88.2778964
+        }
+    },
+    {
+        "name": "Meditek Center",
+        "coordinates": {
+            "latitude": 22.8646884,
+            "longitude": 88.3632423
+        }
+    },
+    {
+        "name": "Naihati Municipality Maternity Hospital",
+        "coordinates": {
+            "latitude": 22.8885247,
+            "longitude": 88.4177971
+        }
+    },
+    {
+        "name": "James Long Clinic Pvt Limited",
+        "coordinates": {
+            "latitude": 22.4907678,
+            "longitude": 88.3178513
+        }
+    },
+    {
+        "name": "Renaissance Hospital",
+        "coordinates": {
+            "latitude": 22.6248726,
+            "longitude": 88.433718
+        }
+    },
+    {
+        "name": "Sabitri Nursing Home, Medinipur East",
+        "coordinates": {
+            "latitude": 22.288193,
+            "longitude": 87.9169529
+        }
+    },
+    {
+        "name": "Gayeshpur Hospital",
+        "coordinates": {
+            "latitude": 23.290797,
+            "longitude": 88.368197
+        }
+    },
+    {
+        "name": "Barnia Hospital",
+        "coordinates": {
+            "latitude": 23.721247,
+            "longitude": 88.420501
+        }
+    },
+    {
+        "name": "Nadanghat Hospital",
+        "coordinates": {
+            "latitude": 23.3734178,
+            "longitude": 88.2531471
+        }
+    },
+    {
+        "name": "Krishnaganj Rural Hospital",
+        "coordinates": {
+            "latitude": 23.4171884,
+            "longitude": 88.6982337
+        }
+    },
+    {
+        "name": "Singhari Hospital",
+        "coordinates": {
+            "latitude": 23.5044061,
+            "longitude": 88.3059608
+        }
+    },
+    {
+        "name": "Bagula Rural Hospital",
+        "coordinates": {
+            "latitude": 23.326665,
+            "longitude": 88.6428633
+        }
+    },
+    {
+        "name": "Kalna Sub Divisional & Super Speciality Hospital",
+        "coordinates": {
+            "latitude": 23.222344,
+            "longitude": 88.346885
+        }
+    },
+    {
+        "name": "Burdwan Medical College And Hospital",
+        "coordinates": {
+            "latitude": 23.244303,
+            "longitude": 87.855989
+        }
+    },
+    {
+        "name": "Bhatar Rural Hospital",
+        "coordinates": {
+            "latitude": 23.4011417,
+            "longitude": 87.9367541
+        }
+    },
+    {
+        "name": "Pritimoyee Rural Hospital",
+        "coordinates": {
+            "latitude": 23.7918095,
+            "longitude": 88.447076
+        }
+    },
+    {
+        "name": "Dhubulia Rural Hospital",
+        "coordinates": {
+            "latitude": 23.489139,
+            "longitude": 88.44916
+        }
+    },
+    {
+        "name": "Sitahati Hospital",
+        "coordinates": {
+            "latitude": 23.698752,
+            "longitude": 88.148394
+        }
+    },
+    {
+        "name": "Bishnupur Rural Hospital",
+        "coordinates": {
+            "latitude": 23.380158,
+            "longitude": 88.417491
+        }
+    },
+    {
+        "name": "Bohar Hospital",
+        "coordinates": {
+            "latitude": 23.270396,
+            "longitude": 88.193613
+        }
+    },
+    {
+        "name": "Srirampur Rural Hospital",
+        "coordinates": {
+            "latitude": 23.41405,
+            "longitude": 88.332911
+        }
+    },
+    {
+        "name": "Tehatta Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 23.7291023,
+            "longitude": 88.5299829
+        }
+    },
+    {
+        "name": "Chapra Rural Hospital",
+        "coordinates": {
+            "latitude": 23.5175365,
+            "longitude": 88.5461134
+        }
+    },
+    {
+        "name": "Bethuadahari Rural Hospital",
+        "coordinates": {
+            "latitude": 23.6157522,
+            "longitude": 88.3831192
+        }
+    },
+    {
+        "name": "Nabadwip State General Hospital",
+        "coordinates": {
+            "latitude": 23.424677,
+            "longitude": 88.357408
+        }
+    },
+    {
+        "name": "Katwa Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 23.6462857,
+            "longitude": 88.1262501
+        }
+    },
+    {
+        "name": "Juranpur Hospital",
+        "coordinates": {
+            "latitude": 23.6999216,
+            "longitude": 88.1891245
+        }
+    },
+    {
+        "name": "Nawpara Rural Hospital",
+        "coordinates": {
+            "latitude": 23.5197498,
+            "longitude": 88.4839096
+        }
+    },
+    {
+        "name": "Singot Rural Hospital",
+        "coordinates": {
+            "latitude": 23.571565,
+            "longitude": 87.982007
+        }
+    },
+    {
+        "name": "Porabazar Hospital",
+        "coordinates": {
+            "latitude": 22.9098575,
+            "longitude": 88.1598621
+        }
+    },
+    {
+        "name": "B. B. Dhar Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6071068,
+            "longitude": 87.9348919
+        }
+    },
+    {
+        "name": "Palla Hospital",
+        "coordinates": {
+            "latitude": 23.0398187,
+            "longitude": 88.7436929
+        }
+    },
+    {
+        "name": "Domjur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6329538,
+            "longitude": 88.2245161
+        }
+    },
+    {
+        "name": "Arambagh Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.8873269,
+            "longitude": 87.7860502
+        }
+    },
+    {
+        "name": "Bhagabantapur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.8006241,
+            "longitude": 87.5033841
+        }
+    },
+    {
+        "name": "Haringhata Rural Hospital",
+        "coordinates": {
+            "latitude": 22.9462957,
+            "longitude": 88.5411998
+        }
+    },
+    {
+        "name": "Jagatballavpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6797378,
+            "longitude": 88.1085312
+        }
+    },
+    {
+        "name": "Masia Hospital",
+        "coordinates": {
+            "latitude": 22.7684975,
+            "longitude": 88.8157257
+        }
+    },
+    {
+        "name": "Barasat District Hospital",
+        "coordinates": {
+            "latitude": 22.7217575,
+            "longitude": 88.4925174
+        }
+    },
+    {
+        "name": "Habra State General Hospital",
+        "coordinates": {
+            "latitude": 22.8434627,
+            "longitude": 88.6546041
+        }
+    },
+    {
+        "name": "Chinsurah Mogra Rural Hospital",
+        "coordinates": {
+            "latitude": 22.9912287,
+            "longitude": 88.3692951
+        }
+    },
+    {
+        "name": "Bankra Hospital",
+        "coordinates": {
+            "latitude": 22.5981589,
+            "longitude": 88.2740081
+        }
+    },
+    {
+        "name": "Gopinathpur Hospital",
+        "coordinates": {
+            "latitude": 22.9510679,
+            "longitude": 87.5553961
+        }
+    },
+    {
+        "name": "Kona Jagadishpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6193143,
+            "longitude": 88.300364
+        }
+    },
+    {
+        "name": "Bhatpara State General Hospital",
+        "coordinates": {
+            "latitude": 22.8526394,
+            "longitude": 88.3922656
+        }
+    },
+    {
+        "name": "Baksha Hospital",
+        "coordinates": {
+            "latitude": 22.7246358,
+            "longitude": 88.2472706
+        }
+    },
+    {
+        "name": "Haroa Hospital",
+        "coordinates": {
+            "latitude": 22.6146622,
+            "longitude": 88.6818745
+        }
+    },
+    {
+        "name": "Ramkrishnapur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.7929451,
+            "longitude": 87.6222891
+        }
+    },
+    {
+        "name": "Rangtakhali Hospital",
+        "coordinates": {
+            "latitude": 22.7746396,
+            "longitude": 87.7498479
+        }
+    },
+    {
+        "name": "Daspur Hospital",
+        "coordinates": {
+            "latitude": 23.0636844,
+            "longitude": 88.1861468
+        }
+    },
+    {
+        "name": "Sree Balaram Seva Mandir State General Hospital",
+        "coordinates": {
+            "latitude": 22.717275,
+            "longitude": 88.369272
+        }
+    },
+    {
+        "name": "Tarakeswar Rural Hospital",
+        "coordinates": {
+            "latitude": 22.8804199,
+            "longitude": 88.0257762
+        }
+    },
+    {
+        "name": "Bakulia Hospital",
+        "coordinates": {
+            "latitude": 23.1642301,
+            "longitude": 88.3808739
+        }
+    },
+    {
+        "name": "Kotulpur Rural Hospital",
+        "coordinates": {
+            "latitude": 23.019649,
+            "longitude": 87.57968
+        }
+    },
+    {
+        "name": "Chagram Gramin Hospital",
+        "coordinates": {
+            "latitude": 23.1593867,
+            "longitude": 88.2979282
+        }
+    },
+    {
+        "name": "Jangalpara Hospital",
+        "coordinates": {
+            "latitude": 22.733053,
+            "longitude": 88.2092044
+        }
+    },
+    {
+        "name": "Akuni Ichapasar Rural Hospital",
+        "coordinates": {
+            "latitude": 22.7296069,
+            "longitude": 88.1609911
+        }
+    },
+    {
+        "name": "Memari Rural Hospital",
+        "coordinates": {
+            "latitude": 23.1761584,
+            "longitude": 88.1038234
+        }
+    },
+    {
+        "name": "Ranaghat Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 23.1673572,
+            "longitude": 88.553299
+        }
+    },
+    {
+        "name": "Belur State General Hospital",
+        "coordinates": {
+            "latitude": 22.6367774,
+            "longitude": 88.3407443
+        }
+    },
+    {
+        "name": "Furfura Hospital",
+        "coordinates": {
+            "latitude": 22.7486783,
+            "longitude": 88.1289435
+        }
+    },
+    {
+        "name": "Imambara District Hospital, Hooghly",
+        "coordinates": {
+            "latitude": 22.8924411,
+            "longitude": 88.3994271
+        }
+    },
+    {
+        "name": "Gaighata Hospital",
+        "coordinates": {
+            "latitude": 22.9340916,
+            "longitude": 88.7350955
+        }
+    },
+    {
+        "name": "College of Medicine & Sagore Dutta Hospital",
+        "coordinates": {
+            "latitude": 22.6753602,
+            "longitude": 88.3733901
+        }
+    },
+    {
+        "name": "Chakdaha State General Hospital",
+        "coordinates": {
+            "latitude": 23.0731229,
+            "longitude": 88.5265282
+        }
+    },
+    {
+        "name": "Khirpai Rural Hospital",
+        "coordinates": {
+            "latitude": 22.7190568,
+            "longitude": 87.6101183
+        }
+    },
+    {
+        "name": "Painta Hospital",
+        "coordinates": {
+            "latitude": 22.9737349,
+            "longitude": 87.8057322
+        }
+    },
+    {
+        "name": "Haripal Rural Hospital",
+        "coordinates": {
+            "latitude": 22.829529,
+            "longitude": 88.115191
+        }
+    },
+    {
+        "name": "Dhaniakhali Rural Hospital",
+        "coordinates": {
+            "latitude": 22.96542,
+            "longitude": 88.091637
+        }
+    },
+    {
+        "name": "Chandannagar Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.8668956,
+            "longitude": 88.3689532
+        }
+    },
+    {
+        "name": "Barsul Government Hospital",
+        "coordinates": {
+            "latitude": 23.1845749,
+            "longitude": 87.967423
+        }
+    },
+    {
+        "name": "Satya Bala Devi ID Hospital",
+        "coordinates": {
+            "latitude": 22.610922,
+            "longitude": 88.3463274
+        }
+    },
+    {
+        "name": "Kamarpukur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.8947898,
+            "longitude": 87.6583046
+        }
+    },
+    {
+        "name": "Chanditala Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6918608,
+            "longitude": 88.2639963
+        }
+    },
+    {
+        "name": "Bhaduria Hospital",
+        "coordinates": {
+            "latitude": 22.9311678,
+            "longitude": 88.813973
+        }
+    },
+    {
+        "name": "Natibpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6658339,
+            "longitude": 87.8911044
+        }
+    },
+    {
+        "name": "Udaynarayanpur State General Hospital",
+        "coordinates": {
+            "latitude": 22.720784,
+            "longitude": 87.988097
+        }
+    },
+    {
+        "name": "Jawaharlal Nehru Memorial Hospital, Kalyani",
+        "coordinates": {
+            "latitude": 22.9742779,
+            "longitude": 88.4557638
+        }
+    },
+    {
+        "name": "Ilsara Hospital",
+        "coordinates": {
+            "latitude": 23.1124054,
+            "longitude": 88.0835388
+        }
+    },
+    {
+        "name": "Khundkuri Hospital",
+        "coordinates": {
+            "latitude": 23.1965507,
+            "longitude": 87.7910213
+        }
+    },
+    {
+        "name": "Srinagar Hospital",
+        "coordinates": {
+            "latitude": 23.0514928,
+            "longitude": 88.6730436
+        }
+    },
+    {
+        "name": "Daspur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.6066817,
+            "longitude": 87.7223378
+        }
+    },
+    {
+        "name": "Walsh Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.7548191,
+            "longitude": 88.3465241
+        }
+    },
+    {
+        "name": "Naihati State General Hospital",
+        "coordinates": {
+            "latitude": 22.8949254,
+            "longitude": 88.4288618
+        }
+    },
+    {
+        "name": "Chandpara Rural Hospital",
+        "coordinates": {
+            "latitude": 22.940784,
+            "longitude": 88.776758
+        }
+    },
+    {
+        "name": "Shyamsundar Hospital",
+        "coordinates": {
+            "latitude": 23.093823,
+            "longitude": 87.8648746
+        }
+    },
+    {
+        "name": "Bagnan Hospital",
+        "coordinates": {
+            "latitude": 22.9322435,
+            "longitude": 88.1442705
+        }
+    },
+    {
+        "name": "Pandua Rural Hospital",
+        "coordinates": {
+            "latitude": 23.0742958,
+            "longitude": 88.2813235
+        }
+    },
+    {
+        "name": "Basirhat District Hospital",
+        "coordinates": {
+            "latitude": 22.6660208,
+            "longitude": 88.8903028
+        }
+    },
+    {
+        "name": "Chandrakona Rural Hospital",
+        "coordinates": {
+            "latitude": 22.72165,
+            "longitude": 87.508729
+        }
+    },
+    {
+        "name": "Kanaipur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.702536,
+            "longitude": 88.3206291
+        }
+    },
+    {
+        "name": "Singur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.8128595,
+            "longitude": 88.23337
+        }
+    },
+    {
+        "name": "Kaity Hospital",
+        "coordinates": {
+            "latitude": 23.0147492,
+            "longitude": 87.8227203
+        }
+    },
+    {
+        "name": "Chhota Jagulia Hospital",
+        "coordinates": {
+            "latitude": 22.7312573,
+            "longitude": 88.5318255
+        }
+    },
+    {
+        "name": "Bireswar Hospital",
+        "coordinates": {
+            "latitude": 22.6170504,
+            "longitude": 88.7415966
+        }
+    },
+    {
+        "name": "Palashi Hospital",
+        "coordinates": {
+            "latitude": 23.0078143,
+            "longitude": 88.1118611
+        }
+    },
+    {
+        "name": "Sundarpur Rural Hospital",
+        "coordinates": {
+            "latitude": 23.1414273,
+            "longitude": 88.8530321
+        }
+    },
+    {
+        "name": "Ghatal Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.6569581,
+            "longitude": 87.7378364
+        }
+    },
+    {
+        "name": "Jara Hospital",
+        "coordinates": {
+            "latitude": 22.7650654,
+            "longitude": 87.5834312
+        }
+    },
+    {
+        "name": "Fort-Gloster State General Hospital",
+        "coordinates": {
+            "latitude": 22.5101693,
+            "longitude": 88.1836138
+        }
+    },
+    {
+        "name": "Kulai Rural Hospital",
+        "coordinates": {
+            "latitude": 22.5531551,
+            "longitude": 88.1512488
+        }
+    },
+    {
+        "name": "Nalgora Gramin Hospital",
+        "coordinates": {
+            "latitude": 22.031432,
+            "longitude": 88.472139
+        }
+    },
+    {
+        "name": "Magrahat Rural Hospital",
+        "coordinates": {
+            "latitude": 22.2400153,
+            "longitude": 88.3681438
+        }
+    },
+    {
+        "name": "Haldia Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.081741,
+            "longitude": 88.141821
+        }
+    },
+    {
+        "name": "Jharkhali Rural Hospital",
+        "coordinates": {
+            "latitude": 22.0532082,
+            "longitude": 88.6651424
+        }
+    },
+    {
+        "name": "Indrapala Hospital",
+        "coordinates": {
+            "latitude": 22.3272851,
+            "longitude": 88.4166097
+        }
+    },
+    {
+        "name": "Salt Lake Sub-divisional Hospital",
+        "coordinates": {
+            "latitude": 22.5899183,
+            "longitude": 88.410437
+        }
+    },
+    {
+        "name": "Shirakole Hospital",
+        "coordinates": {
+            "latitude": 22.3169806,
+            "longitude": 88.2683289
+        }
+    },
+    {
+        "name": "Moukhali Gramin Hospital",
+        "coordinates": {
+            "latitude": 22.386825,
+            "longitude": 88.244729
+        }
+    },
+    {
+        "name": "Chandipur-Manikpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.4711658,
+            "longitude": 88.0268302
+        }
+    },
+    {
+        "name": "Julpia Rural Hospital",
+        "coordinates": {
+            "latitude": 22.3652727,
+            "longitude": 88.3519698
+        }
+    },
+    {
+        "name": "Tulsiberia Hospital",
+        "coordinates": {
+            "latitude": 22.5199021,
+            "longitude": 88.0205529
+        }
+    },
+    {
+        "name": "Basulia Rural Hospital",
+        "coordinates": {
+            "latitude": 22.1892955,
+            "longitude": 87.9814379
+        }
+    },
+    {
+        "name": "Baneswarpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.251128,
+            "longitude": 88.2918479
+        }
+    },
+    {
+        "name": "Padmerhat Rural Hospital",
+        "coordinates": {
+            "latitude": 22.2448654,
+            "longitude": 88.4473864
+        }
+    },
+    {
+        "name": "Sonakhali Rural Hospital",
+        "coordinates": {
+            "latitude": 22.5498,
+            "longitude": 87.767052
+        }
+    },
+    {
+        "name": "Jadabpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.0954515,
+            "longitude": 88.3519474
+        }
+    },
+    {
+        "name": "Gabberia State General Hospital",
+        "coordinates": {
+            "latitude": 22.566693,
+            "longitude": 88.124477
+        }
+    },
+    {
+        "name": "Kulpi Rural Hospital",
+        "coordinates": {
+            "latitude": 22.0821692,
+            "longitude": 88.2478806
+        }
+    },
+    {
+        "name": "Purbanukha Rural Hospital",
+        "coordinates": {
+            "latitude": 22.2662434,
+            "longitude": 87.8108096
+        }
+    },
+    {
+        "name": "Gosaba Rural Hospital",
+        "coordinates": {
+            "latitude": 22.1732677,
+            "longitude": 88.8047999
+        }
+    },
+    {
+        "name": "Nalmuri Rural Hospital",
+        "coordinates": {
+            "latitude": 22.500179,
+            "longitude": 88.6014826
+        }
+    },
+    {
+        "name": "Mathurapur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.123722,
+            "longitude": 88.389674
+        }
+    },
+    {
+        "name": "Amta Rural Hospital",
+        "coordinates": {
+            "latitude": 22.57526,
+            "longitude": 88.013692
+        }
+    },
+    {
+        "name": "Sekendari Hospital",
+        "coordinates": {
+            "latitude": 22.5347293,
+            "longitude": 87.7155675
+        }
+    },
+    {
+        "name": "Bagnan Rural Hospital",
+        "coordinates": {
+            "latitude": 22.4665283,
+            "longitude": 87.9642246
+        }
+    },
+    {
+        "name": "Momrejgarh Hospital",
+        "coordinates": {
+            "latitude": 22.2725315,
+            "longitude": 88.4807614
+        }
+    },
+    {
+        "name": "Hazi S. T. Mullick Rural Hospital",
+        "coordinates": {
+            "latitude": 22.561371,
+            "longitude": 88.220802
+        }
+    },
+    {
+        "name": "Paschim Bainan Rural Hospital",
+        "coordinates": {
+            "latitude": 22.5008393,
+            "longitude": 87.9429838
+        }
+    },
+    {
+        "name": "Abinash Dutta Maternity Home",
+        "coordinates": {
+            "latitude": 22.595575,
+            "longitude": 88.359983
+        }
+    },
+    {
+        "name": "Nimpith Shri Ramkrishna Rural Hospital",
+        "coordinates": {
+            "latitude": 22.1550255,
+            "longitude": 88.4405771
+        }
+    },
+    {
+        "name": "Barunhat Rural Hospital",
+        "coordinates": {
+            "latitude": 22.5369176,
+            "longitude": 88.9530706
+        }
+    },
+    {
+        "name": "Basanti Rural Hospital",
+        "coordinates": {
+            "latitude": 22.1917985,
+            "longitude": 88.7112287
+        }
+    },
+    {
+        "name": "South Howrah State General Hospital",
+        "coordinates": {
+            "latitude": 22.5602924,
+            "longitude": 88.3039377
+        }
+    },
+    {
+        "name": "Jamtala Rural Hospital",
+        "coordinates": {
+            "latitude": 22.1037861,
+            "longitude": 88.5714271
+        }
+    },
+    {
+        "name": "Lady Dufferin Victoria Hospital, Kolkata",
+        "coordinates": {
+            "latitude": 22.5691437,
+            "longitude": 88.3657939
+        }
+    },
+    {
+        "name": "Kamalpur Rural Hospital",
+        "coordinates": {
+            "latitude": 22.260597,
+            "longitude": 87.989462
+        }
+    },
+    {
+        "name": "Ghola Rural Hospital",
+        "coordinates": {
+            "latitude": 22.561938,
+            "longitude": 88.829227
+        }
+    },
+    {
+        "name": "Dalhara Gramin Hospital",
+        "coordinates": {
+            "latitude": 22.329551,
+            "longitude": 87.932699
+        }
+    },
+    {
+        "name": "Minakhan RH",
+        "coordinates": {
+            "latitude": 22.501428,
+            "longitude": 88.726666
+        }
+    },
+    {
+        "name": "Jhumjhumi Rural Hospital",
+        "coordinates": {
+            "latitude": 22.314,
+            "longitude": 87.972795
+        }
+    },
+    {
+        "name": "Amtala Rural Hospital",
+        "coordinates": {
+            "latitude": 22.3658439,
+            "longitude": 88.2719809
+        }
+    },
+    {
+        "name": "Baruipur Sub Division Hospital",
+        "coordinates": {
+            "latitude": 22.359177,
+            "longitude": 88.4335616
+        }
+    },
+    {
+        "name": "Government Hospital, Bhowanipur",
+        "coordinates": {
+            "latitude": 22.516354,
+            "longitude": 88.87344
+        }
+    },
+    {
+        "name": "Panskura Super Speciality Hospital",
+        "coordinates": {
+            "latitude": 22.424014,
+            "longitude": 87.749213
+        }
+    },
+    {
+        "name": "Mugkalyan Rural Hospital",
+        "coordinates": {
+            "latitude": 22.4126037,
+            "longitude": 87.9773968
+        }
+    },
+    {
+        "name": "Panchagram Rural Hospital",
+        "coordinates": {
+            "latitude": 22.2203199,
+            "longitude": 88.238087
+        }
+    },
+    {
+        "name": "Nimichi Hospital",
+        "coordinates": {
+            "latitude": 22.5411765,
+            "longitude": 88.7958734
+        }
+    },
+    {
+        "name": "Ramchandrapur Hospital",
+        "coordinates": {
+            "latitude": 22.3039153,
+            "longitude": 87.7536299
+        }
+    },
+    {
+        "name": "All India Institute of Hygiene and Public Health (A.I.I.H. & P.H)",
+        "coordinates": {
+            "latitude": 22.569687,
+            "longitude": 88.4152119
+        }
+    },
+    {
+        "name": "Byanjanheria Charial Rural Hospital",
+        "coordinates": {
+            "latitude": 22.4631742,
+            "longitude": 88.1846757
+        }
+    },
+    {
+        "name": "Kheyadaha Rural Hospital",
+        "coordinates": {
+            "latitude": 22.499174,
+            "longitude": 88.461902
+        }
+    },
+    {
+        "name": "Mahiyari Lakshmikamal Hospital",
+        "coordinates": {
+            "latitude": 22.589507,
+            "longitude": 88.2404221
+        }
+    },
+    {
+        "name": "Naiyarat Rural Hospital",
+        "coordinates": {
+            "latitude": 22.133661,
+            "longitude": 88.3385734
+        }
+    },
+    {
+        "name": "Uluberia Sub Divisional Hospital",
+        "coordinates": {
+            "latitude": 22.470128,
+            "longitude": 88.094529
+        }
+    },
+    {
+        "name": "S.S.K.M. Hospital",
+        "coordinates": {
+            "latitude": 22.534245,
+            "longitude": 88.324507
+        }
+    },
+    {
+        "name": "Diamond Harbour District Hospital",
+        "coordinates": {
+            "latitude": 22.1974242,
+            "longitude": 88.1909356
+        }
+    },
+    {
+        "name": "Guskara Primary Hospital",
+        "coordinates": {
+            "latitude": 23.4901373,
+            "longitude": 87.7474445
+        }
+    },
+    {
+        "name": "Mangolkote Block Primary Health Centre",
+        "coordinates": {
+            "latitude": 23.529629,
+            "longitude": 87.906549
+        }
+    },
+    {
+        "name": "Homeopathy Healthcare",
+        "coordinates": {
+            "latitude": 23.7246213,
+            "longitude": 88.4210794
+        }
+    },
+    {
+        "name": "Hospital RoseMary",
+        "coordinates": {
+            "latitude": 22.1543428,
+            "longitude": 88.7204195
+        }
+    },
+    {
+        "name": "Indus Nursing Home",
+        "coordinates": {
+            "latitude": 22.5672546,
+            "longitude": 88.2718829
+        }
+    },
+    {
+        "name": "Manorama Pharmacy",
+        "coordinates": {
+            "latitude": 22.6920619,
+            "longitude": 88.466836
+        }
+    },
+    {
+        "name": "Smile Dental Care",
+        "coordinates": {
+            "latitude": 22.5671332,
+            "longitude": 88.2730325
+        }
+    },
+    {
+        "name": "The Sun Hospital",
+        "coordinates": {
+            "latitude": 23.2547249,
+            "longitude": 87.8583736
+        }
+    },
+    {
+        "name": "Gouri Nursing Home",
+        "coordinates": {
+            "latitude": 23.220762,
+            "longitude": 87.883776
+        }
+    },
+    {
+        "name": "Sefa Nursing Home",
+        "coordinates": {
+            "latitude": 23.26088,
+            "longitude": 87.841349
+        }
+    },
+    {
+        "name": "Apollo Nursing Home",
+        "coordinates": {
+            "latitude": 23.242089,
+            "longitude": 87.860093
+        }
+    },
+    {
+        "name": "Woodland's Nursing Home",
+        "coordinates": {
+            "latitude": 23.2604407,
+            "longitude": 87.8408642
+        }
+    },
+    {
+        "name": "Annapurna Nursing Home",
+        "coordinates": {
+            "latitude": 23.244845,
+            "longitude": 87.860419
+        }
+    },
+    {
+        "name": "Jeevan Deep Nursing Home",
+        "coordinates": {
+            "latitude": 23.241914,
+            "longitude": 87.859057
+        }
+    },
+    {
+        "name": "Arogya Niketan Nursing Home",
+        "coordinates": {
+            "latitude": 23.64343,
+            "longitude": 88.128876
+        }
+    },
+    {
+        "name": "Dr. Ram Surat Pandit",
+        "coordinates": {
+            "latitude": 22.7541774,
+            "longitude": 88.3467471
+        }
+    },
+    {
+        "name": "Shaktinagar Zilla Hospital",
+        "coordinates": {
+            "latitude": 23.386676,
+            "longitude": 88.49821
+        }
+    },
+    {
+        "name": "Government Hospital",
+        "coordinates": {
+            "latitude": 22.4173683,
+            "longitude": 88.4287126
+        }
+    },
+    {
+        "name": "Susrut Eye Foundation & Research Centre",
+        "coordinates": {
+            "latitude": 22.580661,
+            "longitude": 88.327107
+        }
+    },
+    {
+        "name": "Anandalok Hospital",
+        "coordinates": {
+            "latitude": 22.5311485,
+            "longitude": 88.345912
+        }
+    },
+    {
+        "name": "Baruipur Eye Hospital",
+        "coordinates": {
+            "latitude": 22.3665709,
+            "longitude": 88.4320364
+        }
+    },
+    {
+        "name": "Sebabbrata Hospital",
+        "coordinates": {
+            "latitude": 22.468093,
+            "longitude": 88.091677
+        }
+    },
+    {
+        "name": "Shefa Eye Clinic and Nursing Home",
+        "coordinates": {
+            "latitude": 23.406278,
+            "longitude": 88.498423
+        }
+    },
+    {
+        "name": "Cancer Hospital",
+        "coordinates": {
+            "latitude": 22.5267338,
+            "longitude": 88.3884232
+        }
+    },
+    {
+        "name": "ECHS Polyclinic",
+        "coordinates": {
+            "latitude": 22.5756826,
+            "longitude": 88.4246568
+        }
+    },
+    {
+        "name": "Harlaka Hospital",
+        "coordinates": {
+            "latitude": 22.532648,
+            "longitude": 88.34615
+        }
+    },
+    {
+        "name": "Hope Hospital",
+        "coordinates": {
+            "latitude": 22.508538,
+            "longitude": 88.3227465
+        }
+    },
+    {
+        "name": "Saraju Nursing Home",
+        "coordinates": {
+            "latitude": 22.629564,
+            "longitude": 88.378271
+        }
+    },
+    {
+        "name": "Phoenix Hospital",
+        "coordinates": {
+            "latitude": 22.690939,
+            "longitude": 88.291484
+        }
+    },
+    {
+        "name": "Simultala Hospital",
+        "coordinates": {
+            "latitude": 22.3044706,
+            "longitude": 88.6953168
+        }
+    },
+    {
+        "name": "Life Line Hospital",
+        "coordinates": {
+            "latitude": 22.467797,
+            "longitude": 87.973291
+        }
+    },
+    {
+        "name": "Glocal Hospital",
+        "coordinates": {
+            "latitude": 23.391121,
+            "longitude": 88.482845
+        }
+    },
+    {
+        "name": "Mission Hospital",
+        "coordinates": {
+            "latitude": 22.552075,
+            "longitude": 88.363293
+        }
+    },
+    {
+        "name": "Narayana Multi Speciality Hospital",
+        "coordinates": {
+            "latitude": 22.705331,
+            "longitude": 88.472242
+        }
+    },
+    {
+        "name": "Centre For Sight",
+        "coordinates": {
+            "latitude": 22.6940875,
+            "longitude": 88.4668833
+        }
+    },
+    {
+        "name": "Baroma Sirona Hospital",
+        "coordinates": {
+            "latitude": 22.4087978,
+            "longitude": 87.7423754
+        }
+    },
+    {
+        "name": "Dr. Alis Multispeciality Clinic",
+        "coordinates": {
+            "latitude": 22.5365096,
+            "longitude": 88.3824758
+        }
+    },
+    {
+        "name": "Sramajibi Hospital",
+        "coordinates": {
+            "latitude": 22.755365,
+            "longitude": 88.309809
+        }
+    },
+    {
+        "name": "Konnagar Matri Sadan Municipal Hospital",
+        "coordinates": {
+            "latitude": 22.708628,
+            "longitude": 88.356469
+        }
+    },
+    {
+        "name": "ESI Hospital",
+        "coordinates": {
+            "latitude": 22.6765561,
+            "longitude": 88.3735885
+        }
+    },
+    {
+        "name": "Miot Hospitals",
+        "coordinates": {
+            "latitude": 22.5444397,
+            "longitude": 88.3596261
+        }
+    },
+    {
+        "name": "Anandalok Polyclinic",
+        "coordinates": {
+            "latitude": 22.59756,
+            "longitude": 88.418108
+        }
+    },
+    {
+        "name": "Maternity Hospital",
+        "coordinates": {
+            "latitude": 23.266152,
+            "longitude": 88.527501
+        }
+    },
+    {
+        "name": "Sankara Nethralaya",
+        "coordinates": {
+            "latitude": 22.563724,
+            "longitude": 88.3607871
+        }
+    },
+    {
+        "name": "ESI Hospital",
+        "coordinates": {
+            "latitude": 22.4652166,
+            "longitude": 88.1678893
+        }
+    },
+    {
+        "name": "Kottakkal Ayurvedic Hospital and Research Centre",
+        "coordinates": {
+            "latitude": 22.5155617,
+            "longitude": 88.3525175
+        }
+    },
+    {
+        "name": "Mary Immaculate Hospital",
+        "coordinates": {
+            "latitude": 23.5214402,
+            "longitude": 88.5494408
+        }
+    },
+    {
+        "name": "Dr. Agarwals Eye Hospital",
+        "coordinates": {
+            "latitude": 22.514789,
+            "longitude": 88.39227
+        }
+    },
+    {
+        "name": "Narayana Hrudayalaya Eye Clinic",
+        "coordinates": {
+            "latitude": 22.6210738,
+            "longitude": 88.4018086
+        }
+    },
+    {
+        "name": "ESIC Center",
+        "coordinates": {
+            "latitude": 22.366338,
+            "longitude": 88.432027
+        }
+    },
+    {
+        "name": "Muchisa Hospital",
+        "coordinates": {
+            "latitude": 22.3890571,
+            "longitude": 88.1981452
+        }
+    },
+    {
+        "name": "Disha Eye Care Center",
+        "coordinates": {
+            "latitude": 22.5052722,
+            "longitude": 88.3733781
+        }
+    },
+    {
+        "name": "Chittaranjan Dental Hospital",
+        "coordinates": {
+            "latitude": 22.081339,
+            "longitude": 88.24592
+        }
+    },
+    {
+        "name": "Rotary Dakshin Barasat Eye Hospital",
+        "coordinates": {
+            "latitude": 22.224118,
+            "longitude": 88.448746
+        }
+    },
+    {
+        "name": "T.B. Hospital",
+        "coordinates": {
+            "latitude": 22.755491,
+            "longitude": 88.346214
+        }
+    },
+    {
+        "name": "ESI Hospital",
+        "coordinates": {
+            "latitude": 22.810439,
+            "longitude": 88.352687
+        }
+    },
+    {
+        "name": "Rotary Hooghly Eye Hospital",
+        "coordinates": {
+            "latitude": 22.957594,
+            "longitude": 88.387277
+        }
+    },
+    {
+        "name": "Eastern Railway Hospital",
+        "coordinates": {
+            "latitude": 22.6258785,
+            "longitude": 88.3433229
+        }
+    },
+    {
+        "name": "Duncan Gleneagles Hospitals",
+        "coordinates": {
+            "latitude": 22.5331915,
+            "longitude": 88.3590386
+        }
+    },
+    {
+        "name": "Netaji Eye Hospital",
+        "coordinates": {
+            "latitude": 22.5321441,
+            "longitude": 88.3432901
+        }
+    },
+    {
+        "name": "Bengal Neuro Institute Hospital",
+        "coordinates": {
+            "latitude": 22.6739939,
+            "longitude": 88.4451998
+        }
+    },
+    {
+        "name": "Disha Eye Hospital",
+        "coordinates": {
+            "latitude": 22.5202511,
+            "longitude": 88.3659743
+        }
+    },
+    {
+        "name": "ESI Hospital",
+        "coordinates": {
+            "latitude": 22.752594,
+            "longitude": 88.331802
+        }
+    },
+    {
+        "name": "B.P. Poddar Hospital",
+        "coordinates": {
+            "latitude": 22.5117693,
+            "longitude": 88.3324303
+        }
+    },
+    {
+        "name": "Park Lions Hospital",
+        "coordinates": {
+            "latitude": 22.681408,
+            "longitude": 88.344949
+        }
+    },
+    {
+        "name": "Shis Eye Care Hospital",
+        "coordinates": {
+            "latitude": 22.5217005,
+            "longitude": 88.6113764
+        }
+    },
+    {
+        "name": "Antara Psychiatric Hospital",
+        "coordinates": {
+            "latitude": 22.389019,
+            "longitude": 88.420662
+        }
+    },
+    {
+        "name": "Tapan Sinha Memorial Hospital",
+        "coordinates": {
+            "latitude": 22.4865885,
+            "longitude": 88.3419528
+        }
+    },
+    {
+        "name": "ESI Hospital",
+        "coordinates": {
+            "latitude": 22.637624,
+            "longitude": 88.327889
+        }
+    },
+    {
+        "name": "ECHS Polyclinic",
+        "coordinates": {
+            "latitude": 23.3875109,
+            "longitude": 88.4979251
+        }
+    },
+    {
+        "name": "Composite Hospital",
+        "coordinates": {
+            "latitude": 22.5820094,
+            "longitude": 88.4351474
+        }
+    },
+    {
+        "name": "Bandhan Hospital",
+        "coordinates": {
+            "latitude": 23.4051521,
+            "longitude": 88.4904756
+        }
+    },
+    {
+        "name": "AMRI Hospital",
+        "coordinates": {
+            "latitude": 22.5125412,
+            "longitude": 88.3676076
+        }
+    },
+    {
+        "name": "Government Hospital, Uchalan",
+        "coordinates": {
+            "latitude": 23.034234,
+            "longitude": 87.7760585
+        }
+    },
+    {
+        "name": "Government Hospital, Khujutipara",
+        "coordinates": {
+            "latitude": 23.6080136,
+            "longitude": 87.8944679
+        }
+    },
+    {
+        "name": "Government Hospital, Sabalsinghpur",
+        "coordinates": {
+            "latitude": 22.6486642,
+            "longitude": 87.8547236
+        }
+    },
+    {
+        "name": "Government Hospital, Jagannathpur",
+        "coordinates": {
+            "latitude": 22.7298334,
+            "longitude": 87.9024281
+        }
+    },
+    {
+        "name": "Government Hospital, Baluhati",
+        "coordinates": {
+            "latitude": 22.659215,
+            "longitude": 88.2669537
+        }
+    },
+    {
+        "name": "Apollo Diagnostics",
+        "coordinates": {
+            "latitude": 22.1710789,
+            "longitude": 88.4170352
+        }
+    },
+    {
+        "name": "Jaynagar Blood Collection Centre and Doctor's Clinic",
+        "coordinates": {
+            "latitude": 22.1711126,
+            "longitude": 88.4170643
+        }
+    },
+    {
+        "name": "North City Hospital Emergency Unit",
+        "coordinates": {
+            "latitude": 22.5886635,
+            "longitude": 88.393518
+        }
+    },
+    {
+        "name": "Modan Clinic",
+        "coordinates": {
+            "latitude": 22.3439878,
+            "longitude": 89.1002502
+        }
+    },
+    {
+        "name": "Taj Diagonetic Center",
+        "coordinates": {
+            "latitude": 22.7302094,
+            "longitude": 89.0631241
+        }
+    },
+    {
+        "name": "Sangana Nursing home and Clinic",
+        "coordinates": {
+            "latitude": 22.7262258,
+            "longitude": 89.0653542
+        }
+    },
+    {
+        "name": "Al Noor Hospital",
+        "coordinates": {
+            "latitude": 22.7232927,
+            "longitude": 89.0672653
+        }
+    },
+    {
+        "name": "Fahim Diagonestic Center",
+        "coordinates": {
+            "latitude": 22.7224881,
+            "longitude": 89.0677328
+        }
+    },
+    {
+        "name": "Sundarban Clinic",
+        "coordinates": {
+            "latitude": 22.7218469,
+            "longitude": 89.0682389
+        }
+    },
+    {
+        "name": "Crital Diagonestic Center",
+        "coordinates": {
+            "latitude": 22.7215747,
+            "longitude": 89.0684467
+        }
+    },
+    {
+        "name": "Satkhira diagonstic complex",
+        "coordinates": {
+            "latitude": 22.7219986,
+            "longitude": 89.0679167
+        }
+    },
+    {
+        "name": "Care Digonosis Center and Clinic",
+        "coordinates": {
+            "latitude": 22.7204665,
+            "longitude": 89.0687838
+        }
+    },
+    {
+        "name": "Sangram Hospital",
+        "coordinates": {
+            "latitude": 22.7199187,
+            "longitude": 89.0692384
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.7194886,
+            "longitude": 89.0695196
+        }
+    },
+    {
+        "name": "Nirmoy Clinic",
+        "coordinates": {
+            "latitude": 22.719306,
+            "longitude": 89.069521
+        }
+    },
+    {
+        "name": "Al-Aksha Hospital",
+        "coordinates": {
+            "latitude": 22.7177099,
+            "longitude": 89.0702929
+        }
+    },
+    {
+        "name": "Tufan Dental Clinic",
+        "coordinates": {
+            "latitude": 22.7112941,
+            "longitude": 89.0707379
+        }
+    },
+    {
+        "name": "Unnayon Clinic",
+        "coordinates": {
+            "latitude": 22.5452572,
+            "longitude": 89.1745877
+        }
+    },
+    {
+        "name": "Life care Digital Lab & Hospital",
+        "coordinates": {
+            "latitude": 22.4485096,
+            "longitude": 89.0378981
+        }
+    },
+    {
+        "name": "Jhorna Clinic",
+        "coordinates": {
+            "latitude": 22.4525995,
+            "longitude": 89.0353585
+        }
+    },
+    {
+        "name": "Star Pathology",
+        "coordinates": {
+            "latitude": 22.860773,
+            "longitude": 89.0370682
+        }
+    },
+    {
+        "name": "Hakim Center",
+        "coordinates": {
+            "latitude": 22.8602417,
+            "longitude": 89.038721
+        }
+    },
+    {
+        "name": "Rido Dental Clinic",
+        "coordinates": {
+            "latitude": 22.8592736,
+            "longitude": 89.0405521
+        }
+    },
+    {
+        "name": "Rido Shastho Kendro",
+        "coordinates": {
+            "latitude": 22.8592846,
+            "longitude": 89.0406442
+        }
+    },
+    {
+        "name": "Monira Dental Care",
+        "coordinates": {
+            "latitude": 22.8580015,
+            "longitude": 89.0413197
+        }
+    },
+    {
+        "name": "Green Homio Hall",
+        "coordinates": {
+            "latitude": 22.8615514,
+            "longitude": 89.0407481
+        }
+    },
+    {
+        "name": "Life Care Clinic",
+        "coordinates": {
+            "latitude": 22.7503844,
+            "longitude": 89.2591233
+        }
+    },
+    {
+        "name": "Jhohora Dedicine",
+        "coordinates": {
+            "latitude": 22.7503148,
+            "longitude": 89.259356
+        }
+    },
+    {
+        "name": "Ramkrishnapur Community Clinic",
+        "coordinates": {
+            "latitude": 23.2566797,
+            "longitude": 88.9253267
+        }
+    },
+    {
+        "name": "Anwar Memorial Clinic",
+        "coordinates": {
+            "latitude": 22.7223475,
+            "longitude": 89.0703267
+        }
+    },
+    {
+        "name": "Nahar Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.7228682,
+            "longitude": 89.0703106
+        }
+    },
+    {
+        "name": "Satkhira Health care",
+        "coordinates": {
+            "latitude": 22.7225547,
+            "longitude": 89.0703646
+        }
+    },
+    {
+        "name": "Satkhira Surgical Clinic",
+        "coordinates": {
+            "latitude": 22.7223216,
+            "longitude": 89.0705949
+        }
+    },
+    {
+        "name": "Mother Teresa Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.722328,
+            "longitude": 89.0707358
+        }
+    },
+    {
+        "name": "Satkhira Clinic and Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.7224004,
+            "longitude": 89.0709553
+        }
+    },
+    {
+        "name": "Sukpukuria Helth Center",
+        "coordinates": {
+            "latitude": 23.2536108,
+            "longitude": 88.9435701
+        }
+    },
+    {
+        "name": "Mandarbaia Community Clinic",
+        "coordinates": {
+            "latitude": 23.2939654,
+            "longitude": 88.9540875
+        }
+    },
+    {
+        "name": "Modern Diagonestic Center",
+        "coordinates": {
+            "latitude": 23.1681465,
+            "longitude": 89.2091763
+        }
+    },
+    {
+        "name": "Life Care Hospital",
+        "coordinates": {
+            "latitude": 23.1682226,
+            "longitude": 89.2096765
+        }
+    },
+    {
+        "name": "Daratana Hospital",
+        "coordinates": {
+            "latitude": 23.1674774,
+            "longitude": 89.2096844
+        }
+    },
+    {
+        "name": "Prime Hospital",
+        "coordinates": {
+            "latitude": 23.1675547,
+            "longitude": 89.2097074
+        }
+    },
+    {
+        "name": "Green Hert Diagonestic and Consaltant",
+        "coordinates": {
+            "latitude": 23.1677239,
+            "longitude": 89.2097587
+        }
+    },
+    {
+        "name": "Sunrise Diagonestic Center",
+        "coordinates": {
+            "latitude": 23.1680192,
+            "longitude": 89.2100374
+        }
+    },
+    {
+        "name": "Aesha Memorial Hospital",
+        "coordinates": {
+            "latitude": 23.1005449,
+            "longitude": 89.0994833
+        }
+    },
+    {
+        "name": "Pallabi Hospital",
+        "coordinates": {
+            "latitude": 23.2607133,
+            "longitude": 89.0237074
+        }
+    },
+    {
+        "name": "Madhumati Hospital",
+        "coordinates": {
+            "latitude": 23.2605121,
+            "longitude": 89.0239847
+        }
+    },
+    {
+        "name": "Unique Hospital",
+        "coordinates": {
+            "latitude": 23.16828,
+            "longitude": 89.2087458
+        }
+    },
+    {
+        "name": "Scan Hospital",
+        "coordinates": {
+            "latitude": 23.1683177,
+            "longitude": 89.2086704
+        }
+    },
+    {
+        "name": "Ashim Hospital",
+        "coordinates": {
+            "latitude": 23.1678854,
+            "longitude": 89.2090693
+        }
+    },
+    {
+        "name": "Renesha Hospital",
+        "coordinates": {
+            "latitude": 23.1677768,
+            "longitude": 89.2093694
+        }
+    },
+    {
+        "name": "Quence Hospital",
+        "coordinates": {
+            "latitude": 23.1685173,
+            "longitude": 89.2113023
+        }
+    },
+    {
+        "name": "Ibn Sina Hospital",
+        "coordinates": {
+            "latitude": 23.1682492,
+            "longitude": 89.2104867
+        }
+    },
+    {
+        "name": "United Hospital",
+        "coordinates": {
+            "latitude": 23.1685821,
+            "longitude": 89.2117088
+        }
+    },
+    {
+        "name": "Uttara Hospital",
+        "coordinates": {
+            "latitude": 23.1686291,
+            "longitude": 89.2119376
+        }
+    },
+    {
+        "name": "Janata Hospital",
+        "coordinates": {
+            "latitude": 23.1687994,
+            "longitude": 89.2122209
+        }
+    },
+    {
+        "name": "Pongu Hospital",
+        "coordinates": {
+            "latitude": 23.1568699,
+            "longitude": 89.2053373
+        }
+    },
+    {
+        "name": "Fatema Hospital",
+        "coordinates": {
+            "latitude": 23.1691866,
+            "longitude": 89.2046712
+        }
+    },
+    {
+        "name": "Genesis Hospital",
+        "coordinates": {
+            "latitude": 23.1694061,
+            "longitude": 89.2047078
+        }
+    },
+    {
+        "name": "Police Line Hospital",
+        "coordinates": {
+            "latitude": 23.1711715,
+            "longitude": 89.1970088
+        }
+    },
+    {
+        "name": "Masanger Diagonestic Center",
+        "coordinates": {
+            "latitude": 22.7216515,
+            "longitude": 89.0681076
+        }
+    },
+    {
+        "name": "Swapna Clinic",
+        "coordinates": {
+            "latitude": 22.7218663,
+            "longitude": 89.0692134
+        }
+    },
+    {
+        "name": "Satkhira Diagonestics Center",
+        "coordinates": {
+            "latitude": 22.7218835,
+            "longitude": 89.0692673
+        }
+    },
+    {
+        "name": "Digital Diagonestics Center",
+        "coordinates": {
+            "latitude": 22.7219454,
+            "longitude": 89.0695825
+        }
+    },
+    {
+        "name": "Bushra Hospital",
+        "coordinates": {
+            "latitude": 22.7224107,
+            "longitude": 89.0718064
+        }
+    },
+    {
+        "name": "Nagarukhra PHC",
+        "coordinates": {
+            "latitude": 22.9214923,
+            "longitude": 88.6439628
+        }
+    },
+    {
+        "name": "Apollo diagnosis center",
+        "coordinates": {
+            "latitude": 22.5995598,
+            "longitude": 88.4051432
+        }
+    },
+    {
+        "name": "Ananya",
+        "coordinates": {
+            "latitude": 22.5888797,
+            "longitude": 88.3993708
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 23.1805738,
+            "longitude": 89.2022389
+        }
+    },
+    {
+        "name": "Bapi Clinic",
+        "coordinates": {
+            "latitude": 22.6752423,
+            "longitude": 88.3982699
+        }
+    },
+    {
+        "name": "ID Hospital",
+        "coordinates": {
+            "latitude": 22.5645031,
+            "longitude": 88.3984031
+        }
+    },
+    {
+        "name": "nehru  memorial techno global hospital",
+        "coordinates": {
+            "latitude": 22.7671143,
+            "longitude": 88.3676458
+        }
+    },
+    {
+        "name": "Theism Diagnostics",
+        "coordinates": {
+            "latitude": 22.6193031,
+            "longitude": 88.392299
+        }
+    },
+    {
+        "name": "Dr. Sunirmal Sarkar Clinic",
+        "coordinates": {
+            "latitude": 22.9227525,
+            "longitude": 88.7773204
+        }
+    },
+    {
+        "name": "Susrut Eye Foundation And Research Hospital",
+        "coordinates": {
+            "latitude": 22.449944,
+            "longitude": 88.3925129
+        }
+    },
+    {
+        "name": "Nokpul gholar math Suchil Clinic",
+        "coordinates": {
+            "latitude": 22.8607,
+            "longitude": 88.739821
+        }
+    },
+    {
+        "name": "JNS Nursing Home",
+        "coordinates": {
+            "latitude": 22.466249,
+            "longitude": 87.9672766
+        }
+    },
+    {
+        "name": "Baruipur Super-Specality Hospital",
+        "coordinates": {
+            "latitude": 22.3579557,
+            "longitude": 88.43427
+        }
+    },
+    {
+        "name": "Divine Nursing Home",
+        "coordinates": {
+            "latitude": 22.5662809,
+            "longitude": 88.3927561
+        }
+    },
+   
+    {
+        "name": "SD Hospital",
+        "coordinates": {
+            "latitude": 22.7176694,
+            "longitude": 89.070209
+        }
+    },
+    {
+        "name": "Spondon Dayaganistic Centre",
+        "coordinates": {
+            "latitude": 22.7198446,
+            "longitude": 89.068636
+        }
+    },
+    {
+        "name": "CDC Cest Hospital Satkhira",
+        "coordinates": {
+            "latitude": 22.6911591,
+            "longitude": 89.0761335
+        }
+    },
+    {
+        "name": "Shakira physiotherapy Point",
+        "coordinates": {
+            "latitude": 22.7302592,
+            "longitude": 89.062918
+        }
+    },
+    {
+        "name": "Satkhira Children\u2019s Hospital",
+        "coordinates": {
+            "latitude": 22.7301301,
+            "longitude": 89.0633221
+        }
+    },
+    {
+        "name": "Mother Teresa diagnostic",
+        "coordinates": {
+            "latitude": 22.7223923,
+            "longitude": 89.0699013
+        }
+    },
+    {
+        "name": "Bangladesh Private hospital Association",
+        "coordinates": {
+            "latitude": 22.7221267,
+            "longitude": 89.0705974
+        }
+    },
+    {
+        "name": "Nova Diagnostic Centre",
+        "coordinates": {
+            "latitude": 22.7221111,
+            "longitude": 89.0702732
+        }
+    },
+    {
+        "name": "Bangladesh diabetes care and Physiotherapy center",
+        "coordinates": {
+            "latitude": 22.7226563,
+            "longitude": 89.0704219
+        }
+    },
+    {
+        "name": "Bushra Hospital",
+        "coordinates": {
+            "latitude": 22.7220813,
+            "longitude": 89.0701142
+        }
+    },
+    {
+        "name": "Swadesh clinic",
+        "coordinates": {
+            "latitude": 22.7221232,
+            "longitude": 89.070368
+        }
+    },
+    {
+        "name": "Sundarban clinic",
+        "coordinates": {
+            "latitude": 22.722028,
+            "longitude": 89.0698613
+        }
+    },
+    {
+        "name": "Cb Hospital",
+        "coordinates": {
+            "latitude": 22.7224456,
+            "longitude": 89.0726109
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.7221043,
+            "longitude": 89.0707548
+        }
+    },
+    {
+        "name": "Nahar Diagnostic Center",
+        "coordinates": {
+            "latitude": 22.7225219,
+            "longitude": 89.0704612
+        }
+    },
+    {
+        "name": "Heart Foundation",
+        "coordinates": {
+            "latitude": 22.7220619,
+            "longitude": 89.0699684
+        }
+    },
+    {
+        "name": "Nova Unimade Diagonistic Centre & Multi Speciality Clinic",
+        "coordinates": {
+            "latitude": 22.6211511,
+            "longitude": 88.4056203
+        }
+    },
+    {
+        "name": "Charitable Dispensary Ramakrishna Yogodyan mission",
+        "coordinates": {
+            "latitude": 22.5761141,
+            "longitude": 88.3963311
+        }
+    },
+    {
+        "name": "Jeevan Asha Kendra",
+        "coordinates": {
+            "latitude": 22.4707422,
+            "longitude": 88.3544507
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.1386957,
+            "longitude": 88.0696461
+        }
+    },
+    {
+        "name": "Urban Primary Health Centre 1",
+        "coordinates": {
+            "latitude": 22.6284133,
+            "longitude": 88.4251354
+        }
+    },
+    {
+        "name": "Ramkrishna mission yogodan",
+        "coordinates": {
+            "latitude": 22.5759996,
+            "longitude": 88.3965023
+        }
+    },
+    {
+        "name": "Disha Eye Hospital",
+        "coordinates": {
+            "latitude": 22.8834141,
+            "longitude": 87.7882363
+        }
+    },
+    {
+        "name": "Unknown Medical Center",
+        "coordinates": {
+            "latitude": 22.7080597,
+            "longitude": 87.8467626
+        }
+    },
+    {
+        "name": "Saha Polyclinic",
+        "coordinates": {
+            "latitude": 22.6001567,
+            "longitude": 88.31955
+        }
+    }
+]

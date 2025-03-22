@@ -12,9 +12,11 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 
 interface Hospital {
+  id: string
   name: string
-  location: {
-    coordinates: [number, number]
+  coordinates?: {
+    latitude: number
+    longitude: number
   }
 }
 
@@ -29,11 +31,12 @@ const HospitalPage: React.FC = () => {
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/receive')
+        const response = await fetch('http://localhost:8000/api/hospitals')
         if (!response.ok) {
           throw new Error('Failed to fetch hospital data.')
         }
         const data = await response.json()
+        console.log("Hospital Data:", data) // Debugging log
         setHospitals(data)
       } catch (error) {
         console.error('Error fetching hospital data:', error)
@@ -111,7 +114,6 @@ const HospitalPage: React.FC = () => {
                   <Input id="search" placeholder="Search for facilities..." />
                 </div>
               </div>
-
               <div className="space-y-2">
                 <Select value={facilityType} onValueChange={setFacilityType}>
                   <SelectTrigger id="type">
@@ -127,7 +129,6 @@ const HospitalPage: React.FC = () => {
                   </SelectContent>
                 </Select>
               </div>
-
               <div className="flex flex-col gap-2 pt-2">
                 <Button onClick={handleGetMyLocation} className="w-full">
                   Get My Location
@@ -138,54 +139,16 @@ const HospitalPage: React.FC = () => {
               </div>
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center gap-2 text-red-500">
-                <Ambulance className="h-5 w-5" />
-                Emergency Info
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 border border-red-200 dark:border-red-900">
-                <div className="flex items-center gap-2 text-red-600 dark:text-red-400 font-semibold mb-1">
-                  Emergency Services
-                </div>
-                <p className="text-sm text-red-700 dark:text-red-300">Call 911 for immediate medical emergencies</p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
-        <motion.div
-          className="space-y-6 lg:col-span-3"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <MapContainer
-            ref={mapRef}
-            style={{ height: '500px', width: '100%' }}
-            center={[51.505, -0.09] as L.LatLngExpression}
-            zoom={13}
-            scrollWheelZoom={true}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {showMyLocation && myLocation && (
-              <Marker position={myLocation} icon={blueIcon}>
-                <Popup>Your Location</Popup>
-              </Marker>
-            )}
-            {showHospitals && hospitals.map((hospital, index) => (
-              <Marker
-                key={index}
-                position={[hospital.location.coordinates[1], hospital.location.coordinates[0]]}
-                icon={redIcon}
-              >
+        <motion.div className="space-y-6 lg:col-span-3" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+          <MapContainer ref={mapRef} style={{ height: '500px', width: '100%' }} center={[22.5727398, 88.3600196]} zoom={13} scrollWheelZoom={true}>
+            <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            {showMyLocation && myLocation && <Marker position={myLocation} icon={blueIcon}><Popup>Your Location</Popup></Marker>}
+            {showHospitals && hospitals.map((hospital) => hospital.coordinates ? (
+              <Marker key={hospital.id} position={[hospital.coordinates.latitude, hospital.coordinates.longitude]} icon={redIcon}>
                 <Popup>{hospital.name}</Popup>
               </Marker>
-            ))}
+            ) : null)}
           </MapContainer>
         </motion.div>
       </div>

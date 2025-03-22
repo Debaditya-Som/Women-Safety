@@ -17,3 +17,18 @@ class ReportSchema(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class Coordinates(BaseModel):
+    latitude: float
+    longitude: float
+
+class HospitalSchema(BaseModel):
+    id: str
+    name: str
+    coordinates: Coordinates
+
+class PoliceSchema(BaseModel):
+    id: str
+    name: str
+    coordinates: Coordinates

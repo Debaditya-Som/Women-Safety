@@ -12,11 +12,14 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 
 interface PoliceStation {
-  name: string
-  location: {
-    coordinates: [number, number]
-  }
+  id: string;
+  name: string;
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
 }
+
 
 const PolicePage: React.FC = () => {
   const [myLocation, setMyLocation] = useState<[number, number] | null>(null)
@@ -29,19 +32,29 @@ const PolicePage: React.FC = () => {
   useEffect(() => {
     const fetchPoliceStations = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/receive')
+        const response = await fetch('http://localhost:8000/api/police');
         if (!response.ok) {
-          throw new Error('Failed to fetch police station data.')
+          throw new Error('Failed to fetch police station data.');
         }
-        const data = await response.json()
-        setPoliceStations(data)
+        const data = await response.json();
+  
+        // Transform data to match expected structure
+        const formattedData = data.map((station: any) => ({
+          id: station.id,
+          name: station.name,
+          location: {
+            coordinates: [station.coordinates.longitude, station.coordinates.latitude], // Ensure correct order for Leaflet
+          },
+        }));
+  
+        setPoliceStations(formattedData);
       } catch (error) {
-        console.error('Error fetching police station data:', error)
+        console.error('Error fetching police station data:', error);
       }
-    }
-
-    fetchPoliceStations()
-  }, [])
+    };
+  
+    fetchPoliceStations();
+  }, []);
 
   const blueIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
@@ -178,7 +191,7 @@ const PolicePage: React.FC = () => {
             {showPoliceStations && policeStations.map((station, index) => (
               <Marker
                 key={index}
-                position={[station.location.coordinates[1], station.location.coordinates[0]]}
+                position={[station.coordinates.latitude, station.coordinates.longitude]} 
                 icon={redIcon}
               >
                 <Popup>{station.name}</Popup>
