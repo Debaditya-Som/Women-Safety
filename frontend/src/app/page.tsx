@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import Navbar from "@/components/ui/Navbar"
+import Chat from "@/components/home/chat"
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <SafetySection />
+        <Chat/>
         <StatisticsSection />
         <TestimonialsSection />
         <FaqSection />
