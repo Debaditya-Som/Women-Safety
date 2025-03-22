@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { MapContainer, TileLayer, Marker, Polyline, useMapEvents, useMap } from "react-leaflet"
 import axios from "axios"
-import { Search, Navigation, MapPin, Compass, Info, X, Menu } from "lucide-react"
+import { Search, Navigation, MapPin, Compass, Info, X, Menu, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import "leaflet/dist/leaflet.css"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,11 +11,12 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
-import "leaflet/dist/leaflet.css"
 import L from "leaflet"
 import "leaflet.heat"
 import HeatmapLayer from "@/components/map/MapComponent"
-
+import RouteSafetyAnalysis from "@/components/map/RouteSafetyAnalysis"
+import SafetyAlert from "@/components/map/SafetyAlert"
+import { analyzeRouteSafety, getRouteSegmentColor, formatDistance, RouteSafetyAnalysis as RouteSafetyType } from "@/components/map/routeSafety"
 
 // Custom marker icons
 const createIcon = (color: string) => {
@@ -29,21 +30,43 @@ const createIcon = (color: string) => {
   })
 }
 
+// Route colors
 const safeColor = "#10b981" // Safe route 🟢
 const midColor = "#f59e0b" // Moderate route 🟠
 const unsafeColor = "#ef4444" // Unsafe route 🔴
+
+// Center map on user component
+function CenterMapOnUser({ position }: { position: [number, number] }) {
+  const map = useMap()
+  useEffect(() => {
+    map.flyTo(position, map.getZoom())
+  }, [map, position])
+  return null
+}
+
+// Map click handler component
+function MapClickHandler({ setDestination }: { setDestination: (pos: [number, number]) => void }) {
+  useMapEvents({
+    click(e) {
+      setDestination([e.latlng.lat, e.latlng.lng])
+    },
+  })
+  return null
+}
 
 export default function SafetyMap() {
   const mapRef = useRef<L.Map | null>(null)
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null)
   const [destination, setDestination] = useState<[number, number] | null>(null)
   const [routes, setRoutes] = useState<any[]>([])
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState<{ label: string; value: [number, number] }[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null)
-
+  const [showRouteAnalysis, setShowRouteAnalysis] = useState(true)
+  const [routeSafety, setRouteSafety] = useState<RouteSafetyType | null>(null)
+  
   // Get user location
   const getUserLocation = () => {
     setIsLoading(true)
@@ -84,11 +107,16 @@ export default function SafetyMap() {
         `https://router.project-osrm.org/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}?overview=full&alternatives=true&geometries=geojson`,
       )
       if (res.data.routes) {
-        setRoutes(
-          res.data.routes.map((route: any) =>
-            route.geometry.coordinates.map(([lng, lat]: [number, number]) => [lat, lng]),
-          ),
+        const routeCoordinates = res.data.routes.map((route: any) =>
+          route.geometry.coordinates.map(([lng, lat]: [number, number]) => [lat, lng]),
         )
+        setRoutes(routeCoordinates)
+        
+        // Analyze the first route for safety
+        if (routeCoordinates.length > 0) {
+          const safetyAnalysis = analyzeRouteSafety(routeCoordinates[0])
+          setRouteSafety(safetyAnalysis)
+        }
       }
     } catch (error) {
       console.error("Error fetching routes:", error)
@@ -138,30 +166,56 @@ export default function SafetyMap() {
     setDestination(null)
     setRoutes([])
     setSelectedPlace(null)
+    setRouteSafety(null)
+  }
+
+  // Generate route segments with safety coloring
+  const renderRoutesWithSafety = () => {
+    if (!routeSafety || routeSafety.segments.length === 0) {
+      // If no safety analysis, render original routes with default colors
+      return routes.map((route, index) => (
+        <Polyline
+          key={index}
+          positions={route}
+          color={[safeColor, midColor, unsafeColor][index % 3]}
+          weight={5}
+          opacity={0.7}
+        />
+      ))
+    }
+    
+    // Otherwise, render the first route with safety segments
+    return routeSafety.segments.map((segment, index) => (
+      <Polyline
+        key={`segment-${index}`}
+        positions={segment.path}
+        color={getRouteSegmentColor(segment.risk)}
+        weight={5}
+        opacity={0.7}
+        className={segment.risk === "unsafe" ? "animate-pulse" : ""}
+      />
+    ))
   }
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      <MapContainer center={userLocation || [51.505, -0.09]} zoom={13} className="h-full w-full z-0" ref={mapRef}>
+      <MapContainer center={userLocation || [24.5, 87.5]} zoom={13} className="h-full w-full z-0" ref={mapRef}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {userLocation && <Marker position={userLocation} icon={createIcon("#3b82f6")} />}
-
         {destination && <Marker position={destination} icon={createIcon("#ef4444")} />}
-        {routes.map((route, index) => (
-          <Polyline
-            key={index}
-            positions={route}
-            color={[safeColor, midColor, unsafeColor][index % 3]}
-            weight={5}
-            opacity={0.7}
-          />
-        ))}
+        
+        {/* Render safety-aware route segments */}
+        {renderRoutesWithSafety()}
+        
         {mapRef.current && <HeatmapLayer map={mapRef.current} />}
         <MapClickHandler setDestination={setDestination} />
 
         {userLocation && <CenterMapOnUser position={userLocation} />}
       </MapContainer>
+
+      {/* Safety Alert for high-risk areas */}
+      <SafetyAlert routeSafety={routeSafety} />
 
       {/* Mobile Toggle Button */}
       <Button
@@ -208,7 +262,7 @@ export default function SafetyMap() {
                   <Card className="mt-2">
                     <CardContent className="p-2">
                       <ul className="space-y-1 max-h-40 overflow-y-auto">
-                        {searchResults.map((result: any, index) => (
+                        {searchResults.map((result, index) => (
                           <li key={index}>
                             <Button
                               variant="ghost"
@@ -229,6 +283,9 @@ export default function SafetyMap() {
                   </Card>
                 )}
               </div>
+
+              {/* Route Safety Analysis Component */}
+              <RouteSafetyAnalysis routeSafety={routeSafety} showAnalysis={showRouteAnalysis} />
 
               {/* Location Info */}
               <Card className="mb-4">
@@ -290,11 +347,24 @@ export default function SafetyMap() {
 
                     {routes.length > 0 && (
                       <div className="space-y-2">
-                        <div className="text-xs font-medium">Available Routes:</div>
+                        <div className="flex items-center justify-between text-xs">
+                          <label htmlFor="route-analysis">Show Route Safety Analysis</label>
+                          <div className="flex items-center space-x-2">
+                            <input 
+                              type="checkbox"
+                              id="route-analysis"
+                              checked={showRouteAnalysis}
+                              onChange={(e) => setShowRouteAnalysis(e.target.checked)}
+                              className="rounded border-gray-300 text-primary focus:ring-primary"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div className="text-xs font-medium mt-3">Route Safety Legend:</div>
                         <div className="flex flex-wrap gap-2">
                           <Badge className="bg-[#10b981]">Safe Route</Badge>
-                          <Badge className="bg-[#f59e0b]">Moderate Route</Badge>
-                          <Badge className="bg-[#ef4444]">Unsafe Route</Badge>
+                          <Badge className="bg-[#f59e0b]">Moderate Risk</Badge>
+                          <Badge className="bg-[#ef4444]">High Risk</Badge>
                         </div>
                       </div>
                     )}
@@ -314,67 +384,98 @@ export default function SafetyMap() {
                   <div className="space-y-2">
                     <h3 className="font-medium">SafetyMap Legend</h3>
                     <p className="text-sm text-muted-foreground">
-                      SafetyMap helps you navigate safely by providing route options with different safety levels:
+                      SafetyMap helps you navigate safely by identifying routes with different safety levels:
                     </p>
                     <div className="space-y-1 text-sm">
                       <div className="flex items-center">
                         <div className="w-3 h-3 rounded-full bg-[#10b981] mr-2"></div>
-                        <span>Safe Route - Recommended for all times</span>
+                        <span>Safe Route - Low risk areas</span>
                       </div>
                       <div className="flex items-center">
                         <div className="w-3 h-3 rounded-full bg-[#f59e0b] mr-2"></div>
-                        <span>Moderate Route - Use with caution</span>
+                        <span>Moderate Risk - Some caution advised</span>
                       </div>
                       <div className="flex items-center">
                         <div className="w-3 h-3 rounded-full bg-[#ef4444] mr-2"></div>
-                        <span>Unsafe Route - Not recommended</span>
+                        <span>High Risk - Areas with harassment reports</span>
                       </div>
                     </div>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Route segments are colored based on proximity to reported harassment incidents. 
+                      The heat map shows areas with higher concentration of incidents.
+                    </p>
                   </div>
                 </PopoverContent>
               </Popover>
             </>
           ) : (
-            // Collapsed sidebar with icons only
-            <div className="flex flex-col items-center gap-4 pt-4">
+            <div className="flex flex-col items-center space-y-4 py-4">
               <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(true)}>
                 <Menu className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" onClick={getUserLocation}>
-                <Compass className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(true)}>
-                <Search className="h-5 w-5" />
-              </Button>
-              {destination && (
-                <Button variant="ghost" size="icon" onClick={getDirections}>
-                  <Navigation className="h-5 w-5" />
-                </Button>
-              )}
             </div>
           )}
         </div>
       </div>
+
+      {/* Route Details Overlay */}
+      {routeSafety && routes.length > 0 && (
+        <div className="absolute bottom-0 left-0 right-0 md:left-80 p-4 z-30 transition-all duration-300">
+          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 flex flex-col md:flex-row gap-4 items-center">
+            {/* Safety Indicator */}
+            <div className="flex items-center gap-3">
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold ${
+                routeSafety.overallScore >= 75 
+                  ? "bg-green-100 text-green-700" 
+                  : routeSafety.overallScore >= 50 
+                    ? "bg-amber-100 text-amber-700" 
+                    : "bg-red-100 text-red-700"
+              }`}>
+                {routeSafety.overallScore}
+              </div>
+              <div>
+                <h3 className="font-medium text-sm">Safety Score</h3>
+                <p className={`text-xs ${
+                  routeSafety.overallScore >= 75 
+                    ? "text-green-600" 
+                    : routeSafety.overallScore >= 50 
+                      ? "text-amber-600" 
+                      : "text-red-600"
+                }`}>
+                  {routeSafety.riskLevel} Risk
+                </p>
+              </div>
+            </div>
+            
+            {/* Route Details */}
+            <div className="flex-1">
+              <h3 className="font-medium text-sm">Route Summary</h3>
+              <div className="flex flex-wrap gap-x-4 mt-1 text-xs">
+                <span className="flex items-center">
+                  <Navigation className="h-3 w-3 mr-1 text-primary" /> 
+                  {formatDistance(routeSafety.totalDistance)}
+                </span>
+                {routeSafety.unsafePercentage > 0 && (
+                  <span className="flex items-center text-red-500">
+                    <Shield className="h-3 w-3 mr-1" /> 
+                    Passes through high-risk areas
+                  </span>
+                )}
+              </div>
+            </div>
+            
+            {/* Actions */}
+            <div className="flex gap-2">
+              <Button variant="default" size="sm">
+                Start Navigation
+              </Button>
+              <Button variant="outline" size="icon" onClick={resetMap}>
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
-}
-
-function MapClickHandler({ setDestination }: { setDestination: (coords: [number, number]) => void }) {
-  useMapEvents({
-    click(e) {
-      setDestination([e.latlng.lat, e.latlng.lng])
-    },
-  })
-  return null
-}
-
-// Center map on user component
-function CenterMapOnUser({ position }: { position: [number, number] }) {
-  const map = useMap()
-
-  useEffect(() => {
-    map.setView(position, map.getZoom())
-  }, [map, position])
-
-  return null
 }

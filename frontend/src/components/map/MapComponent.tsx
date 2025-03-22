@@ -13,11 +13,11 @@ import { AlertCircle, Info } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 // Define severity levels with weights, colors, and descriptions
-const severityConfig = {
+export const severityConfig = {
   low: { weight: 2, color: "#3b82f6", label: "Low" },
   medium: { weight: 4, color: "#10b981", label: "Medium" },
-  high: { weight: 6, color: "#f59e0b", label: "High" },
-  critical: { weight: 8, color: "#ef4444", label: "Critical" },
+  high: { weight: 8, color: "#f59e0b", label: "High" },     // Increased from 6 to 8
+  critical: { weight: 12, color: "#ef4444", label: "Critical" },  // Increased from 8 to 12
 }
 
 interface HeatmapLayerProps {
