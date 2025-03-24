@@ -4,8 +4,8 @@ export const downloadSelfDefenseGuide = () => {
   const doc = new jsPDF()
 
   doc.setProperties({
-    title: "Women's Self-Defense Guide",
-    author: "SafetyNet",
+    title: "Self-Defense Guide for Women",
+    author: "SHEild",
     subject: "Self-Defense Techniques and Safety Tips",
     keywords: "self-defense, women, safety, techniques",
   })
@@ -29,7 +29,7 @@ export const downloadSelfDefenseGuide = () => {
   doc.setTextColor(textColor)
   doc.setFontSize(12)
   doc.setFont("helvetica", "normal")
-  doc.text("Provided by SafetyNet - Your Resource for Women's Safety", 105, 40, { align: "center" })
+  doc.text("Provided by SHEild - Your Resource for Women's Safety", 105, 40, { align: "center" })
 
   doc.setFontSize(14)
   doc.setFont("helvetica", "bold")
@@ -129,7 +129,7 @@ export const downloadSelfDefenseGuide = () => {
   ]
 
   let yPosition = 85
-  tips.forEach((tip, index) => {
+  tips.forEach((tip) => {
     const bulletPoint = `• ${tip}`
     const splitTip = doc.splitTextToSize(bulletPoint, 170)
     doc.text(splitTip, 20, yPosition)
@@ -155,7 +155,7 @@ export const downloadSelfDefenseGuide = () => {
   doc.setTextColor(255, 255, 255)
   doc.setFontSize(20)
   doc.setFont("helvetica", "bold")
-  doc.text("ABOUT SAFETYNET", 105, 20, { align: "center" })
+  doc.text("ABOUT SHEild", 105, 20, { align: "center" })
 
   doc.setTextColor(textColor)
   doc.setFontSize(14)
@@ -168,7 +168,7 @@ export const downloadSelfDefenseGuide = () => {
 
   doc.setTextColor(primaryColor)
   doc.setFont("helvetica", "bold")
-  doc.text("www.safetynet-womens-portal.com", 20, 70)
+  doc.text("www.SHEild-womens-portal.com", 20, 70)
 
   doc.setTextColor(textColor)
   doc.setFont("helvetica", "normal")
@@ -184,7 +184,7 @@ export const downloadSelfDefenseGuide = () => {
   ]
 
   yPosition = 95
-  websiteFeatures.forEach((feature, index) => {
+  websiteFeatures.forEach((feature) => {
     const bulletPoint = `• ${feature}`
     const splitFeature = doc.splitTextToSize(bulletPoint, 170)
     doc.text(splitFeature, 20, yPosition)
@@ -194,14 +194,14 @@ export const downloadSelfDefenseGuide = () => {
   doc.setFontSize(10)
   doc.setFont("helvetica", "italic")
   doc.text(
-    "Disclaimer: This guide is for educational purposes only. The techniques described should be practiced with qualified instructors. SafetyNet is not liable for any injuries resulting from the use or misuse of this information.",
+    "Disclaimer: This guide is for educational purposes only. The techniques described should be practiced with qualified instructors. SHEild is not liable for any injuries resulting from the use or misuse of this information.",
     20,
     160,
   )
 
   doc.setFontSize(10)
   doc.setFont("helvetica", "normal")
-  doc.text(`© ${new Date().getFullYear()} SafetyNet. All rights reserved.`, 105, 280, { align: "center" })
+  doc.text(`© ${new Date().getFullYear()} SHEild. All rights reserved.`, 105, 280, { align: "center" })
 
-  doc.save("SafetyNet-Womens-Self-Defense-Guide.pdf")
+  doc.save("SHEild-Womens-Self-Defense-Guide.pdf")
 }

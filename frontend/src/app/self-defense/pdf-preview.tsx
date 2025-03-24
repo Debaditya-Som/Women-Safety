@@ -26,14 +26,14 @@ export function PDFPreviewButton() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px] max-h-[80vh] overflow-auto">
         <DialogHeader>
-          <DialogTitle>Women's Self-Defense Guide Preview</DialogTitle>
+          <DialogTitle>Self-Defense Guide for Women Preview</DialogTitle>
           <DialogDescription>A preview of our comprehensive self-defense guide for women</DialogDescription>
         </DialogHeader>
 
         <div className="mt-4 space-y-6">
           {/* PDF Preview Content */}
           <div className="bg-muted p-6 rounded-lg">
-            <h2 className="text-2xl font-bold text-primary mb-4">WOMEN'S SELF-DEFENSE GUIDE</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">SELF-DEFENSE GUIDE FOR WOMEN</h2>
             <p className="text-sm mb-6">Essential techniques and safety tips for women</p>
 
             <h3 className="text-lg font-semibold mb-2">Introduction</h3>

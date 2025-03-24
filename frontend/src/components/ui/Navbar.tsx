@@ -1,8 +1,7 @@
 "use client"
 import Link from "next/link";
-import { Shield, Search, Menu, X } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import { Shield, Menu, X } from "lucide-react";
+
 import { useState } from "react";
 
 export default function Navbar() {
@@ -14,11 +13,10 @@ export default function Navbar() {
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <Shield className="h-6 w-6 text-primary" />
-            <span className="inline-block font-bold">SafetyNet</span>
+            <span className="inline-block font-bold">SHEild</span>
           </Link>
         </div>
-        
-        {/* Navigation Links - Desktop */}
+      
         <nav className="hidden md:flex gap-6">
           <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
             Home
@@ -46,7 +44,7 @@ export default function Navbar() {
             
             </form>
           </div>
-          <ThemeToggle />
+         
           
           {/* Hamburger Menu Button - Moved to Corner */}
           <button 

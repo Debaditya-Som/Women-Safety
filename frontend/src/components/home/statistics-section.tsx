@@ -11,7 +11,7 @@ export function StatisticsSection() {
   ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+<section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#FFFDE8] to-[#FFFFFF]">
       <div className="container px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-10"
@@ -23,7 +23,7 @@ export function StatisticsSection() {
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Impact</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Making a difference in women's safety and empowerment every day.
+              Making a difference in safety and empowerment of women every day.
             </p>
           </div>
         </motion.div>

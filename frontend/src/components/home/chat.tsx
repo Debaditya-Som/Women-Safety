@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import { Card, CardContent } from "@/components/ui/card"
@@ -22,11 +21,22 @@ export default function SHEildChatbot() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
+  const isFirstRender = useRef(true)
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    // Skip the first render to avoid unnecessary scroll
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    // Scroll to bottom when messages change
+    if (scrollAreaRef.current) {
+      const scrollContainer = scrollAreaRef.current
+      setTimeout(() => {
+        scrollContainer.scrollTop = scrollContainer.scrollHeight
+      }, 100) // Small delay to ensure content is rendered
     }
   }, [messages])
 
@@ -62,7 +72,7 @@ export default function SHEildChatbot() {
 
       const errorMessage: Message = {
         role: "bot",
-        content: "Sorry, I couldn't process your request. Please try again.",
+        content: "Sorry, I could not process your request. Please try again.",
         timestamp: new Date(),
       }
       setMessages((prev) => [...prev, errorMessage])
@@ -91,7 +101,7 @@ export default function SHEildChatbot() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="relative"
           >
-            <Card className="w-[350px] sm:w-[400px] h-[500px] shadow-xl rounded-2xl overflow-hidden border-0">
+            <Card className="w-[350px] sm:w-[400px] h-[500px] shadow-xl rounded-2xl overflow-hidden border-0 flex flex-col">
               <div className="bg-gradient-to-r from-violet-500 to-indigo-600 p-4 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                   <Bot className="h-6 w-6 text-white" />
@@ -105,13 +115,16 @@ export default function SHEildChatbot() {
                 </button>
               </div>
 
-              <CardContent className="p-0 flex flex-col h-[calc(500px-64px)]">
-                <ScrollArea className="flex-1 p-4">
+              <CardContent className="p-0 flex-1 flex flex-col min-h-0">
+                <div 
+                  ref={scrollAreaRef}
+                  className="flex-1 p-4 overflow-y-auto min-h-0"
+                >
                   {messages.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-center p-6 text-gray-500">
                       <Bot className="h-12 w-12 mb-4 text-indigo-500" />
                       <p className="mb-2 font-medium">Welcome to SHEild! How can I help you today?</p>
-                      <p className="text-sm">Ask me anything and I'll do my best to assist you!</p>
+                      <p className="text-sm">Ask me anything and I will do my best to assist you!</p>
                     </div>
                   ) : (
                     <div className="space-y-4">
@@ -148,12 +161,11 @@ export default function SHEildChatbot() {
                           </div>
                         </div>
                       )}
-                      <div ref={messagesEndRef} />
                     </div>
                   )}
-                </ScrollArea>
+                </div>
 
-                <div className="p-4 border-t bg-white dark:bg-gray-950">
+                <div className="p-4 border-t bg-white dark:bg-gray-950 mt-auto">
                   <div className="flex items-center space-x-2">
                     <Input
                       value={input}

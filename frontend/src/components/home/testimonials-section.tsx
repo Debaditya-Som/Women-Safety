@@ -11,7 +11,7 @@ export function TestimonialsSection() {
       name: "Sarah J.",
       role: "Community Member",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
-      text: "The SafetyNet app helped me locate a nearby women's crisis center when I needed it most. The resources and support I received were invaluable.",
+      text: "The SHEild app helped me locate a nearby crisis center when I needed it most. The resources and support I received were invaluable.",
     },
     {
       name: "Maya R.",
@@ -23,12 +23,12 @@ export function TestimonialsSection() {
       name: "Priya K.",
       role: "Legal Aid Recipient",
       image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=1974&auto=format&fit=crop",
-      text: "The legal aid services provided by SafetyNet were crucial in helping me navigate a difficult situation. The support was compassionate and professional.",
+      text: "The legal aid services provided by SHEild were crucial in helping me navigate a difficult situation. The support was compassionate and professional.",
     },
   ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-primary/20 to-background">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-t from-primary/10 to-background">
       <div className="container px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-10"

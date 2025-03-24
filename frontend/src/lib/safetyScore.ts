@@ -2,7 +2,7 @@ import type { Incident, SafetyPoint } from "../../../data/schema";
 
 const SAFETY_POINT_WEIGHT = 0.4;
 const INCIDENT_WEIGHT = 0.6;
-const MAX_SAFETY_DISTANCE = 2000; // meters
+const MAX_SAFETY_DISTANCE = 2000; 
 
 export interface SafetyScore {
   score: number; // 0-100
@@ -20,7 +20,6 @@ export function calculateSafetyScore(
   const factors: string[] = [];
   let score = 100;
 
-  // Calculate distance-weighted incident impact
   const recentIncidents = incidents.filter(i => {
     const incidentDate = new Date(i.date);
     const sixMonthsAgo = new Date();
@@ -39,7 +38,6 @@ export function calculateSafetyScore(
     factors.push(`${recentIncidents.length} incidents reported nearby`);
   }
 
-  // Calculate safety point proximity bonus
   const nearestPoints = safetyPoints.map(point => {
     const distance = calculateDistance(lat, lng, point.latitude, point.longitude);
     return { point, distance };

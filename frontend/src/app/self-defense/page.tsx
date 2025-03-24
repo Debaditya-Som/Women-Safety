@@ -80,7 +80,7 @@ export default function SelfDefensePage() {
   const workshops = [
     {
       id: 1,
-      name: "Women's Self-Defense Basics",
+      name: "Women&apos;s Self-Defense Basics",
       location: "Community Center, 123 Main St",
       date: "Every Saturday, 10:00 AM - 12:00 PM",
       instructor: "Sarah Johnson",
@@ -114,9 +114,9 @@ export default function SelfDefensePage() {
         "Stay alert and minimize distractions like phone use when walking. Scan your environment regularly, especially when entering or exiting buildings or vehicles. Trust your instincts - if something feels wrong, it probably is. Consider using the buddy system when possible, especially at night.",
     },
     {
-      question: "What should I do if I'm being followed?",
+      question: "What should I do if I&apos;m being followed?",
       answer:
-        "Change your direction or cross the street to see if they follow. Head toward populated areas, open businesses, or public places. Call someone on your phone (or pretend to) and loudly mention your location. If you feel threatened, don't hesitate to call emergency services. Never lead someone following you to your home.",
+        "Change your direction or cross the street to see if they follow. Head toward populated areas, open businesses, or public places. Call someone on your phone (or pretend to) and loudly mention your location. If you feel threatened, do not hesitate to call emergency services. Never lead someone following you to your home.",
     },
     {
       question: "How should I respond to verbal harassment?",
@@ -126,7 +126,7 @@ export default function SelfDefensePage() {
     {
       question: "What are some safety tips for using rideshare services?",
       answer:
-        "Always verify the driver's identity and car details before entering. Share your trip details with a trusted friend. Sit in the back seat rather than the front. Keep your phone accessible and track the route to ensure you're heading to your destination. Trust your instincts - if something feels wrong, ask to be let out in a safe, populated area.",
+        "Always verify the identity and car details of driver before entering. Share your trip details with a trusted friend. Sit in the back seat rather than the front. Keep your phone accessible and track the route to ensure you're heading to your destination. Trust your instincts - if something feels wrong, ask to be let out in a safe, populated area.",
     },
     {
       question: "How can I make my home more secure?",
@@ -348,7 +348,7 @@ export default function SelfDefensePage() {
                     <li className="flex items-start gap-2">
                       <Shield className="h-5 w-5 text-primary mt-0.5" />
                       <div>
-                        <p className="font-medium">SafetyNet App</p>
+                        <p className="font-medium">SHEild App</p>
                         <p className="text-sm text-muted-foreground">
                           Our official app with emergency features and location sharing
                         </p>
@@ -401,7 +401,7 @@ export default function SelfDefensePage() {
                     <li className="flex items-start gap-2">
                       <Shield className="h-5 w-5 text-primary mt-0.5" />
                       <div>
-                        <p className="font-medium">Women's Crisis Center</p>
+                        <p className="font-medium">Women Crisis Center</p>
                         <p className="text-sm text-muted-foreground">+91 (555) 123-4567</p>
                       </div>
                     </li>
@@ -423,7 +423,7 @@ export default function SelfDefensePage() {
           <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-4">Download Our Self-Defense Guide</h2>
             <p className="text-muted-foreground mb-6">
-              Our comprehensive guide includes detailed techniques, safety tips, and resources for women's self-defense.
+              Our comprehensive guide includes detailed techniques, safety tips, and resources for self-defense.
               Download it for free and have it available even when offline.
             </p>
             {/* Update the Button in the bottom section to use the download function */}
@@ -445,6 +445,30 @@ export default function SelfDefensePage() {
           </div>
         </div>
       </motion.div>
+      <footer className="w-full border-t bg-background py-6">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <div className="flex items-center gap-2">
+              <Shield className="h-6 w-6 text-primary" />
+              <span className="font-bold">SHEild</span>
+            </div>
+            <p className="text-center text-sm text-muted-foreground md:text-left">
+              © {new Date().getFullYear()} SHEild. All rights reserved.
+            </p>
+            <div className="flex gap-4">
+              <Link href="#" className="text-sm font-medium transition-colors hover:text-primary">
+                Terms
+              </Link>
+              <Link href="#" className="text-sm font-medium transition-colors hover:text-primary">
+                Privacy
+              </Link>
+              <Link href="#" className="text-sm font-medium transition-colors hover:text-primary">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

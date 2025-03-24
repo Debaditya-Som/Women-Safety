@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
-import * as L from 'leaflet';
+// import * as L from 'leaflet';
 import { calculateDistance } from './routeSafety';
 
 interface LiveLocationTrackerProps {
@@ -10,8 +10,8 @@ interface LiveLocationTrackerProps {
   destination: [number, number] | null;
   onSignificantMove?: (newPosition: [number, number], distance: number) => void;
   followUser?: boolean;
-  updateFrequency?: number; // How often to update the map in ms
-  significantMoveDistance?: number; // Distance in meters that constitutes a significant move
+  updateFrequency?: number; 
+  significantMoveDistance?: number; 
 }
 
 /**
@@ -33,7 +33,6 @@ export default function LiveLocationTracker({
   const lastReportedPositionRef = useRef<[number, number] | null>(null);
   
   useEffect(() => {
-    // Only start tracking if we have a destination
     if (!destination) return;
     
     const handlePositionSuccess = (position: GeolocationPosition) => {

@@ -15,7 +15,7 @@ export function SafetySection() {
   ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-t from-primary/20 to-background">
+    <section className="w-full py-12 md:py-24 lg:py-30 bg-gradient-to-t from-primary/10 to-background">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[600px_1fr]">
           <motion.div
@@ -65,7 +65,7 @@ export function SafetySection() {
               ))}
             </ul>
             <div>
-              <Link href="/safety">
+              <Link href="/self-defense">
                 <Button size="lg" className="gap-1">
                   <Shield className="h-4 w-4" />
                   Explore Resources
