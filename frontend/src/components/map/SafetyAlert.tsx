@@ -37,7 +37,7 @@ export default function SafetyAlert({ routeSafety }: SafetyAlertProps) {
   if (!visible) return null
   
   return (
-    <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-30 transition-all duration-500 ease-in-out">
+    <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-30 transition-all duration-500 ease-in-out">
       <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-3 flex items-center gap-3 max-w-md border-l-4 border-[#ef4444] animate-pulse">
         <div className="text-[#ef4444] flex-shrink-0">
           <AlertCircle className="h-5 w-5" />
@@ -56,5 +56,5 @@ export default function SafetyAlert({ routeSafety }: SafetyAlertProps) {
         </button>
       </div>
     </div>
-  )
+  )  
 }

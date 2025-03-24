@@ -9,15 +9,16 @@ import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
-import { AlertCircle, Info } from "lucide-react"
+import { AlertCircle, Info, ChevronLeft, ChevronRight, Settings, List } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Button } from "@/components/ui/button"
 
 // Define severity levels with weights, colors, and descriptions
 export const severityConfig = {
   low: { weight: 2, color: "#3b82f6", label: "Low" },
   medium: { weight: 4, color: "#10b981", label: "Medium" },
-  high: { weight: 8, color: "#f59e0b", label: "High" },     // Increased from 6 to 8
-  critical: { weight: 12, color: "#ef4444", label: "Critical" },  // Increased from 8 to 12
+  high: { weight: 8, color: "#f59e0b", label: "High" }, // Increased from 6 to 8
+  critical: { weight: 12, color: "#ef4444", label: "Critical" }, // Increased from 8 to 12
 }
 
 interface HeatmapLayerProps {
@@ -31,6 +32,8 @@ export default function HeatmapLayer({ map }: HeatmapLayerProps) {
   const [blur, setBlur] = useState<number>(15)
   const [showLegend, setShowLegend] = useState<boolean>(true)
   const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [isPanelCollapsed, setIsPanelCollapsed] = useState<boolean>(false)
+  const [activePanel, setActivePanel] = useState<"controls" | "legend">("controls")
   const [filterSeverity, setFilterSeverity] = useState<Record<string, boolean>>({
     low: true,
     medium: true,
@@ -151,120 +154,185 @@ export default function HeatmapLayer({ map }: HeatmapLayerProps) {
 
   return (
     <>
-      <div className={`fixed bottom-4 right-4 z-[1000] flex flex-col gap-2 ${darkMode ? "dark" : ""}`}>
-        {/* Debug Info */}
-        <Card className="p-2 w-64 bg-background shadow-lg border border-border">
-          <p className="text-xs text-foreground">Status: {debugInfo}</p>
-        </Card>
+      <div className={`fixed bottom-26 right-4 z-[1000] flex flex-col gap-2 transition-all duration-300 ${darkMode ? "dark" : ""}`}>
+        {/* Collapsed Toggle Button */}
+        <div className={`absolute ${isPanelCollapsed ? "right-2" : "-left-12"} top-0 transition-all duration-300`}>
+          <Button
+            variant="secondary"
+            size="icon"
+            className="shadow-md"
+            onClick={() => setIsPanelCollapsed(!isPanelCollapsed)}
+          >
+            {isPanelCollapsed ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          </Button>
+        </div>
 
-        {/* Controls Card */}
-        <Card className="p-4 w-64 bg-background shadow-lg border border-border">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="font-medium text-foreground">Heatmap Controls</h3>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Info className="h-4 w-4 text-muted-foreground cursor-help" />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="w-60">Adjust these settings to customize the heatmap visualization</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+        {/* Main Content - collapsed or expanded */}
+        <div className={`transition-all duration-300 ${isPanelCollapsed ? "w-0 opacity-0 overflow-hidden" : "w-64 opacity-100"}`}>
+          {/* Tab Buttons */}
+          <div className="flex mb-2 bg-secondary rounded-lg overflow-hidden">
+            <Button 
+              variant="ghost" 
+              className={`flex-1 rounded-none py-1 h-auto text-xs flex items-center justify-center ${activePanel === "controls" ? "bg-primary/10" : ""}`}
+              onClick={() => setActivePanel("controls")}
+            >
+              <Settings className="h-3 w-3 mr-1" /> Controls
+            </Button>
+            <Button 
+              variant="ghost"
+              className={`flex-1 rounded-none py-1 h-auto text-xs flex items-center justify-center ${activePanel === "legend" ? "bg-primary/10" : ""}`}
+              onClick={() => setActivePanel("legend")}
+            >
+              <List className="h-3 w-3 mr-1" /> Legend
+            </Button>
           </div>
 
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="intensity">Intensity: {Math.round(intensity * 100)}%</Label>
+          {/* Debug Info */}
+          <Card className="p-2 bg-background shadow-lg border border-border mb-2">
+            <p className="text-xs text-foreground">Status: {debugInfo}</p>
+          </Card>
+
+          {/* Controls Panel */}
+          {activePanel === "controls" && (
+            <Card className="p-4 bg-background shadow-lg border border-border">
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="font-medium text-foreground">Heatmap Controls</h3>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Info className="h-4 w-4 text-muted-foreground cursor-help" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="w-60">Adjust these settings to customize the heatmap visualization</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
-              <Slider
-                id="intensity"
-                min={0.1}
-                max={2.0}
-                step={0.1}
-                value={[intensity]}
-                onValueChange={(value) => setIntensity(value[0])}
-              />
-            </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="radius">Radius: {radius}px</Label>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <Label htmlFor="intensity">Intensity: {Math.round(intensity * 100)}%</Label>
+                  </div>
+                  <Slider
+                    id="intensity"
+                    min={0.1}
+                    max={2.0}
+                    step={0.1}
+                    value={[intensity]}
+                    onValueChange={(value) => setIntensity(value[0])}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <Label htmlFor="radius">Radius: {radius}px</Label>
+                  </div>
+                  <Slider
+                    id="radius"
+                    min={10}
+                    max={80}
+                    step={5}
+                    value={[radius]}
+                    onValueChange={(value) => setRadius(value[0])}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <Label htmlFor="blur">Blur: {blur}px</Label>
+                  </div>
+                  <Slider id="blur" min={0} max={30} step={1} value={[blur]} onValueChange={(value) => setBlur(value[0])} />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="legend-toggle">Show Legend</Label>
+                  <Switch id="legend-toggle" checked={showLegend} onCheckedChange={setShowLegend} />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="dark-mode">Dark Mode</Label>
+                  <Switch id="dark-mode" checked={darkMode} onCheckedChange={setDarkMode} />
+                </div>
+
+                <div className="space-y-2">
+                  <Label>Filter by Severity</Label>
+                  <div className="flex flex-wrap gap-2">
+                    {Object.entries(severityConfig).map(([key, config]) => (
+                      <Badge
+                        key={key}
+                        variant={filterSeverity[key] ? "default" : "outline"}
+                        className="cursor-pointer"
+                        style={{
+                          backgroundColor: filterSeverity[key] ? config.color : "transparent",
+                          color: filterSeverity[key] ? "white" : "inherit",
+                          borderColor: config.color,
+                        }}
+                        onClick={() => toggleSeverity(key)}
+                      >
+                        {config.label}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <Slider
-                id="radius"
-                min={10}
-                max={80}
-                step={5}
-                value={[radius]}
-                onValueChange={(value) => setRadius(value[0])}
-              />
-            </div>
+            </Card>
+          )}
 
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="blur">Blur: {blur}px</Label>
+          {/* Legend Panel */}
+          {activePanel === "legend" && showLegend && (
+            <Card className="p-4 bg-background shadow-lg border border-border">
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="font-medium text-foreground">Severity Legend</h3>
+                <AlertCircle className="h-4 w-4 text-muted-foreground" />
               </div>
-              <Slider id="blur" min={0} max={30} step={1} value={[blur]} onValueChange={(value) => setBlur(value[0])} />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <Label htmlFor="legend-toggle">Show Legend</Label>
-              <Switch id="legend-toggle" checked={showLegend} onCheckedChange={setShowLegend} />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <Label htmlFor="dark-mode">Dark Mode</Label>
-              <Switch id="dark-mode" checked={darkMode} onCheckedChange={setDarkMode} />
-            </div>
-
-            <div className="space-y-2">
-              <Label>Filter by Severity</Label>
-              <div className="flex flex-wrap gap-2">
+              <div className="space-y-2">
                 {Object.entries(severityConfig).map(([key, config]) => (
-                  <Badge
-                    key={key}
-                    variant={filterSeverity[key] ? "default" : "outline"}
-                    className="cursor-pointer"
-                    style={{
-                      backgroundColor: filterSeverity[key] ? config.color : "transparent",
-                      color: filterSeverity[key] ? "white" : "inherit",
-                      borderColor: config.color,
-                    }}
-                    onClick={() => toggleSeverity(key)}
-                  >
-                    {config.label}
-                  </Badge>
+                  <div key={key} className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: config.color }} />
+                    <span className="text-sm text-foreground">{config.label}</span>
+                  </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </Card>
-
-        {/* Legend Card */}
-        {showLegend && (
-          <Card className="p-4 w-64 bg-background shadow-lg border border-border">
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="font-medium text-foreground">Severity Legend</h3>
-              <AlertCircle className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <div className="space-y-2">
-              {Object.entries(severityConfig).map(([key, config]) => (
-                <div key={key} className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full" style={{ backgroundColor: config.color }} />
-                  <span className="text-sm text-foreground">{config.label}</span>
+              <div className="mt-3">
+                <div className="w-full h-4 rounded-full bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500" />
+                <div className="flex justify-between mt-1">
+                  <span className="text-xs text-muted-foreground">Low</span>
+                  <span className="text-xs text-muted-foreground">Critical</span>
                 </div>
-              ))}
-            </div>
-            <div className="mt-3">
-              <div className="w-full h-4 rounded-full bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500" />
-              <div className="flex justify-between mt-1">
-                <span className="text-xs text-muted-foreground">Low</span>
-                <span className="text-xs text-muted-foreground">Critical</span>
               </div>
-            </div>
-          </Card>
+            </Card>
+          )}
+        </div>
+
+        {/* Mini UI when collapsed */}
+        {isPanelCollapsed && (
+          <div className="flex flex-col gap-2 transition-all duration-300">
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className="bg-white shadow-md" 
+              onClick={() => {
+                setIsPanelCollapsed(false);
+                setActivePanel("controls");
+              }}
+            >
+              <Settings className="h-4 w-4" />
+            </Button>
+            {showLegend && (
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="bg-white shadow-md" 
+                onClick={() => {
+                  setIsPanelCollapsed(false);
+                  setActivePanel("legend");
+                }}
+              >
+                <List className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
         )}
       </div>
     </>
