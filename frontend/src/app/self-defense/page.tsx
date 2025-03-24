@@ -387,21 +387,22 @@ export default function SelfDefensePage() {
                       <Shield className="h-5 w-5 text-red-500 mt-0.5" />
                       <div>
                         <p className="font-medium">Emergency Services</p>
-                        <p className="text-sm text-muted-foreground">911</p>
+                        <p className="text-sm text-muted-foreground">100</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Shield className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <p className="font-medium">National Domestic Violence Hotline</p>
-                        <p className="text-sm text-muted-foreground">1-800-799-7233</p>
+                        <p className="text-sm text-muted-foreground">7827-170-170
+                        </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-2">
                       <Shield className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <p className="font-medium">Women's Crisis Center</p>
-                        <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                        <p className="text-sm text-muted-foreground">+91 (555) 123-4567</p>
                       </div>
                     </li>
                   </ul>

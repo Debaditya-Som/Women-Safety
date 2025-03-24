@@ -104,7 +104,7 @@ export function HeroSection() {
                   Find Nearby Services
                 </Button>
               </Link>
-              <Link href="/safety">
+              <Link href="/self-defense">
                 <Button
                   size="lg"
                   variant="outline"
@@ -185,7 +185,7 @@ export function HeroSection() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/40 rounded-lg blur-lg opacity-70"></div>
               <div className="relative rounded-lg overflow-hidden border border-border/30 shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   width={500}
                   height={600}
                   alt="Women's safety and empowerment"

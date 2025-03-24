@@ -8,7 +8,7 @@ export function FaqSection() {
     {
       question: "What should I do if I feel unsafe?",
       answer:
-        "If you're in immediate danger, call emergency services (911). If you feel unsafe but not in immediate danger, move to a public place, contact a trusted friend or family member, or call a crisis hotline. Trust your instincts and prioritize your safety.",
+        "If you're in immediate danger, call emergency services (100). If you feel unsafe but not in immediate danger, move to a public place, contact a trusted friend or family member, or call a crisis hotline. Trust your instincts and prioritize your safety.",
     },
     {
       question: "How can I create a personal safety plan?",

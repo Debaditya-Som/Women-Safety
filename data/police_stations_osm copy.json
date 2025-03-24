@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Bansberia Sub Police Station",
+        "coordinates": {
+            "latitude": 22.962058372630878, 
+            "longitude": 88.41142415594297
+        }
+    },
+    {
+        "name": "Mora Police Station",
+        "coordinates": {
+            "latitude": 22.99224436795144, 
+            "longitude": 88.37777852771826
+        }
+    },
+    {
+        "name": "Chinsurah Police Station",
+        "coordinates": {
+            "latitude": 22.893551879759222, 
+            "longitude": 88.41153677945785
+        }
+    },
+    {
+        "name": "Pipulpati Police Fari",
+        "coordinates": {
+            "latitude": 22.907783685327985, 
+            "longitude": 88.4208064933565
+        }
+    },
+    {
+        "name": "Keota Police Fari",
+        "coordinates": {
+            "latitude": 22.929742940068312,
+            "longitude": 88.40447313318921
+        }
+    },
+    {
+        "name": "Bandel Police Outpost",
+        "coordinates": {
+            "latitude": 22.919716496593676, 
+            "longitude": 88.380487559204
+        }
+    },
+    {
+        "name": "Hooghly More Police Booth",
+        "coordinates": {
+            "latitude": 22.90474709780088,
+            "longitude":  88.38554593732148
+        }
+    },
+    {
+        "name": "Bansberia Mill Town Sub police Station", 
+        "coordinates": {
+            "latitude": 22.973375425458634, 
+            "longitude": 88.39736144183708
+        }
+    },
+    {
+        "name": "Chandannagar Police Station",
+        "coordinates": {
+            "latitude": 22.89668403970731,
+            "longitude":  88.39752768465866
+        }
+    }
+]
