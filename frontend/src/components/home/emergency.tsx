@@ -19,7 +19,6 @@ export default function EmergencyContact() {
     { code: "+33", country: "France", flag: "🇫🇷" },
     { code: "+971", country: "UAE", flag: "🇦🇪" },
     { code: "+86", country: "China", flag: "🇨🇳" },
-    { code: "+7", country: "Russia", flag: "🇷🇺" },
     { code: "+55", country: "Brazil", flag: "🇧🇷" },
     { code: "+82", country: "South Korea", flag: "🇰🇷" },
     { code: "+39", country: "Italy", flag: "🇮🇹" },
