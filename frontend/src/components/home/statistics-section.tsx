@@ -9,9 +9,9 @@ export function StatisticsSection() {
     { value: "50+", label: "Partner Organizations" },
     { value: "24/7", label: "Support Available" },
   ]
-
+////[#FFFDE8] to-[#FFFFFF]
   return (
-<section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#FFFDE8] to-[#FFFFFF]">
+<section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#FFFFF] to-[#FFFFFF]"> 
       <div className="container px-4 md:px-6">
         <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-10"
