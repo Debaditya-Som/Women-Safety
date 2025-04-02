@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { MapContainer, TileLayer, Marker, Polyline, useMapEvents, useMap } from "react-leaflet"
 import axios from "axios"
-import { Search, Navigation, MapPin, Compass, Info, X, Menu, Shield } from "lucide-react"
+import { Search, Navigation, MapPin, Compass, Info, X, Menu, Shield, Locate } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import "leaflet/dist/leaflet.css"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -35,12 +35,14 @@ const safeColor = "#10b981" // Safe route 🟢
 const midColor = "#f59e0b" // Moderate route 🟠
 const unsafeColor = "#ef4444" // Unsafe route 🔴
 
-// Center map on user component
-function CenterMapOnUser({ position }: { position: [number, number] }) {
+// Center map on user component - only when recenter is true
+function CenterMapOnUser({ position, recenter }: { position: [number, number], recenter: boolean }) {
   const map = useMap()
   useEffect(() => {
-    map.flyTo(position, map.getZoom())
-  }, [map, position])
+    if (recenter && position) {
+      map.flyTo(position, map.getZoom())
+    }
+  }, [map, position, recenter])
   return null
 }
 
@@ -66,6 +68,7 @@ export default function SafetyMap() {
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null)
   const [showRouteAnalysis, setShowRouteAnalysis] = useState(true)
   const [routeSafety, setRouteSafety] = useState<RouteSafetyType | null>(null)
+  const [recenterMap, setRecenterMap] = useState(false)
   
   // Get user location
   const getUserLocation = () => {
@@ -74,6 +77,8 @@ export default function SafetyMap() {
       (pos) => {
         setUserLocation([pos.coords.latitude, pos.coords.longitude])
         setIsLoading(false)
+        // Enable recenter when getting location manually
+        setRecenterMap(true)
       },
       (err) => {
         console.error("Geolocation Error:", err)
@@ -169,6 +174,15 @@ export default function SafetyMap() {
     setRouteSafety(null)
   }
 
+  // Handle recenter map
+  const handleRecenter = () => {
+    setRecenterMap(true)
+    // Reset after a short delay to avoid continuous recentering
+    setTimeout(() => {
+      setRecenterMap(false)
+    }, 1000)
+  }
+
   // Generate route segments with safety coloring
   const renderRoutesWithSafety = () => {
     if (!routeSafety || routeSafety.segments.length === 0) {
@@ -211,8 +225,19 @@ export default function SafetyMap() {
         {mapRef.current && <HeatmapLayer map={mapRef.current} />}
         <MapClickHandler setDestination={setDestination} />
 
-        {userLocation && <CenterMapOnUser position={userLocation} />}
+        {/* Only recenter when recenterMap is true */}
+        {userLocation && <CenterMapOnUser position={userLocation} recenter={recenterMap} />}
       </MapContainer>
+
+      {/* Recenter Button - Floating button on map */}
+      <Button
+        variant="secondary"
+        size="icon"
+        className="absolute bottom-24 right-4 z-50 rounded-full shadow-lg"
+        onClick={handleRecenter}
+      >
+        <Locate className="h-5 w-5" />
+      </Button>
 
       {/* Safety Alert for high-risk areas */}
       <SafetyAlert routeSafety={routeSafety} />
