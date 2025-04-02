@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
+import Image from "next/image"  
 import { CreditCard, Heart, DollarSign, CheckCircle2, Coffee, Lightbulb, Rocket, ArrowRight } from 'lucide-react'
 import { 
   Card, 
@@ -191,9 +192,10 @@ export default function DonatePage() {
                   <div className="space-y-2">
                     <Label>Payment method</Label>
                     <Tabs defaultValue="card" value={paymentMethod} onValueChange={setPaymentMethod}>
-                      <TabsList className="grid w-full grid-cols-2">
+                      <TabsList className="grid w-full grid-cols-3">
                         <TabsTrigger value="card">Credit Card</TabsTrigger>
                         <TabsTrigger value="paypal">PayPal</TabsTrigger>
+                        <TabsTrigger value="upi">UPI</TabsTrigger>
                       </TabsList>
                       <TabsContent value="card" className="space-y-4 mt-4">
                         <div className="grid grid-cols-2 gap-4">
@@ -217,6 +219,16 @@ export default function DonatePage() {
                           <Button variant="outline" className="w-full">
                             Continue with PayPal
                           </Button>
+                        </div>
+                      </TabsContent>
+                      <TabsContent value="upi" className="mt-4">
+                        <div className="text-center p-4 border rounded-lg bg-muted/30">
+                          <p className="mb-2">You will be redirected to UPI to complete your donation.</p>
+                          <Image src="/bhim.jpeg" alt="UPI Logo" width={200} height={150} className="mx-auto mb-2" />
+                          <p className="text-sm text-muted-foreground mb-4">Scan the QR code or enter your UPI ID.</p>  
+                            <Button variant="outline" className="w-full mb-2">
+                                Scan QR Code
+                            </Button>
                         </div>
                       </TabsContent>
                     </Tabs>
@@ -332,26 +344,6 @@ export default function DonatePage() {
 
               <div className="pt-4 border-t">
                 <h4 className="font-medium mb-2">Project Progress</h4>
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span>Hospitals Mapped</span>
-                      <span className="font-medium">1,245 / 2,000</span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2.5">
-                      <div className="bg-primary h-2.5 rounded-full" style={{ width: '62%' }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span>Monthly Goal</span>
-                      <span className="font-medium">$3,750 / $5,000</span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2.5">
-                      <div className="bg-primary h-2.5 rounded-full" style={{ width: '75%' }}></div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </CardContent>
             <CardFooter className="flex flex-col">
