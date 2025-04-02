@@ -1299,6 +1299,19 @@
             "witnessInfo": "An eyewitness gave a description of the suspect.",
             "latitude": 26.328604150728207,
             "longitude": 87.56923932344623
+        },
+        {
+            "type": "harassment",
+            "severity": "high",
+            "description": "testing 123",
+            "date": "2025-04-02",
+            "time": "21:23",
+            "isAnonymous": "yes",
+            "contactInfo": "",
+            "hasWitnesses": "yes",
+            "witnessInfo": "",
+            "latitude": 22.569763516558172,
+            "longitude": 88.29404408468913
         }
     ]
 }
