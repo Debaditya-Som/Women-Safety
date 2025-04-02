@@ -36,6 +36,9 @@ export default function Navbar() {
           <Link href="/self-defense" className="text-sm font-medium transition-colors hover:text-primary">
             Self-Defense
           </Link>
+          <Link href="/donate" className="text-sm font-medium transition-colors hover:text-primary">
+            Donate
+          </Link>
         </nav>
         
         <div className="flex items-center space-x-4">
