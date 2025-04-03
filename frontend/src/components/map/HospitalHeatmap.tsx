@@ -19,7 +19,7 @@ const HospitalHeatmap: React.FC = () => {
   const map = useMap()
   const heatLayerRef = useRef<any>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
 
   useEffect(() => {
     const fetchHospitals = async () => {
@@ -29,7 +29,6 @@ const HospitalHeatmap: React.FC = () => {
         if (!response.ok) throw new Error("Failed to fetch hospital data.")
         const data = await response.json()
 
-        // Filter hospitals with valid coordinates
         const formattedData = data
           .filter((hospital: any) => hospital.coordinates?.latitude && hospital.coordinates?.longitude)
           .map((hospital: any) => ({
@@ -55,7 +54,6 @@ const HospitalHeatmap: React.FC = () => {
   useEffect(() => {
     if (hospitals.length === 0 || isLoading) return
 
-    // Remove existing heat layer if it exists
     if (heatLayerRef.current) {
       heatLayerRef.current.remove()
     }
@@ -64,8 +62,8 @@ const HospitalHeatmap: React.FC = () => {
     const severityConfig = {
         low: { weight: 2, color: "#3b82f6", label: "Low" },
         medium: { weight: 4, color: "#10b981", label: "Medium" },
-        high: { weight: 8, color: "#f59e0b", label: "High" },     // Increased from 6 to 8
-        critical: { weight: 12, color: "#ef4444", label: "Critical" },  // Increased from 8 to 12
+        high: { weight: 8, color: "#f59e0b", label: "High" },    
+        critical: { weight: 12, color: "#ef4444", label: "Critical" }, 
       }
 
     const gradient = {
@@ -89,14 +87,13 @@ const HospitalHeatmap: React.FC = () => {
         gradient, 
         minOpacity: 0.5, 
         max: 1.0,
-        zIndex: 200, 
+        zIndex: 500,  
+        useWorker: true, 
       },
     )
 
-    // Add the heat layer to the map
     heatLayerRef.current.addTo(map)
 
-    // Adjust heatmap when zoom changes
     const handleZoom = () => {
       const currentZoom = map.getZoom()
       const scaleFactor = Math.max(0.5, Math.min(1.5, 18 / (currentZoom + 5)))
@@ -111,7 +108,6 @@ const HospitalHeatmap: React.FC = () => {
 
     map.on("zoomend", handleZoom)
 
-    // Clean up
     return () => {
       if (heatLayerRef.current) {
         heatLayerRef.current.remove()
@@ -120,7 +116,6 @@ const HospitalHeatmap: React.FC = () => {
     }
   }, [hospitals, map, isLoading])
 
-  // Add a subtle pulsing animation to draw attention to the heatmap
   useEffect(() => {
     if (!heatLayerRef.current || isLoading) return
 
@@ -148,4 +143,3 @@ const HospitalHeatmap: React.FC = () => {
 }
 
 export default HospitalHeatmap
-

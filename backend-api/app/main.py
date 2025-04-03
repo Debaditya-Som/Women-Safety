@@ -16,12 +16,8 @@ app.add_middleware(
 app.add_event_handler("startup", connect_to_mongo)
 app.add_event_handler("shutdown", close_mongo_connection)
 
-# Include report routes
 app.include_router(report.router, prefix="/api/report", tags=["report"])
-
-# Include hospital routes
 app.include_router(hospital.router, prefix="/api/hospitals", tags=["hospitals"])
-
 app.include_router(police.router, prefix="/api/police", tags=["police"])
 app.include_router(chatbot.router, prefix="/api/chatbot", tags=["chatbot"])
 

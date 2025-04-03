@@ -56,3 +56,16 @@ async def retrieve_police_stations():
             "coordinates": police.get("coordinates", {})
         })
     return polices
+
+async def search_hospital_by_name(name: str):
+    hospital = await hospital_collection.find_one(
+        {"name": {"$regex": name, "$options": "i"}}
+    )
+
+    if hospital:
+        return {
+            "id": str(hospital["_id"]),
+            "name": hospital.get("name", "Unknown"),
+            "coordinates": hospital.get("coordinates", {})
+        }
+    return None
