@@ -3,14 +3,14 @@ import { ServicesSection } from "@/components/home/services-section"
 import { SafetySection } from "@/components/home/safety-section"
 import { StatisticsSection } from "@/components/home/statistics-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
-// import { NewsSection } from "@/components/home/news-section"
-// import { AppDownloadSection } from "@/components/home/app-download-section"
 import { FaqSection } from "@/components/home/faq-section"
 import { CtaSection } from "@/components/home/cta-section"
 import Link from "next/link"
 import { Shield } from "lucide-react"
 import Chat from "@/components/home/chat"
 import EmergencyContact from "@/components/home/emergency"
+import App from "next/app"
+import { AppDownloadSection } from "@/components/home/app-download"
 
 export default function Home() {
   return (
@@ -24,6 +24,7 @@ export default function Home() {
         <EmergencyContact/>
         <TestimonialsSection />
         <FaqSection />
+        <AppDownloadSection />
         {/* <AppDownloadSection />
         <PartnersSection /> */}
         <CtaSection />
