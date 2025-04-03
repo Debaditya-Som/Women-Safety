@@ -7,11 +7,12 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Search, Ambulance } from "lucide-react"
+import { Search, Ambulance, Navigation } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import HospitalHeatmap from "@/components/map/HospitalHeatmap"
+import RoutingMachine from "@/app/hospitals/RoutingMachine"
 
 interface Hospital {
   id: string
@@ -21,6 +22,11 @@ interface Hospital {
     longitude: number
   }
   distance?: number
+}
+
+interface RouteProps {
+  start: [number, number]
+  end: [number, number]
 }
 
 const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
@@ -51,6 +57,8 @@ const HospitalPage: React.FC = () => {
   const markerRef = useRef<L.Marker | null>(null)
   const [searchMarkerPosition, setSearchMarkerPosition] = useState<[number, number] | null>(null)
   const [searchMarkerName, setSearchMarkerName] = useState<string>("")
+  const [routePoints, setRoutePoints] = useState<RouteProps | null>(null)
+  const [selectedHospital, setSelectedHospital] = useState<Hospital | null>(null)
 
   const showNotification = (message: string, type: "success" | "error" | "info") => {
     const bgColor = type === "success" ? "bg-green-500" : type === "error" ? "bg-red-500" : "bg-blue-500"
@@ -113,15 +121,24 @@ const HospitalPage: React.FC = () => {
         const { latitude, longitude } = data.coordinates
         mapRef.current?.flyTo([latitude, longitude], 15)
 
-        // Set the search marker position and name
         setSearchMarkerPosition([latitude, longitude])
         setSearchMarkerName(data.name)
+
+        setSelectedHospital({
+          id: data.id || "search-result",
+          name: data.name,
+          coordinates: {
+            latitude,
+            longitude,
+          },
+        })
       }
     } catch (error) {
       console.error("Error searching for hospital:", error)
       showNotification("Error searching for hospital", "error")
     }
   }
+
   const handleGetMyLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -163,6 +180,21 @@ const HospitalPage: React.FC = () => {
     if (mapRef.current) {
       mapRef.current.setView(myLocation, 12)
     }
+  }
+
+  const handleShowRoute = (hospital: Hospital) => {
+    if (!myLocation || !hospital.coordinates) {
+      showNotification("Your location is needed to show the route", "info")
+      return
+    }
+
+    setSelectedHospital(hospital)
+    setRoutePoints({
+      start: myLocation,
+      end: [hospital.coordinates.latitude, hospital.coordinates.longitude],
+    })
+
+    showNotification(`Showing route to ${hospital.name}`, "success")
   }
 
   return (
@@ -256,13 +288,16 @@ const HospitalPage: React.FC = () => {
                   <div
                     key={hospital.id}
                     className="flex items-start justify-between p-3 rounded-md hover:bg-blue-50 cursor-pointer transition-colors border border-transparent hover:border-blue-200"
-                    onClick={() => {
-                      if (mapRef.current && hospital.coordinates) {
-                        mapRef.current.setView([hospital.coordinates.latitude, hospital.coordinates.longitude], 15)
-                      }
-                    }}
                   >
-                    <div>
+                    <div
+                      className="flex-1"
+                      onClick={() => {
+                        if (mapRef.current && hospital.coordinates) {
+                          mapRef.current.setView([hospital.coordinates.latitude, hospital.coordinates.longitude], 15)
+                          setSelectedHospital(hospital)
+                        }
+                      }}
+                    >
                       <div className="font-medium">{hospital.name}</div>
                       <div className="text-sm text-muted-foreground">
                         {hospital.distance !== undefined
@@ -270,8 +305,47 @@ const HospitalPage: React.FC = () => {
                           : "Distance unknown"}
                       </div>
                     </div>
+                    {myLocation && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="ml-2 flex items-center gap-1"
+                        onClick={() => handleShowRoute(hospital)}
+                      >
+                        <Navigation className="h-3 w-3" />
+                        <span className="text-xs">Route</span>
+                      </Button>
+                    )}
                   </div>
                 ))}
+              </CardContent>
+            </Card>
+          )}
+
+          {selectedHospital && (
+            <Card className="mt-4 border-t-4 border-t-red-500 shadow-md">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2">
+                  <Navigation className="h-5 w-5 text-red-500" />
+                  Selected Hospital
+                </CardTitle>
+                <CardDescription>Details and directions</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="p-3 rounded-md bg-red-50 border border-red-200">
+                  <div className="font-medium">{selectedHospital.name}</div>
+                  {selectedHospital.distance && (
+                    <div className="text-sm text-muted-foreground">{selectedHospital.distance.toFixed(2)} km away</div>
+                  )}
+                  {myLocation && selectedHospital.coordinates && (
+                    <Button
+                      className="mt-2 w-full bg-red-600 hover:bg-red-700"
+                      onClick={() => handleShowRoute(selectedHospital)}
+                    >
+                      Show Directions
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           )}
@@ -295,10 +369,39 @@ const HospitalPage: React.FC = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {searchMarkerPosition && (
-                <Marker position={searchMarkerPosition} icon={createIcon("#ff0000")}>
+                <Marker
+                  position={searchMarkerPosition}
+                  icon={createIcon("#ff0000")}
+                  eventHandlers={{
+                    click: () => {
+                      if (myLocation && searchMarkerPosition) {
+                        setRoutePoints({
+                          start: myLocation,
+                          end: searchMarkerPosition,
+                        })
+                      }
+                    },
+                  }}
+                >
                   <Popup>
                     <div className="font-medium">{searchMarkerName}</div>
                     <div className="text-sm">Search Result</div>
+                    {myLocation && (
+                      <Button
+                        className="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-xs py-1"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          if (myLocation && searchMarkerPosition) {
+                            setRoutePoints({
+                              start: myLocation,
+                              end: searchMarkerPosition,
+                            })
+                          }
+                        }}
+                      >
+                        Show Route
+                      </Button>
+                    )}
                   </Popup>
                 </Marker>
               )}
@@ -314,17 +417,45 @@ const HospitalPage: React.FC = () => {
                       key={hospital.id}
                       position={[hospital.coordinates.latitude, hospital.coordinates.longitude]}
                       icon={createIcon("#3b82f6")}
+                      eventHandlers={{
+                        click: () => {
+                          setSelectedHospital(hospital)
+                          if (myLocation) {
+                            setRoutePoints({
+                              start: myLocation,
+                              end: [hospital.coordinates!.latitude, hospital.coordinates!.longitude],
+                            })
+                          }
+                        },
+                      }}
                     >
                       <Popup>
                         <div className="font-medium">{hospital.name}</div>
                         {hospital.distance !== undefined && (
                           <div className="text-sm">{hospital.distance.toFixed(2)} km away</div>
                         )}
+                        {myLocation && (
+                          <Button
+                            className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white text-xs py-1"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              if (myLocation && hospital.coordinates) {
+                                setRoutePoints({
+                                  start: myLocation,
+                                  end: [hospital.coordinates.latitude, hospital.coordinates.longitude],
+                                })
+                              }
+                            }}
+                          >
+                            Show Route
+                          </Button>
+                        )}
                       </Popup>
                     </Marker>
                   ) : null,
                 )}
               <HospitalHeatmap />
+              {routePoints && <RoutingMachine route={routePoints} />}
             </MapContainer>
           </Card>
         </motion.div>
