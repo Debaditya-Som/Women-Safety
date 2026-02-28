@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SHEild</string>
+    <string name="title_activity_main">SHEild</string>
+    <string name="package_name">com.sheild.womensafety</string>
+    <string name="custom_url_scheme">com.sheild.womensafety</string>
+</resources>

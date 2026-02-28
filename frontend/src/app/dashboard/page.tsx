@@ -1,3 +1,7 @@
+// Dashboard is under development
+export const dynamic = "force-static";
+export default function Dashboard() { return null; }
+
 // import { useEffect, useState } from "react";
 // import dynamic from "next/dynamic";
 // import { Pie } from "react-chartjs-2";

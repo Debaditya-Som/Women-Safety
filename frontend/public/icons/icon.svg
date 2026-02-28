@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Orange background with rounded corners -->
+  <rect width="512" height="512" rx="96" fill="#c2410c"/>
+  <!-- White shield shape -->
+  <path d="M256 80 L404 136 L404 268 Q404 372 256 444 Q108 372 108 268 L108 136 Z" fill="white"/>
+  <!-- Stylized S for SHEild in primary color -->
+  <path d="M215 188 C215 164 234 150 256 150 C278 150 299 164 299 188 C299 208 281 220 256 228 C231 236 213 250 213 272 C213 296 232 312 256 312 C280 312 299 296 299 272"
+        stroke="#c2410c" stroke-width="24" stroke-linecap="round" fill="none"/>
+</svg>

@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PWA – generated service worker files (do not commit)
+/public/sw.js
+/public/workbox-*.js
+/public/swe-worker-*.js
+/public/fallback-*.js
+
+# Capacitor Android – generated native project
+# Remove this line if you want to commit the android/ directory
+# /android
