@@ -37,5 +37,26 @@
 
     <!-- Permissions -->
 
+    <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Location (required for Safe Arrival GPS tracking) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Notifications (required on Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Vibration for alert notifications -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Keep CPU running to deliver time-critical notifications -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Reschedule notifications after device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Schedule exact alarms for Safe Arrival timer notifications -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
 </manifest>

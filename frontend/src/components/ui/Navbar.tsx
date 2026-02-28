@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { Shield, Menu, X } from "lucide-react";
+import { Shield, Menu, X, Timer } from "lucide-react";
 
 import { useState } from "react";
 
@@ -38,6 +38,13 @@ export default function Navbar() {
           </Link>
           <Link href="/donate" className="text-sm font-medium transition-colors hover:text-primary">
             Donate
+          </Link>
+          <Link
+            href="/safe-arrival"
+            className="flex items-center gap-1.5 rounded-full bg-orange-600 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-orange-700"
+          >
+            <Timer className="h-3.5 w-3.5" />
+            Safe Arrival
           </Link>
         </nav>
         
@@ -79,6 +86,21 @@ export default function Navbar() {
               </Link>
               <Link href="/self-defense" className="text-sm font-medium transition-colors hover:text-primary" onClick={() => setMenuOpen(false)}>
                 Self-Defense
+              </Link>
+              <Link
+                href="/donate"
+                className="text-sm font-medium transition-colors hover:text-primary"
+                onClick={() => setMenuOpen(false)}
+              >
+                Donate
+              </Link>
+              <Link
+                href="/safe-arrival"
+                className="flex items-center gap-1.5 rounded-full bg-orange-600 px-4 py-2 text-sm font-semibold text-white"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Timer className="h-3.5 w-3.5" />
+                Safe Arrival
               </Link>
             </div>
           </nav>
