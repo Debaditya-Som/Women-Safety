@@ -4,7 +4,7 @@ import twilio from "twilio";
 // Twilio Credentials
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilioPhoneNumber = "+14195975446";
+const twilioPhoneNumber = process.env.NEXT_PUBLIC_TWILIO_PHONE_NUMBER;
 // Twilio Client
 const client = twilio(accountSid, authToken);
 

@@ -31,8 +31,8 @@ export interface SafeArrivalJourney {
 // ---------------------------------------------------------------------------
 
 const STORAGE_KEY = 'sheild_safe_arrival_v1';
-const CHECK_WINDOW_MS = 0.5 * 60 * 1000;
-const WARNING_WINDOW_MS = 0.5 * 60 * 1000;
+const CHECK_WINDOW_MS = 1 * 60 * 1000;
+const WARNING_WINDOW_MS = 1 * 60 * 1000;
 
 const NOTIF_CHECK_ID = 1001;
 const NOTIF_WARNING_ID = 1002;
