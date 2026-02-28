@@ -71,6 +71,8 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Silence the workspace root warning when there are multiple lockfiles
+  outputFileTracingRoot: require("path").join(__dirname, "../"),
   // Static export settings – only applied when building for Android
   ...(isAndroidBuild && {
     output: "export",
