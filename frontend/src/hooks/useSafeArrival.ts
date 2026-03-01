@@ -103,7 +103,8 @@ async function scheduleNotif(
             schedule: { at, allowWhileIdle: true },
             actionTypeId,
             channelId: 'safe-arrival',
-            smallIcon: 'ic_stat_shield',
+            // Do not set smallIcon — Capacitor uses the app default.
+            // An invalid drawable name causes Android to silently drop the notification.
             extra: { safeArrival: true },
           },
         ],
@@ -177,21 +178,64 @@ async function getCurrentPosition(): Promise<{ latitude: number; longitude: numb
 // SOS dispatch
 // ---------------------------------------------------------------------------
 
+// Twilio credentials — used only in the native APK path where the Next.js
+// API route is unavailable. Keep these in sync with /api/send-sos/route.ts.
+const TWILIO_SID = 'AC9d5b756016a10183bc5562feed485ffd';
+const TWILIO_TOKEN = 'ee4e56f52ff78af3dd04f92ff145c702';
+const TWILIO_FROM = '+17604176876';
+
 async function dispatchSOS(latitude: number, longitude: number): Promise<void> {
   const mapsLink =
     latitude !== 0
       ? `https://www.google.com/maps?q=${latitude.toFixed(6)},${longitude.toFixed(6)}`
       : 'Location unavailable';
 
-  await fetch('/api/send-sos', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      latitude,
-      longitude,
-      emergencyContact: SOS_EMERGENCY_NUMBER,
-    }),
-  });
+  if (isNativePlatform()) {
+    // In the APK there is no Next.js server, so /api/send-sos does not exist.
+    // CapacitorHttp issues the request from the native layer, bypassing CORS.
+    const { CapacitorHttp } = await import('@capacitor/core');
+    const credentials = btoa(`${TWILIO_SID}:${TWILIO_TOKEN}`);
+    const sosMessage = [
+      '🚨 EMERGENCY — Safe Arrival Alert 🚨',
+      '',
+      'No response received to safe arrival check-in.',
+      '',
+      `Last known location: ${mapsLink}`,
+    ].join('\n');
+
+    const params = new URLSearchParams({
+      From: TWILIO_FROM,
+      To: SOS_EMERGENCY_NUMBER,
+      Body: sosMessage,
+    });
+
+    const response = await CapacitorHttp.post({
+      url: `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_SID}/Messages.json`,
+      headers: {
+        Authorization: `Basic ${credentials}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      data: params.toString(),
+    });
+
+    if (response.status < 200 || response.status >= 300) {
+      throw new Error(`Twilio responded with status ${response.status}`);
+    }
+  } else {
+    // PWA / web context — use the server-side Next.js API route.
+    const response = await fetch('/api/send-sos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        latitude,
+        longitude,
+        emergencyContact: SOS_EMERGENCY_NUMBER,
+      }),
+    });
+    if (!response.ok) {
+      throw new Error(`SOS API responded with status ${response.status}`);
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
