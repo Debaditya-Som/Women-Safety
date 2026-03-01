@@ -3,92 +3,88 @@
 import { useState, useEffect, useRef } from "react"
 import { MapContainer, TileLayer, Marker, Polyline, useMapEvents, useMap } from "react-leaflet"
 import axios from "axios"
-import { Search, Navigation, MapPin, Compass, Info, X, Menu, Shield, Locate } from "lucide-react"
+import { Search, Navigation, MapPin, X, Shield, Locate, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import "leaflet/dist/leaflet.css"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 import L from "leaflet"
 import "leaflet.heat"
 import HeatmapLayer from "@/components/map/MapComponent"
-import RouteSafetyAnalysis from "@/components/map/RouteSafetyAnalysis"
+import SafetyMarkers, { type NearestPlace } from "@/components/map/SafetyMarkers"
 import SafetyAlert from "@/components/map/SafetyAlert"
 import { analyzeRouteSafety, getRouteSegmentColor, formatDistance, RouteSafetyAnalysis as RouteSafetyType } from "@/components/map/routeSafety"
 
-// Custom marker icons
-const createIcon = (color: string) => {
-  return L.divIcon({
+const createIcon = (color: string) =>
+  L.divIcon({
     className: "custom-icon",
-    html: `<div style="background-color: white; border-radius: 50%; padding: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-            <div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%;"></div>
+    html: `<div style="background:white;border-radius:50%;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.25);">
+             <div style="background:${color};width:16px;height:16px;border-radius:50%;"></div>
            </div>`,
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   })
-}
 
-// Route colors
-const safeColor = "#10b981" // Safe route 🟢
-const midColor = "#f59e0b" // Moderate route 🟠
-const unsafeColor = "#ef4444" // Unsafe route 🔴
+const safeColor = "#10b981"
+const midColor  = "#f59e0b"
+const unsafeColor = "#ef4444"
 
-// Center map on user component - only when recenter is true
-function CenterMapOnUser({ position, recenter }: { position: [number, number], recenter: boolean }) {
+function CenterMapOnUser({ position, recenter }: { position: [number, number]; recenter: boolean }) {
   const map = useMap()
   useEffect(() => {
-    if (recenter && position) {
-      map.flyTo(position, map.getZoom())
-    }
+    if (recenter && position) map.flyTo(position, map.getZoom())
   }, [map, position, recenter])
   return null
 }
 
-// Map click handler component
 function MapClickHandler({ setDestination }: { setDestination: (pos: [number, number]) => void }) {
-  useMapEvents({
-    click(e) {
-      setDestination([e.latlng.lat, e.latlng.lng])
-    },
-  })
+  useMapEvents({ click(e) { setDestination([e.latlng.lat, e.latlng.lng]) } })
   return null
 }
 
 export default function SafetyMap() {
   const mapRef = useRef<L.Map | null>(null)
-  const [userLocation, setUserLocation] = useState<[number, number] | null>(null)
-  const [destination, setDestination] = useState<[number, number] | null>(null)
-  const [routes, setRoutes] = useState<any[]>([])
+  const [userLocation, setUserLocation]   = useState<[number, number] | null>(null)
+  const [destination, setDestination]     = useState<[number, number] | null>(null)
+  const [routes, setRoutes]               = useState<any[]>([])
   const [searchResults, setSearchResults] = useState<{ label: string; value: [number, number] }[]>([])
-  const [searchQuery, setSearchQuery] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [searchQuery, setSearchQuery]     = useState("")
+  const [isLoading, setIsLoading]         = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null)
-  const [showRouteAnalysis, setShowRouteAnalysis] = useState(true)
-  const [routeSafety, setRouteSafety] = useState<RouteSafetyType | null>(null)
-  const [recenterMap, setRecenterMap] = useState(false)
-  
-  // Get user location
+  const [routeSafety, setRouteSafety]     = useState<RouteSafetyType | null>(null)
+  const [recenterMap, setRecenterMap]     = useState(false)
+  const [isMobile, setIsMobile]           = useState(false)
+  // Map layer visibility
+  const [showIncidents, setShowIncidents] = useState(true)
+  const [showHospitals, setShowHospitals] = useState(false)
+  const [showPolice, setShowPolice]       = useState(false)
+  // Nearest safety resources (reported back from SafetyMarkers)
+  const [nearestHospital, setNearestHospital] = useState<NearestPlace | null>(null)
+  const [nearestPolice, setNearestPolice]     = useState<NearestPlace | null>(null)
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)")
+    setIsMobile(mq.matches)
+    const handler = () => setIsMobile(mq.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [])
+
   const getUserLocation = () => {
     setIsLoading(true)
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setUserLocation([pos.coords.latitude, pos.coords.longitude])
         setIsLoading(false)
-        // Enable recenter when getting location manually
         setRecenterMap(true)
       },
-      (err) => {
-        console.error("Geolocation Error:", err)
-        setIsLoading(false)
-      },
+      (err) => { console.error("Geolocation Error:", err); setIsLoading(false) },
       { enableHighAccuracy: true },
     )
   }
 
-  // Watch user location
   useEffect(() => {
     const watchId = navigator.geolocation.watchPosition(
       (pos) => setUserLocation([pos.coords.latitude, pos.coords.longitude]),
@@ -98,13 +94,11 @@ export default function SafetyMap() {
     return () => navigator.geolocation.clearWatch(watchId)
   }, [])
 
-  // Fetch routes when destination is selected
   useEffect(() => {
     if (!userLocation || !destination) return
     fetchMultipleRoutes(userLocation, destination)
   }, [userLocation, destination])
 
-  // Fetch multiple routes from OSRM
   async function fetchMultipleRoutes(start: [number, number], end: [number, number]) {
     setIsLoading(true)
     try {
@@ -116,11 +110,8 @@ export default function SafetyMap() {
           route.geometry.coordinates.map(([lng, lat]: [number, number]) => [lat, lng]),
         )
         setRoutes(routeCoordinates)
-        
-        // Analyze the first route for safety
         if (routeCoordinates.length > 0) {
-          const safetyAnalysis = analyzeRouteSafety(routeCoordinates[0])
-          setRouteSafety(safetyAnalysis)
+          setRouteSafety(analyzeRouteSafety(routeCoordinates[0]))
         }
       }
     } catch (error) {
@@ -130,7 +121,6 @@ export default function SafetyMap() {
     }
   }
 
-  // Handle destination search
   async function handleSearch() {
     if (!searchQuery) return
     setIsLoading(true)
@@ -149,354 +139,444 @@ export default function SafetyMap() {
     }
   }
 
-  // Handle search input change with debounce
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (searchQuery.length > 2) {
-        handleSearch()
-      }
+      if (searchQuery.length > 2) handleSearch()
+      else setSearchResults([])
     }, 500)
-
     return () => clearTimeout(timer)
   }, [searchQuery])
 
-  // Get directions
   const getDirections = () => {
     if (!userLocation || !destination) return
     fetchMultipleRoutes(userLocation, destination)
   }
 
-  // Reset map
   const resetMap = () => {
     setDestination(null)
     setRoutes([])
     setSelectedPlace(null)
     setRouteSafety(null)
+    setSearchQuery("")
+    setSearchResults([])
   }
 
-  // Handle recenter map
   const handleRecenter = () => {
     setRecenterMap(true)
-    // Reset after a short delay to avoid continuous recentering
-    setTimeout(() => {
-      setRecenterMap(false)
-    }, 1000)
+    setTimeout(() => setRecenterMap(false), 1000)
   }
 
-  // Generate route segments with safety coloring
   const renderRoutesWithSafety = () => {
     if (!routeSafety || routeSafety.segments.length === 0) {
-      // If no safety analysis, render original routes with default colors
       return routes.map((route, index) => (
-        <Polyline
-          key={index}
-          positions={route}
-          color={[safeColor, midColor, unsafeColor][index % 3]}
-          weight={5}
-          opacity={0.7}
-        />
+        <Polyline key={index} positions={route} color={[safeColor, midColor, unsafeColor][index % 3]} weight={5} opacity={0.85} />
       ))
     }
-    
-    // Otherwise, render the first route with safety segments
     return routeSafety.segments.map((segment, index) => (
-      <Polyline
-        key={`segment-${index}`}
-        positions={segment.path}
-        color={getRouteSegmentColor(segment.risk)}
-        weight={5}
-        opacity={0.7}
-        className={segment.risk === "unsafe" ? "animate-pulse" : ""}
-      />
+      <Polyline key={`seg-${index}`} positions={segment.path} color={getRouteSegmentColor(segment.risk)} weight={5} opacity={0.85} />
     ))
   }
 
-  return (
-    <div className="relative h-screen w-screen overflow-hidden">
-      <MapContainer center={userLocation || [24.5, 87.5]} zoom={13} className="h-full w-full z-0" ref={mapRef}>
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+  const scoreColor = (score: number) =>
+    score >= 75 ? { bg: "bg-emerald-50", text: "text-emerald-700", ring: "ring-emerald-200", pill: "bg-emerald-100 text-emerald-700" }
+    : score >= 50 ? { bg: "bg-amber-50", text: "text-amber-700", ring: "ring-amber-200", pill: "bg-amber-100 text-amber-700" }
+    : { bg: "bg-red-50", text: "text-red-700", ring: "ring-red-200", pill: "bg-red-100 text-red-700" }
 
-        {userLocation && <Marker position={userLocation} icon={createIcon("#3b82f6")} />}
-        {destination && <Marker position={destination} icon={createIcon("#ef4444")} />}
-        
-        {/* Render safety-aware route segments */}
-        {renderRoutesWithSafety()}
-        
-        {mapRef.current && <HeatmapLayer map={mapRef.current} />}
-        <MapClickHandler setDestination={setDestination} />
-
-        {/* Only recenter when recenterMap is true */}
-        {userLocation && <CenterMapOnUser position={userLocation} recenter={recenterMap} />}
-      </MapContainer>
-
-      {/* Recenter Button - Floating button on map */}
-      <Button
-        variant="secondary"
-        size="icon"
-        className="absolute bottom-24 right-4 z-50 rounded-full shadow-lg"
-        onClick={handleRecenter}
-      >
-        <Locate className="h-5 w-5" />
-      </Button>
-
-      {/* Safety Alert for high-risk areas */}
-      <SafetyAlert routeSafety={routeSafety} />
-
-      {/* Mobile Toggle Button */}
-      <Button
-        variant="secondary"
-        size="icon"
-        className="absolute top-4 right-4 z-50 md:hidden"
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-      >
-        {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </Button>
-
-      {/* Sidebar */}
-      <div
-        className={cn(
-          "absolute top-0 left-0 h-full bg-white/95 dark:bg-gray-900/95 shadow-lg transition-all duration-300 z-10",
-          isSidebarOpen ? "w-80" : "w-0 -translate-x-full md:translate-x-0 md:w-16",
+  // ── Sidebar / Sheet content ──────────────────────────────────────────────
+  const controlsContent = (
+    <div className="flex flex-col gap-4">
+      {/* Search input */}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+        <Input
+          placeholder="Where to?"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+          className="pl-9 pr-8 h-11 rounded-xl border-border/60 bg-muted/40 focus-visible:ring-1 focus-visible:bg-background transition-colors"
+        />
+        {searchQuery && (
+          <button
+            onClick={() => { setSearchQuery(""); setSearchResults([]) }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <X className="h-3.5 w-3.5" />
+          </button>
         )}
-      >
-        <div className="p-4 h-full overflow-y-auto">
-          {isSidebarOpen ? (
-            <>
-              <h1 className="text-2xl font-bold mb-6 flex items-center">
-                <Navigation className="mr-2 h-6 w-6 text-primary" />
-                SafetyMap
-              </h1>
 
-              {/* Search */}
-              <div className="space-y-2 mb-6">
-                <label className="text-sm font-medium">Find a destination</label>
-                <div className="flex gap-2">
-                  <Input
-                    placeholder="Search for a place..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="flex-1"
-                  />
-                  <Button size="icon" onClick={handleSearch} disabled={isLoading}>
-                    <Search className="h-4 w-4" />
-                  </Button>
-                </div>
+        {/* Search results dropdown */}
+        {searchResults.length > 0 && (
+          <div className="absolute top-full left-0 right-0 mt-1.5 z-50 bg-background rounded-xl shadow-xl border border-border overflow-hidden">
+            <ul className="max-h-52 overflow-y-auto divide-y divide-border/40">
+              {searchResults.slice(0, 6).map((result, i) => (
+                <li key={i}>
+                  <button
+                    className="w-full flex items-start gap-2.5 px-3 py-2.5 text-left hover:bg-muted/60 transition-colors"
+                    onClick={() => {
+                      setDestination(result.value)
+                      setSelectedPlace(result.label)
+                      setSearchResults([])
+                      if (isMobile) setIsSidebarOpen(false)
+                    }}
+                  >
+                    <MapPin className="h-3.5 w-3.5 mt-0.5 text-primary shrink-0" />
+                    <span className="text-xs leading-snug line-clamp-2 text-foreground/85">{result.label}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
 
-                {/* Search Results */}
-                {searchResults.length > 0 && (
-                  <Card className="mt-2">
-                    <CardContent className="p-2">
-                      <ul className="space-y-1 max-h-40 overflow-y-auto">
-                        {searchResults.map((result, index) => (
-                          <li key={index}>
-                            <Button
-                              variant="ghost"
-                              className="w-full justify-start text-left text-xs h-auto py-2"
-                              onClick={() => {
-                                setDestination(result.value)
-                                setSelectedPlace(result.label)
-                                setSearchResults([])
-                              }}
-                            >
-                              <MapPin className="h-3 w-3 mr-2 flex-shrink-0" />
-                              <span className="truncate">{result.label}</span>
-                            </Button>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+      {/* My location status row */}
+      <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-muted/40 border border-border/40">
+        <div className={cn(
+          "w-2 h-2 rounded-full shrink-0 transition-colors",
+          userLocation ? "bg-emerald-500" : "bg-amber-400 animate-pulse"
+        )} />
+        <div className="flex-1 min-w-0">
+          <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider leading-none mb-0.5">Your Location</p>
+          <p className="text-xs font-mono text-foreground/75 truncate">
+            {userLocation ? `${userLocation[0].toFixed(5)}, ${userLocation[1].toFixed(5)}` : "Not detected"}
+          </p>
+        </div>
+        <button
+          onClick={getUserLocation}
+          disabled={isLoading}
+          className="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-muted disabled:opacity-50 transition-colors shrink-0"
+          title="Re-detect location"
+        >
+          <Locate className="h-3.5 w-3.5 text-muted-foreground" />
+        </button>
+      </div>
 
-              {/* Route Safety Analysis Component */}
-              <RouteSafetyAnalysis routeSafety={routeSafety} showAnalysis={showRouteAnalysis} />
-
-              {/* Location Info */}
-              <Card className="mb-4">
-                <CardHeader className="p-3">
-                  <CardTitle className="text-sm flex items-center">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    Location Details
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-3 pt-0">
-                  <div className="space-y-2 text-sm">
-                    <div>
-                      <span className="font-medium">Your Location:</span>{" "}
-                      {userLocation ? `${userLocation[0].toFixed(4)}, ${userLocation[1].toFixed(4)}` : "Not available"}
-                    </div>
-
-                    {selectedPlace && (
-                      <div>
-                        <span className="font-medium">Destination:</span>{" "}
-                        <span className="text-xs">{selectedPlace}</span>
-                      </div>
-                    )}
-
-                    <div className="flex gap-2 pt-2">
-                      <Button size="sm" onClick={getUserLocation} disabled={isLoading} className="flex-1">
-                        <Compass className="h-4 w-4 mr-2" />
-                        My Location
-                      </Button>
-
-                      {destination && (
-                        <Button size="sm" onClick={resetMap} variant="outline" className="flex-1">
-                          <X className="h-4 w-4 mr-2" />
-                          Reset
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Route Controls */}
-              {destination && (
-                <Card className="mb-4">
-                  <CardHeader className="p-3">
-                    <CardTitle className="text-sm flex items-center">
-                      <Navigation className="h-4 w-4 mr-2" />
-                      Route Options
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    <Button
-                      onClick={getDirections}
-                      disabled={!userLocation || !destination || isLoading}
-                      className="w-full mb-3"
-                    >
-                      <Navigation className="h-4 w-4 mr-2" />
-                      Get Directions
-                    </Button>
-
-                    {routes.length > 0 && (
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between text-xs">
-                          <label htmlFor="route-analysis">Show Route Safety Analysis</label>
-                          <div className="flex items-center space-x-2">
-                            <input 
-                              type="checkbox"
-                              id="route-analysis"
-                              checked={showRouteAnalysis}
-                              onChange={(e) => setShowRouteAnalysis(e.target.checked)}
-                              className="rounded border-gray-300 text-primary focus:ring-primary"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div className="text-xs font-medium mt-3">Route Safety Legend:</div>
-                        <div className="flex flex-wrap gap-2">
-                          <Badge className="bg-[#10b981]">Safe Route</Badge>
-                          <Badge className="bg-[#f59e0b]">Moderate Risk</Badge>
-                          <Badge className="bg-[#ef4444]">High Risk</Badge>
-                        </div>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
+      {/* ── Map layer toggles ─────────────────────────────────── */}
+      <div>
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">Map Layers</p>
+        <div className="space-y-1">
+          {([
+            { label: "Incidents",       color: "#ef4444", state: showIncidents, toggle: () => setShowIncidents(v => !v) },
+            { label: "Hospitals",       color: "#dc2626", state: showHospitals, toggle: () => setShowHospitals(v => !v) },
+            { label: "Police Stations", color: "#1d4ed8", state: showPolice,    toggle: () => setShowPolice(v => !v)    },
+          ] as const).map(({ label, color, state, toggle }) => (
+            <button
+              key={label}
+              onClick={toggle}
+              className={cn(
+                "w-full flex items-center gap-2.5 px-3 py-2 rounded-xl transition-colors text-left",
+                state ? "bg-muted/50" : "hover:bg-muted/30"
               )}
-
-              {/* Legend */}
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="w-full">
-                    <Info className="h-4 w-4 mr-2" />
-                    About SafetyMap
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-80">
-                  <div className="space-y-2">
-                    <h3 className="font-medium">SafetyMap Legend</h3>
-                    <p className="text-sm text-muted-foreground">
-                      SafetyMap helps you navigate safely by identifying routes with different safety levels:
-                    </p>
-                    <div className="space-y-1 text-sm">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 rounded-full bg-[#10b981] mr-2"></div>
-                        <span>Safe Route - Low risk areas</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 rounded-full bg-[#f59e0b] mr-2"></div>
-                        <span>Moderate Risk - Some caution advised</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 rounded-full bg-[#ef4444] mr-2"></div>
-                        <span>High Risk - Areas with harassment reports</span>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Route segments are colored based on proximity to reported harassment incidents. 
-                      The heat map shows areas with higher concentration of incidents.
-                    </p>
-                  </div>
-                </PopoverContent>
-              </Popover>
-            </>
-          ) : (
-            <div className="flex flex-col items-center space-y-4 py-4">
-              <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(true)}>
-                <Menu className="h-5 w-5" />
-              </Button>
-            </div>
-          )}
+            >
+              <div className="w-2.5 h-2.5 rounded-full shrink-0 transition-opacity" style={{ backgroundColor: color, opacity: state ? 1 : 0.3 }} />
+              <span className={cn("flex-1 text-xs", state ? "text-foreground font-medium" : "text-muted-foreground")}>
+                {label}
+              </span>
+              {/* Toggle pill */}
+              <div className={cn("w-8 h-[18px] rounded-full flex items-center px-0.5 transition-colors duration-200 shrink-0", state ? "bg-primary" : "bg-muted-foreground/25")}>
+                <div className={cn("w-3.5 h-3.5 rounded-full bg-white shadow-sm transition-transform duration-200", state ? "translate-x-[14px]" : "translate-x-0")} />
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Route Details Overlay */}
-      {routeSafety && routes.length > 0 && (
-        <div className="absolute bottom-0 left-0 right-0 md:left-80 p-4 z-30 transition-all duration-300">
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 flex flex-col md:flex-row gap-4 items-center">
-            {/* Safety Indicator */}
-            <div className="flex items-center gap-3">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold ${
-                routeSafety.overallScore >= 75 
-                  ? "bg-green-100 text-green-700" 
-                  : routeSafety.overallScore >= 50 
-                    ? "bg-amber-100 text-amber-700" 
-                    : "bg-red-100 text-red-700"
-              }`}>
-                {routeSafety.overallScore}
+      {/* Nearest help — shown when a layer is on and user location is known */}
+      {userLocation && (nearestHospital || nearestPolice) && (
+        <div className="space-y-1.5">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Nearest Help</p>
+
+          {nearestHospital && (
+            <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-red-50/70 dark:bg-red-950/20 border border-red-100 dark:border-red-900/30">
+              <div className="w-7 h-7 rounded-lg bg-white dark:bg-gray-800 border border-red-200 dark:border-red-800 flex items-center justify-center shrink-0">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/>
+                </svg>
               </div>
-              <div>
-                <h3 className="font-medium text-sm">Safety Score</h3>
-                <p className={`text-xs ${
-                  routeSafety.overallScore >= 75 
-                    ? "text-green-600" 
-                    : routeSafety.overallScore >= 50 
-                      ? "text-amber-600" 
-                      : "text-red-600"
-                }`}>
-                  {routeSafety.riskLevel} Risk
-                </p>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-medium truncate">{nearestHospital.name}</p>
+                <p className="text-[10px] text-red-600 font-medium">{formatDistance(nearestHospital.dist)} away</p>
+              </div>
+              <button
+                onClick={() => { setDestination(nearestHospital.coords); setSelectedPlace(nearestHospital.name) }}
+                className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors shrink-0"
+                title="Navigate to hospital"
+              >
+                <Navigation className="h-3.5 w-3.5 text-white" />
+              </button>
+            </div>
+          )}
+
+          {nearestPolice && (
+            <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/30">
+              <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2L4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z"/>
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-medium truncate">{nearestPolice.name}</p>
+                <p className="text-[10px] text-blue-600 font-medium">{formatDistance(nearestPolice.dist)} away</p>
+              </div>
+              <button
+                onClick={() => { setDestination(nearestPolice.coords); setSelectedPlace(nearestPolice.name) }}
+                className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors shrink-0"
+                title="Navigate to police station"
+              >
+                <Navigation className="h-3.5 w-3.5 text-white" />
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Destination chip */}
+      {selectedPlace && (
+        <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-xl bg-primary/5 border border-primary/15">
+          <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+            <MapPin className="h-3 w-3 text-primary" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-[10px] font-semibold text-primary uppercase tracking-wider leading-none mb-0.5">Destination</p>
+            <p className="text-xs leading-snug text-foreground/80 line-clamp-2">{selectedPlace}</p>
+          </div>
+          <button
+            onClick={resetMap}
+            className="w-5 h-5 rounded-full flex items-center justify-center hover:bg-muted transition-colors shrink-0 mt-0.5"
+            title="Clear destination"
+          >
+            <X className="h-3 w-3 text-muted-foreground" />
+          </button>
+        </div>
+      )}
+
+      {/* Get Directions button */}
+      {destination && !routeSafety && (
+        <Button
+          onClick={getDirections}
+          disabled={!userLocation || isLoading}
+          className="w-full h-10 rounded-xl"
+        >
+          <Navigation className="h-4 w-4 mr-2" />
+          {isLoading ? "Finding route…" : "Get Directions"}
+        </Button>
+      )}
+
+      {/* Route active hint */}
+      {routeSafety && (
+        <p className="text-xs text-muted-foreground text-center py-1">
+          Route details shown below ↓
+        </p>
+      )}
+    </div>
+  )
+
+  const sc = routeSafety ? scoreColor(routeSafety.overallScore) : null
+
+  return (
+    <div className="relative h-[calc(100vh-4rem)] w-full overflow-hidden">
+      {/* ── Map ─────────────────────────────────────────────────── */}
+      <MapContainer center={userLocation || [24.5, 87.5]} zoom={13} className="h-full w-full z-0" ref={mapRef}>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {userLocation  && <Marker position={userLocation}  icon={createIcon("#3b82f6")} />}
+        {destination   && <Marker position={destination}   icon={createIcon("#ef4444")} />}
+        {renderRoutesWithSafety()}
+        {mapRef.current && <HeatmapLayer map={mapRef.current} visible={showIncidents} />}
+        <SafetyMarkers
+          showHospitals={showHospitals}
+          showPolice={showPolice}
+          userLocation={userLocation}
+          onNearestHospital={setNearestHospital}
+          onNearestPolice={setNearestPolice}
+        />
+        <MapClickHandler setDestination={setDestination} />
+        {userLocation && <CenterMapOnUser position={userLocation} recenter={recenterMap} />}
+      </MapContainer>
+
+      {/* ── Recenter button ──────────────────────────────────────── */}
+      <button
+        onClick={handleRecenter}
+        className={cn(
+          "absolute right-4 z-30 w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-border/50 flex items-center justify-center hover:bg-muted/60 transition-colors",
+          routeSafety && routes.length > 0 ? "bottom-[7.5rem] md:bottom-28" : "bottom-4"
+        )}
+        title="Re-center map"
+      >
+        <Locate className="h-4 w-4 text-foreground/70" />
+      </button>
+
+      {/* ── Safety alert ─────────────────────────────────────────── */}
+      <SafetyAlert routeSafety={routeSafety} />
+
+      {/* ── MOBILE: search pill + bottom sheet ──────────────────── */}
+      {isMobile && (
+        <div className="absolute top-3 left-3 right-3 z-20">
+          <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+            <SheetTrigger asChild>
+              <button className="flex items-center gap-2.5 w-full h-12 px-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-border/50 text-left active:scale-[0.99] transition-transform">
+                <Search className="h-4 w-4 text-muted-foreground shrink-0" />
+                <span className="flex-1 text-sm text-muted-foreground truncate">
+                  {selectedPlace || "Where to?"}
+                </span>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  {userLocation && <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />}
+                  <ChevronUp className="h-4 w-4 text-muted-foreground" />
+                </div>
+              </button>
+            </SheetTrigger>
+
+            <SheetContent side="bottom" className="h-[82vh] rounded-t-3xl px-4 pt-2 pb-6 [&>button]:top-3 [&>button]:right-4">
+              <SheetHeader className="sr-only">
+                <SheetTitle>SafetyMap</SheetTitle>
+              </SheetHeader>
+              {/* Handle bar */}
+              <div className="mx-auto w-10 h-1 rounded-full bg-muted-foreground/20 mb-5" />
+              {/* Sheet header */}
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Shield className="h-4.5 w-4.5 text-primary" />
+                </div>
+                <div>
+                  <h1 className="text-base font-bold leading-none">SafetyMap</h1>
+                  <p className="text-xs text-muted-foreground mt-0.5">Navigate safely</p>
+                </div>
+              </div>
+              <div className="overflow-y-auto h-[calc(100%-7rem)]">
+                {controlsContent}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      )}
+
+      {/* ── DESKTOP: collapsible sidebar ─────────────────────────── */}
+      {!isMobile && (
+        <div className={cn(
+          "absolute top-0 left-0 h-full bg-white/96 dark:bg-gray-900/97 backdrop-blur-sm border-r border-border/40 transition-all duration-300 z-10 flex flex-col shadow-sm",
+          isSidebarOpen ? "w-[288px]" : "w-14"
+        )}>
+          {isSidebarOpen ? (
+            <>
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 py-4 border-b border-border/40 shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Shield className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <h1 className="text-sm font-bold leading-none">SafetyMap</h1>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">Navigate safely</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsSidebarOpen(false)}
+                  className="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-muted transition-colors"
+                >
+                  <ChevronLeft className="h-4 w-4 text-muted-foreground" />
+                </button>
+              </div>
+
+              {/* Scrollable content */}
+              <div className="flex-1 overflow-y-auto px-4 py-4">
+                {controlsContent}
+              </div>
+            </>
+          ) : (
+            /* Collapsed icon strip */
+            <div className="flex flex-col items-center pt-3 gap-3">
+              <button
+                onClick={() => setIsSidebarOpen(true)}
+                className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                title="Open panel"
+              >
+                <ChevronRight className="h-4 w-4 text-primary" />
+              </button>
+              <div className="w-6 h-px bg-border/60" />
+              <button
+                onClick={getUserLocation}
+                disabled={isLoading}
+                className="w-9 h-9 rounded-xl flex items-center justify-center hover:bg-muted disabled:opacity-50 transition-colors"
+                title="My location"
+              >
+                <Locate className="h-4 w-4 text-muted-foreground" />
+              </button>
+              {userLocation && (
+                <div className="w-2 h-2 rounded-full bg-emerald-500" title="Location active" />
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ── Route summary card ───────────────────────────────────── */}
+      {routeSafety && routes.length > 0 && (
+        <div className={cn(
+          "absolute bottom-4 left-4 right-4 z-20 transition-all duration-300",
+          !isMobile && isSidebarOpen ? "md:left-[304px]" : !isMobile ? "md:left-[72px]" : ""
+        )}>
+          <div className="bg-white/96 dark:bg-gray-900/97 backdrop-blur-sm rounded-2xl shadow-xl border border-border/40 p-4">
+            {/* Top row */}
+            <div className="flex items-center gap-3">
+              {/* Score badge */}
+              <div className={cn(
+                "w-12 h-12 rounded-2xl flex flex-col items-center justify-center shrink-0 ring-2",
+                sc?.bg, sc?.text, sc?.ring
+              )}>
+                <span className="text-base font-bold leading-none">{routeSafety.overallScore}</span>
+                <span className="text-[9px] font-medium opacity-60">/ 100</span>
+              </div>
+
+              {/* Labels */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm font-semibold">Safety Score</span>
+                  <span className={cn("text-[10px] font-semibold px-1.5 py-0.5 rounded-full", sc?.pill)}>
+                    {routeSafety.riskLevel} Risk
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground">{formatDistance(routeSafety.totalDistance)} total</p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex items-center gap-2 shrink-0">
+                <Button size="sm" className="h-9 rounded-xl px-3 text-xs">
+                  <Navigation className="h-3.5 w-3.5 mr-1.5" />
+                  Start
+                </Button>
+                <button
+                  onClick={resetMap}
+                  className="w-9 h-9 rounded-xl border border-border/60 flex items-center justify-center hover:bg-muted transition-colors"
+                  title="Clear route"
+                >
+                  <X className="h-3.5 w-3.5 text-muted-foreground" />
+                </button>
               </div>
             </div>
-            
-            {/* Route Details */}
-            <div className="flex-1">
-              <h3 className="font-medium text-sm">Route Summary</h3>
-              <div className="flex flex-wrap gap-x-4 mt-1 text-xs">
-                <span className="flex items-center">
-                  <Navigation className="h-3 w-3 mr-1 text-primary" /> 
-                  {formatDistance(routeSafety.totalDistance)}
-                </span>
+
+            {/* Route breakdown bar */}
+            <div className="mt-3.5">
+              <div className="flex h-2 rounded-full overflow-hidden gap-0.5">
+                {routeSafety.safePercentage > 0 && (
+                  <div className="bg-emerald-500 rounded-full transition-all" style={{ width: `${routeSafety.safePercentage}%` }} />
+                )}
+                {routeSafety.moderatePercentage > 0 && (
+                  <div className="bg-amber-400 rounded-full transition-all" style={{ width: `${routeSafety.moderatePercentage}%` }} />
+                )}
                 {routeSafety.unsafePercentage > 0 && (
-                  <span className="flex items-center text-red-500">
-                    <Shield className="h-3 w-3 mr-1" /> 
-                    Passes through high-risk areas
-                  </span>
+                  <div className="bg-red-500 rounded-full transition-all" style={{ width: `${routeSafety.unsafePercentage}%` }} />
                 )}
               </div>
-            </div>
-            
-            {/* Actions */}
-            <div className="flex gap-2">
-              <Button variant="default" size="sm">
-                Start Navigation
-              </Button>
-              <Button variant="outline" size="icon" onClick={resetMap}>
-                <X className="h-4 w-4" />
-              </Button>
+              <div className="flex items-center gap-3 mt-1.5">
+                {routeSafety.safePercentage > 0 && (
+                  <span className="text-[10px] text-emerald-600 font-medium">{routeSafety.safePercentage}% safe</span>
+                )}
+                {routeSafety.moderatePercentage > 0 && (
+                  <span className="text-[10px] text-amber-600 font-medium">{routeSafety.moderatePercentage}% moderate</span>
+                )}
+                {routeSafety.unsafePercentage > 0 && (
+                  <span className="text-[10px] text-red-600 font-medium">{routeSafety.unsafePercentage}% high risk</span>
+                )}
+              </div>
             </div>
           </div>
         </div>

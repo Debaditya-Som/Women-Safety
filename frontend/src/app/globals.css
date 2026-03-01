@@ -133,7 +133,19 @@ body {
 }
 
 .container {
-  max-width: 1200px; /* Adjust the width as needed */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Optional: Add padding for extra space on the sides */
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Leaflet map container fix */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
 }

@@ -4,337 +4,152 @@ import { useEffect, useRef, useState } from "react"
 import L from "leaflet"
 import "leaflet.heat"
 import harassmentData from "../../../public/harassment_reports.json"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import { AlertCircle, Info, ChevronLeft, ChevronRight, Settings, List } from "lucide-react"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
+import { Layers, X } from "lucide-react"
 
-// Define severity levels with weights, colors, and descriptions
+// Severity weights used for heatmap intensity and filter badge colors.
+// NOTE: The heatmap gradient (amber→red) is separate from these badge colors —
+// badge colors represent individual severity categories, gradient represents density.
 export const severityConfig = {
-  low: { weight: 2, color: "#3b82f6", label: "Low" },
-  medium: { weight: 4, color: "#10b981", label: "Medium" },
-  high: { weight: 8, color: "#f59e0b", label: "High" }, // Increased from 6 to 8
-  critical: { weight: 12, color: "#ef4444", label: "Critical" }, // Increased from 8 to 12
+  low:      { weight: 2,  color: "#f59e0b", label: "Low" },
+  medium:   { weight: 5,  color: "#f97316", label: "Medium" },
+  high:     { weight: 9,  color: "#ef4444", label: "High" },
+  critical: { weight: 14, color: "#b91c1c", label: "Critical" },
+}
+
+// Semantic gradient: transparent at zero density → amber → orange → dark red.
+// Every color on this scale means RISK — no misleading blue/green "safe" tones.
+const HEATMAP_GRADIENT = {
+  0.0: "rgba(251,191,36,0)",   // transparent (no incidents)
+  0.3: "#fbbf24",              // amber   – sparse incidents
+  0.55: "#f97316",             // orange  – moderate density
+  0.8: "#ef4444",              // red     – high density
+  1.0: "#991b1b",              // dark red – critical cluster
 }
 
 interface HeatmapLayerProps {
   map: L.Map | null
+  visible: boolean
 }
 
-export default function HeatmapLayer({ map }: HeatmapLayerProps) {
+export default function HeatmapLayer({ map, visible }: HeatmapLayerProps) {
   const layersRef = useRef<{ heatmap: L.LayerGroup | null }>({ heatmap: null })
-  const [intensity, setIntensity] = useState<number>(1.0) // Higher default intensity
-  const [radius, setRadius] = useState<number>(40) // Larger default radius
-  const [blur, setBlur] = useState<number>(15)
-  const [showLegend, setShowLegend] = useState<boolean>(true)
-  const [darkMode, setDarkMode] = useState<boolean>(false)
-  const [isPanelCollapsed, setIsPanelCollapsed] = useState<boolean>(false)
-  const [activePanel, setActivePanel] = useState<"controls" | "legend">("controls")
+  const [isPanelOpen, setIsPanelOpen] = useState(false)
   const [filterSeverity, setFilterSeverity] = useState<Record<string, boolean>>({
-    low: true,
-    medium: true,
-    high: true,
-    critical: true,
+    low: true, medium: true, high: true, critical: true,
   })
-  const [debugInfo, setDebugInfo] = useState<string>("")
-  const initialRenderRef = useRef(true)
 
-  // Generate gradient based on severity config
-  const generateGradient = () => {
-    return {
-      0.2: severityConfig.low.color,
-      0.5: severityConfig.medium.color,
-      0.8: severityConfig.high.color,
-      1.0: severityConfig.critical.color,
-    }
-  }
+  // Fixed visual defaults — tuned for good coverage without noise
+  const RADIUS = 40
+  const BLUR   = 15
 
   useEffect(() => {
-    if (!map) {
-      setDebugInfo("Map not initialized")
-      return
-    }
-
-    setDebugInfo("Map is ready")
-
-    if (!harassmentData.reports || harassmentData.reports.length === 0) {
-      setDebugInfo("No heatmap data available!")
-      return
-    }
-
-    setDebugInfo(`Found ${harassmentData.reports.length} data points`)
-
-    // Function to generate heatmap data with filtering
-    const generateHeatmapData = () => {
-      const filteredData = harassmentData.reports
-        .filter((report) => {
-          const severity = report.severity as keyof typeof severityConfig
-          return filterSeverity[severity]
-        })
-        .map((report) => {
-          const severity = report.severity as keyof typeof severityConfig
-          // Multiply by intensity for better visibility
-          return [report.latitude, report.longitude, severityConfig[severity]?.weight * intensity || 2 * intensity]
-        })
-
-      setDebugInfo(`Processed ${filteredData.length} points for heatmap`)
-      return filteredData
-    }
-
-    // Clear any existing heatmap layers
+    // Clear existing layer whenever visibility or filters change
     if (layersRef.current.heatmap) {
       layersRef.current.heatmap.clearLayers()
-      map.removeLayer(layersRef.current.heatmap)
+      map?.removeLayer(layersRef.current.heatmap)
       layersRef.current.heatmap = null
     }
 
-    // Create a new layer group
+    if (!map || !visible || !harassmentData.reports?.length) return
+
     layersRef.current.heatmap = L.layerGroup().addTo(map)
 
-    // Function to update heatmap
-    const updateHeatmap = () => {
-      if (!layersRef.current.heatmap || !map) return
+    const points = harassmentData.reports
+      .filter((r) => filterSeverity[r.severity as keyof typeof severityConfig])
+      .map((r) => {
+        const sev = r.severity as keyof typeof severityConfig
+        return [r.latitude, r.longitude, severityConfig[sev]?.weight ?? 2]
+      })
 
-      // Clear existing layers
-      layersRef.current.heatmap.clearLayers()
+    if (!points.length) return
 
-      // Generate heatmap data
-      const heatmapData = generateHeatmapData()
-
-      if (heatmapData.length === 0) {
-        setDebugInfo("No data points after filtering")
-        return
-      }
-
-      try {
-        // Create heat layer with more visible settings
-        const heatLayer = (L as any).heatLayer(heatmapData, {
-          radius: radius,
-          blur: blur,
-          maxZoom: 18,
-          minOpacity: 0.5, // Ensure minimum opacity for visibility
-          gradient: generateGradient(),
-        })
-
-        // Add the heat layer to the layer group
-        layersRef.current.heatmap.addLayer(heatLayer)
-
-        // Remove the auto-fitting bounds code
-        setDebugInfo(`Heatmap rendered with ${heatmapData.length} points`)
-      } catch (error) {
-        setDebugInfo(`Error creating heatmap: ${error}`)
-      }
+    try {
+      const heat = (L as any).heatLayer(points, {
+        radius: RADIUS,
+        blur: BLUR,
+        maxZoom: 18,
+        minOpacity: 0.35,
+        gradient: HEATMAP_GRADIENT,
+      })
+      layersRef.current.heatmap.addLayer(heat)
+    } catch (err) {
+      console.error("Heatmap error:", err)
     }
-
-    // Initial heatmap render
-    updateHeatmap()
-
-    // Make sure to remove the zoomend event handler - it's not needed
-    // and could be causing issues with zoom functionality
 
     return () => {
       if (layersRef.current.heatmap) {
         layersRef.current.heatmap.clearLayers()
-        map.removeLayer(layersRef.current.heatmap)
+        map?.removeLayer(layersRef.current.heatmap)
       }
     }
-  }, [map, radius, blur, intensity, filterSeverity])
+  }, [map, visible, filterSeverity])
 
-  // Toggle severity filter
-  const toggleSeverity = (severity: string) => {
-    setFilterSeverity((prev) => ({
-      ...prev,
-      [severity]: !prev[severity],
-    }))
-  }
+  const toggleSeverity = (key: string) =>
+    setFilterSeverity((prev) => ({ ...prev, [key]: !prev[key] }))
+
+  if (!visible) return null
 
   return (
-    <>
-      <div className={`fixed bottom-26 right-4 z-[1000] flex flex-col gap-2 transition-all duration-300 ${darkMode ? "dark" : ""}`}>
-        {/* Collapsed Toggle Button */}
-        <div className={`absolute ${isPanelCollapsed ? "right-2" : "-left-12"} top-0 transition-all duration-300`}>
-          <Button
-            variant="secondary"
-            size="icon"
-            className="shadow-md"
-            onClick={() => setIsPanelCollapsed(!isPanelCollapsed)}
-          >
-            {isPanelCollapsed ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-          </Button>
-        </div>
-
-        {/* Main Content - collapsed or expanded */}
-        <div className={`transition-all duration-300 ${isPanelCollapsed ? "w-0 opacity-0 overflow-hidden" : "w-64 opacity-100"}`}>
-          {/* Tab Buttons */}
-          <div className="flex mb-2 bg-secondary rounded-lg overflow-hidden">
-            <Button 
-              variant="ghost" 
-              className={`flex-1 rounded-none py-1 h-auto text-xs flex items-center justify-center ${activePanel === "controls" ? "bg-primary/10" : ""}`}
-              onClick={() => setActivePanel("controls")}
+    <div className="fixed bottom-20 right-4 z-[1000] flex flex-col items-end gap-2">
+      {/* Expanded panel */}
+      {isPanelOpen && (
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-border/50 p-4 w-52 mb-1">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-xs font-semibold">Incident Heatmap</h3>
+            <button
+              onClick={() => setIsPanelOpen(false)}
+              className="w-5 h-5 rounded-full flex items-center justify-center hover:bg-muted transition-colors"
             >
-              <Settings className="h-3 w-3 mr-1" /> Controls
-            </Button>
-            <Button 
-              variant="ghost"
-              className={`flex-1 rounded-none py-1 h-auto text-xs flex items-center justify-center ${activePanel === "legend" ? "bg-primary/10" : ""}`}
-              onClick={() => setActivePanel("legend")}
-            >
-              <List className="h-3 w-3 mr-1" /> Legend
-            </Button>
+              <X className="h-3 w-3 text-muted-foreground" />
+            </button>
           </div>
 
-          {/* Debug Info */}
-          <Card className="p-2 bg-background shadow-lg border border-border mb-2">
-            <p className="text-xs text-foreground">Status: {debugInfo}</p>
-          </Card>
-
-          {/* Controls Panel */}
-          {activePanel === "controls" && (
-            <Card className="p-4 bg-background shadow-lg border border-border">
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-medium text-foreground">Heatmap Controls</h3>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Info className="h-4 w-4 text-muted-foreground cursor-help" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p className="w-60">Adjust these settings to customize the heatmap visualization</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <Label htmlFor="intensity">Intensity: {Math.round(intensity * 100)}%</Label>
-                  </div>
-                  <Slider
-                    id="intensity"
-                    min={0.1}
-                    max={2.0}
-                    step={0.1}
-                    value={[intensity]}
-                    onValueChange={(value) => setIntensity(value[0])}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <Label htmlFor="radius">Radius: {radius}px</Label>
-                  </div>
-                  <Slider
-                    id="radius"
-                    min={10}
-                    max={80}
-                    step={5}
-                    value={[radius]}
-                    onValueChange={(value) => setRadius(value[0])}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <Label htmlFor="blur">Blur: {blur}px</Label>
-                  </div>
-                  <Slider id="blur" min={0} max={30} step={1} value={[blur]} onValueChange={(value) => setBlur(value[0])} />
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="legend-toggle">Show Legend</Label>
-                  <Switch id="legend-toggle" checked={showLegend} onCheckedChange={setShowLegend} />
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="dark-mode">Dark Mode</Label>
-                  <Switch id="dark-mode" checked={darkMode} onCheckedChange={setDarkMode} />
-                </div>
-
-                <div className="space-y-2">
-                  <Label>Filter by Severity</Label>
-                  <div className="flex flex-wrap gap-2">
-                    {Object.entries(severityConfig).map(([key, config]) => (
-                      <Badge
-                        key={key}
-                        variant={filterSeverity[key] ? "default" : "outline"}
-                        className="cursor-pointer"
-                        style={{
-                          backgroundColor: filterSeverity[key] ? config.color : "transparent",
-                          color: filterSeverity[key] ? "white" : "inherit",
-                          borderColor: config.color,
-                        }}
-                        onClick={() => toggleSeverity(key)}
-                      >
-                        {config.label}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Card>
-          )}
-
-          {/* Legend Panel */}
-          {activePanel === "legend" && showLegend && (
-            <Card className="p-4 bg-background shadow-lg border border-border">
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-medium text-foreground">Severity Legend</h3>
-                <AlertCircle className="h-4 w-4 text-muted-foreground" />
-              </div>
-              <div className="space-y-2">
-                {Object.entries(severityConfig).map(([key, config]) => (
-                  <div key={key} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: config.color }} />
-                    <span className="text-sm text-foreground">{config.label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3">
-                <div className="w-full h-4 rounded-full bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500" />
-                <div className="flex justify-between mt-1">
-                  <span className="text-xs text-muted-foreground">Low</span>
-                  <span className="text-xs text-muted-foreground">Critical</span>
-                </div>
-              </div>
-            </Card>
-          )}
-        </div>
-
-        {/* Mini UI when collapsed */}
-        {isPanelCollapsed && (
-          <div className="flex flex-col gap-2 transition-all duration-300">
-            <Button 
-              variant="outline" 
-              size="icon" 
-              className="bg-white shadow-md" 
-              onClick={() => {
-                setIsPanelCollapsed(false);
-                setActivePanel("controls");
-              }}
-            >
-              <Settings className="h-4 w-4" />
-            </Button>
-            {showLegend && (
-              <Button 
-                variant="outline" 
-                size="icon" 
-                className="bg-white shadow-md" 
-                onClick={() => {
-                  setIsPanelCollapsed(false);
-                  setActivePanel("legend");
-                }}
-              >
-                <List className="h-4 w-4" />
-              </Button>
-            )}
+          {/* Gradient legend — matches HEATMAP_GRADIENT above */}
+          <div className="mb-3">
+            <div className="h-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-800" />
+            <div className="flex justify-between mt-1">
+              <span className="text-[10px] text-muted-foreground">Few reports</span>
+              <span className="text-[10px] text-muted-foreground">High density</span>
+            </div>
           </div>
-        )}
-      </div>
-    </>
+
+          {/* Severity filter */}
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+              Filter severity
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {Object.entries(severityConfig).map(([key, cfg]) => (
+                <button
+                  key={key}
+                  onClick={() => toggleSeverity(key)}
+                  className="flex items-center gap-1 px-2 py-1 rounded-full text-[11px] font-medium border transition-all"
+                  style={{
+                    backgroundColor: filterSeverity[key] ? cfg.color + "20" : "transparent",
+                    borderColor:      cfg.color + "80",
+                    color:            filterSeverity[key] ? cfg.color : "#9ca3af",
+                  }}
+                >
+                  <div
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    style={{ backgroundColor: filterSeverity[key] ? cfg.color : "#d1d5db" }}
+                  />
+                  {cfg.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Toggle button — only shows when incidents layer is on */}
+      <button
+        onClick={() => setIsPanelOpen((v) => !v)}
+        className="w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-border/50 flex items-center justify-center hover:bg-muted/60 transition-colors"
+        title="Incident heatmap filter"
+      >
+        <Layers className="h-4 w-4 text-foreground/70" />
+      </button>
+    </div>
   )
 }

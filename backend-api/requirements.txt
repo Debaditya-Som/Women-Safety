@@ -1,0 +1,9 @@
+uvicorn[standard]
+fastapi
+pymongo
+motor
+pydantic
+pandas
+scikit-learn
+joblib
+ollama

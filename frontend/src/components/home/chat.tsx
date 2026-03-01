@@ -91,7 +91,7 @@ export default function SHEildChatbot() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <AnimatePresence>
         {isOpen ? (
           <motion.div
@@ -101,7 +101,7 @@ export default function SHEildChatbot() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="relative"
           >
-            <Card className="w-[350px] sm:w-[400px] h-[500px] shadow-xl rounded-2xl overflow-hidden border-0 flex flex-col">
+            <Card className="w-[calc(100vw-3rem)] sm:w-[400px] h-[70dvh] sm:h-[500px] shadow-xl rounded-2xl overflow-hidden border-0 flex flex-col">
               <div className="bg-gradient-to-r from-violet-500 to-indigo-600 p-4 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                   <Bot className="h-6 w-6 text-white" />

@@ -1,6 +1,4 @@
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Info } from "lucide-react"
+import { cn } from "@/lib/utils"
 import { formatDistance, RouteSafetyAnalysis as RouteSafetyAnalysisType } from "./routeSafety"
 
 interface RouteSafetyAnalysisProps {
@@ -11,93 +9,70 @@ interface RouteSafetyAnalysisProps {
 export default function RouteSafetyAnalysis({ routeSafety, showAnalysis }: RouteSafetyAnalysisProps) {
   if (!routeSafety || !showAnalysis) return null
 
-  // Determine color for safety score
-  const getSafetyScoreColor = (score: number) => {
-    if (score >= 75) return "text-[#10b981]" // Safe - Green
-    if (score >= 50) return "text-[#f59e0b]" // Moderate - Orange
-    return "text-[#ef4444]" // Unsafe - Red
-  }
+  const scoreColor = (score: number) =>
+    score >= 75 ? "text-emerald-600"
+    : score >= 50 ? "text-amber-600"
+    : "text-red-600"
+
+  // Position of the score indicator on the 0–100 gradient bar
+  const indicatorLeft = `calc(${Math.min(Math.max(routeSafety.overallScore, 0), 100)}% - 6px)`
+
+  const segments = [
+    { pct: routeSafety.safePercentage,     color: "bg-emerald-500", label: "Safe",      text: "text-emerald-600", dist: routeSafety.totalDistance * routeSafety.safePercentage / 100 },
+    { pct: routeSafety.moderatePercentage, color: "bg-amber-400",   label: "Moderate",  text: "text-amber-600",   dist: routeSafety.totalDistance * routeSafety.moderatePercentage / 100 },
+    { pct: routeSafety.unsafePercentage,   color: "bg-red-500",     label: "High Risk", text: "text-red-600",     dist: routeSafety.totalDistance * routeSafety.unsafePercentage / 100 },
+  ].filter(({ pct }) => pct > 0)
 
   return (
-    <Card className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4 border border-gray-200 dark:border-gray-700">
-      <div className="flex justify-between items-center mb-3">
-        <h3 className="font-medium text-sm flex items-center">
-          <svg 
-            className="w-4 h-4 mr-2 text-primary" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
+    <div className="rounded-xl border border-border/50 bg-muted/20 p-3.5 space-y-3.5">
+      {/* Header row */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1.5">
+          <svg className="w-3.5 h-3.5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
-          Route Safety Analysis
-        </h3>
-        <Badge variant="outline" className="bg-[#ef4444]/10 text-[#ef4444] border-[#ef4444]/20">New</Badge>
-      </div>
-      
-      <div className="space-y-4">
-        {/* Safety Score */}
-        <div>
-          <div className="flex justify-between text-xs mb-1">
-            <span>Route Safety Score</span>
-            <span className={`font-medium ${getSafetyScoreColor(routeSafety.overallScore)}`}>
-              {routeSafety.overallScore}/100
-            </span>
-          </div>
-          <div className="h-2 rounded-full bg-gradient-to-r from-[#ef4444] via-[#f59e0b] to-[#10b981]"></div>
-          <div className="flex justify-between mt-1 text-[10px] text-gray-500 dark:text-gray-400">
-            <span>High Risk</span>
-            <span>Low Risk</span>
-          </div>
+          <span className="text-xs font-semibold">Route Safety</span>
         </div>
-        
-        {/* Safety Breakdown */}
-        <div className="space-y-1.5">
-          <h4 className="text-xs font-medium">Route Analysis</h4>
-          
-          {routeSafety.unsafePercentage > 0 && (
-            <div className="flex items-center text-xs py-1.5 border-b border-gray-100 dark:border-gray-700">
-              <div className="w-3 h-3 rounded-full bg-[#ef4444] mr-2"></div>
-              <span className="flex-1">
-                High risk segments ({formatDistance(routeSafety.totalDistance * routeSafety.unsafePercentage / 100)})
-              </span>
-              <span className="text-[#ef4444] font-medium">{routeSafety.unsafePercentage}%</span>
-            </div>
-          )}
-          
-          {routeSafety.moderatePercentage > 0 && (
-            <div className="flex items-center text-xs py-1.5 border-b border-gray-100 dark:border-gray-700">
-              <div className="w-3 h-3 rounded-full bg-[#f59e0b] mr-2"></div>
-              <span className="flex-1">
-                Moderate risk segments ({formatDistance(routeSafety.totalDistance * routeSafety.moderatePercentage / 100)})
-              </span>
-              <span className="text-[#f59e0b] font-medium">{routeSafety.moderatePercentage}%</span>
-            </div>
-          )}
-          
-          {routeSafety.safePercentage > 0 && (
-            <div className="flex items-center text-xs py-1.5">
-              <div className="w-3 h-3 rounded-full bg-[#10b981] mr-2"></div>
-              <span className="flex-1">
-                Safe segments ({formatDistance(routeSafety.totalDistance * routeSafety.safePercentage / 100)})
-              </span>
-              <span className="text-[#10b981] font-medium">{routeSafety.safePercentage}%</span>
-            </div>
-          )}
-        </div>
-        
-        {routeSafety.highRiskZoneCount > 0 && (
-          <div className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 p-2 rounded flex items-start">
-            <Info className="h-3 w-3 mt-0.5 mr-1 flex-shrink-0" />
-            <span>
-              This route passes through {routeSafety.highRiskZoneCount} reported harassment {routeSafety.highRiskZoneCount === 1 ? 'zone' : 'zones'}
-            </span>
-          </div>
-        )}
+        <span className={cn("text-sm font-bold tabular-nums", scoreColor(routeSafety.overallScore))}>
+          {routeSafety.overallScore}
+          <span className="text-[10px] font-normal text-muted-foreground"> / 100</span>
+        </span>
       </div>
-    </Card>
+
+      {/* Gradient bar + indicator */}
+      <div className="relative pt-0.5 pb-3">
+        <div className="h-2 rounded-full bg-gradient-to-r from-[#ef4444] via-[#f59e0b] to-[#10b981]" />
+        <div
+          className="absolute top-0.5 w-3 h-3 rounded-full bg-white border-2 border-gray-600 shadow-sm transition-all duration-500"
+          style={{ left: indicatorLeft }}
+        />
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between">
+          <span className="text-[10px] text-muted-foreground">High Risk</span>
+          <span className="text-[10px] text-muted-foreground">Safe</span>
+        </div>
+      </div>
+
+      {/* Per-segment breakdown */}
+      <div className="space-y-2">
+        {segments.map(({ pct, color, label, text, dist }) => (
+          <div key={label} className="flex items-center gap-2">
+            <div className={cn("w-1.5 h-1.5 rounded-full shrink-0", color)} />
+            <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
+              <div className={cn("h-full rounded-full", color)} style={{ width: `${pct}%` }} />
+            </div>
+            <span className={cn("text-[10px] font-semibold tabular-nums w-7 text-right shrink-0", text)}>{pct}%</span>
+            <span className="text-[10px] text-muted-foreground w-16 shrink-0">{label}</span>
+            <span className="text-[10px] text-muted-foreground/70 shrink-0">{formatDistance(dist)}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* High-risk zone notice */}
+      {routeSafety.highRiskZoneCount > 0 && (
+        <p className="text-[10px] text-red-600 bg-red-50 dark:bg-red-950/30 px-2.5 py-1.5 rounded-lg leading-snug">
+          ⚠ Route passes through {routeSafety.highRiskZoneCount} high-risk {routeSafety.highRiskZoneCount === 1 ? "zone" : "zones"}
+        </p>
+      )}
+    </div>
   )
 }
