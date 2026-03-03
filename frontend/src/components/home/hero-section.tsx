@@ -6,9 +6,12 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useState } from "react"
+import { Capacitor } from "@capacitor/core"
+import { NativeSms } from "@/plugins/native-sms"
 
 export function HeroSection() {
   const [isSending, setIsSending] = useState(false)
+  const isAndroidNative = Capacitor.isNativePlatform() && Capacitor.getPlatform() === "android"
 
   const sendSOS = async () => {
     if (navigator.geolocation) {
@@ -19,18 +22,41 @@ export function HeroSection() {
           const emergencyContact = localStorage.getItem("emergencyContact") || "+919330703381" // +918617795062
 
           try {
-            const response = await fetch("/api/send-sos", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ latitude, longitude, emergencyContact }),
-            })
+            if (isAndroidNative) {
+              const permission = await NativeSms.checkPermissions()
+              if (permission.sms !== "granted") {
+                const requested = await NativeSms.requestPermissions()
+                if (requested.sms !== "granted") {
+                  alert("SMS permission denied. Please allow SMS access to send SOS.")
+                  return
+                }
+              }
 
-            const data = await response.json()
+              const smsMessage = `🚨 Emergency Alert! 🚨\nLocation: https://www.google.com/maps?q=${latitude},${longitude}`
+              const result = await NativeSms.sendSMS({
+                to: emergencyContact,
+                message: smsMessage,
+              })
 
-            if (response.ok) {
-              alert(data.message || "SOS Sent Successfully!")
+              if (result?.sent) {
+                alert("SOS Sent Successfully!")
+              } else {
+                alert("Failed to send SOS.")
+              }
             } else {
-              alert(data.error || "Failed to send SOS.")
+              const response = await fetch("/api/send-sos", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ latitude, longitude, emergencyContact }),
+              })
+
+              const data = await response.json()
+
+              if (response.ok) {
+                alert(data.message || "SOS Sent Successfully!")
+              } else {
+                alert(data.error || "Failed to send SOS.")
+              }
             }
           } catch (error) {
             console.error("Error sending SOS:", error)
