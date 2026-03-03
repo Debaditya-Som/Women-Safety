@@ -1,33 +1,17 @@
-"use client"
+ "use client"
 
 import Link from "next/link"
-import { MapPin, Hospital, BadgeIcon as Police } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { MapPin, Check, AlertTriangle, Navigation, Shield, Ambulance } from "lucide-react"
 
 export function ServicesSection() {
   const services = [
-    {
-      icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Interactive Map",
-      description: "Find nearby hospitals, police stations, and women's safety services with our interactive map.",
-      link: "/map",
-      linkText: "Explore Map",
-    },
-    {
-      icon: <Hospital className="h-6 w-6 text-primary" />,
-      title: "Hospitals & Clinics",
-      description: "Find information about nearby hospitals and clinics for medical assistance.",
-      link: "/hospitals",
-      linkText: "View Hospitals",
-    },
-    {
-      icon: <Police className="h-6 w-6 text-primary" />,
-      title: "Police Stations",
-      description: "Locate nearby police stations and get contact information for emergencies.",
-      link: "/police",
-      linkText: "View Police Stations",
-    },
+    { icon: <MapPin className="h-6 w-6 text-primary" />, title: "Map", link: "/map" },
+    { icon: <Check className="h-6 w-6 text-primary" />, title: "Safe arrival", link: "/safe-arrival" },
+    { icon: <AlertTriangle className="h-6 w-6 text-primary" />, title: "Report Incident", link: "/report" },
+    { icon: <Navigation className="h-6 w-6 text-primary" />, title: "Walk With Me", link: "/walk-with-me" },
+    { icon: <Shield className="h-6 w-6 text-primary" />, title: "Police", link: "/police" },
+    { icon: <Ambulance className="h-6 w-6 text-primary" />, title: "Medical", link: "/hospitals" },
   ]
 
   return (
@@ -43,30 +27,17 @@ export function ServicesSection() {
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Services</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Find the support and resources you need with our comprehensive services.
+              Find the support and resources you need with our services.
             </p>
           </div>
         </motion.div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
+
+        <div className="mx-auto grid max-w-4xl grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 gap-6 py-8 items-center justify-center">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col items-center space-y-4 rounded-lg border p-6 shadow-sm transition-all hover:shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="rounded-full bg-primary/20 p-4">{service.icon}</div>
-              <h3 className="text-xl font-bold">{service.title}</h3>
-              <p className="text-center text-muted-foreground">{service.description}</p>
-              <Link href={service.link}>
-                <Button variant="outline" size="sm">
-                  {service.linkText}
-                </Button>
-              </Link>
-            </motion.div>
+            <Link key={index} href={service.link} className="flex items-center gap-3 rounded-md border p-3 hover:shadow-sm transition">
+              <div className="rounded-full bg-primary/10 p-3 text-2xl">{service.icon}</div>
+              <span className="font-medium">{service.title}</span>
+            </Link>
           ))}
         </div>
       </div>

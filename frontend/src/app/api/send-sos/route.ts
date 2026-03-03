@@ -17,6 +17,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    // Debug: ensure Twilio credentials are present on the server
+    if (!accountSid || !authToken || !twilioPhoneNumber) {
+      console.error("Missing Twilio env vars", {
+        accountSid: !!accountSid,
+        authToken: !!authToken,
+        twilioPhoneNumber: !!twilioPhoneNumber,
+      });
+      return NextResponse.json({ error: "Twilio credentials not configured on server" }, { status: 500 });
+    }
+
     // Send SOS Alert via Twilio SMS
     const message = await client.messages.create({
       body: `🚨 Emergency Alert! 🚨\nLocation: https://www.google.com/maps?q=${latitude},${longitude}`,
@@ -28,7 +38,21 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "SOS Sent Successfully!" }, { status: 200 });
   } catch (error) {
+    // Log full error for server-side debugging
     console.error("Error sending SOS via Twilio:", error);
-    return NextResponse.json({ error: "Failed to send SOS via Twilio." }, { status: 500 });
+
+    // Return detailed error information for debugging (remove/obfuscate in production)
+    const errMessage = (error as any)?.message || String(error);
+    const errCode = (error as any)?.code;
+    const errStatus = (error as any)?.status;
+    const details: Record<string, any> = {};
+    if (errCode) details.code = errCode;
+    if (errStatus) details.status = errStatus;
+    if ((error as any)?.moreInfo) details.moreInfo = (error as any).moreInfo;
+
+    return NextResponse.json(
+      { error: "Failed to send SOS via Twilio.", message: errMessage, details },
+      { status: 500 },
+    );
   }
 }

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import report, hospital,police, chatbot
+from app.routes import report, hospital, police, chatbot, services
 from app.database import connect_to_mongo, close_mongo_connection
 
 app = FastAPI()
@@ -20,4 +20,5 @@ app.include_router(report.router, prefix="/api/report", tags=["report"])
 app.include_router(hospital.router, prefix="/api/hospitals", tags=["hospitals"])
 app.include_router(police.router, prefix="/api/police", tags=["police"])
 app.include_router(chatbot.router, prefix="/api/chatbot", tags=["chatbot"])
+app.include_router(services.router, prefix="/api/services", tags=["services"])
 
