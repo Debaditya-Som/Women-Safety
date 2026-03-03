@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import twilio from "twilio";
 
 // Twilio Credentials
-const accountSid = process.env.TWILIO_ACCOUNT_SID || "ACb9d44def9c80f8bab0f2b0e64c164104";
-const authToken = process.env.TWILIO_AUTH_TOKEN || "002031569669f19b3979812f25a575fc";
-const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER || "+14195975446";
+const accountSid = "ACb9d44def9c80f8bab0f2b0e64c164104";
+const authToken = "24ab6e857d4ea2221bab7d8c1b3db99c";
+const twilioPhoneNumber = "+14195975446";
 // Twilio Client
 const client = twilio(accountSid, authToken);
 
