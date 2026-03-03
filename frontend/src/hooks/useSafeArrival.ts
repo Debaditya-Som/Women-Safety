@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { NativeSms } from '@/plugins/native-sms';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -178,12 +179,6 @@ async function getCurrentPosition(): Promise<{ latitude: number; longitude: numb
 // SOS dispatch
 // ---------------------------------------------------------------------------
 
-// Twilio credentials — used only in the native APK path where the Next.js
-// API route is unavailable. Keep these in sync with /api/send-sos/route.ts.
-const TWILIO_SID = 'AC9d5b756016a10183bc5562feed485ffd';
-const TWILIO_TOKEN = 'ee4e56f52ff78af3dd04f92ff145c702';
-const TWILIO_FROM = '+17604176876';
-
 async function dispatchSOS(latitude: number, longitude: number): Promise<void> {
   const mapsLink =
     latitude !== 0
@@ -191,10 +186,7 @@ async function dispatchSOS(latitude: number, longitude: number): Promise<void> {
       : 'Location unavailable';
 
   if (isNativePlatform()) {
-    // In the APK there is no Next.js server, so /api/send-sos does not exist.
-    // CapacitorHttp issues the request from the native layer, bypassing CORS.
-    const { CapacitorHttp } = await import('@capacitor/core');
-    const credentials = btoa(`${TWILIO_SID}:${TWILIO_TOKEN}`);
+    // Android-native path: send SMS directly via platform API (no internet/Twilio).
     const sosMessage = [
       '🚨 EMERGENCY — Safe Arrival Alert 🚨',
       '',
@@ -203,24 +195,19 @@ async function dispatchSOS(latitude: number, longitude: number): Promise<void> {
       `Last known location: ${mapsLink}`,
     ].join('\n');
 
-    const params = new URLSearchParams({
-      From: TWILIO_FROM,
-      To: SOS_EMERGENCY_NUMBER,
-      Body: sosMessage,
-    });
-
-    const response = await CapacitorHttp.post({
-      url: `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_SID}/Messages.json`,
-      headers: {
-        Authorization: `Basic ${credentials}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      data: params.toString(),
-    });
-
-    if (response.status < 200 || response.status >= 300) {
-      throw new Error(`Twilio responded with status ${response.status}`);
+    const permission = await NativeSms.checkPermissions();
+    if (permission.sms !== 'granted') {
+      const requested = await NativeSms.requestPermissions();
+      if (requested.sms !== 'granted') {
+        throw new Error('SMS permission was denied.');
+      }
     }
+
+    const result = await NativeSms.sendSMS({
+      to: SOS_EMERGENCY_NUMBER,
+      message: sosMessage,
+    });
+    if (!result?.sent) throw new Error('Native SMS send failed.');
   } else {
     // PWA / web context — use the server-side Next.js API route.
     const response = await fetch('/api/send-sos', {
