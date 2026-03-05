@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { MapPin, Check, AlertTriangle, Navigation, Shield, Ambulance } from "lucide-react"
 import { Capacitor } from "@capacitor/core"
+import { NativeCall } from "@/plugins/native-call"
 
 export function ServicesSection() {
   const emergencyNumber = "+919007226977"
@@ -18,7 +19,21 @@ export function ServicesSection() {
     { icon: <Ambulance className="h-6 w-6 text-primary" />, title: "Medical", link: "/hospitals", callOnAndroid: true },
   ]
 
-  const triggerEmergencyCall = () => {
+  const triggerEmergencyCall = async () => {
+    if (isAndroidNative) {
+      const permission = await NativeCall.checkPermissions()
+      if (permission.call !== "granted") {
+        const requested = await NativeCall.requestPermissions()
+        if (requested.call !== "granted") {
+          alert("Call permission denied. Please allow phone call access.")
+          return
+        }
+      }
+
+      await NativeCall.callNumber({ phoneNumber: emergencyNumber })
+      return
+    }
+
     window.location.href = `tel:${emergencyNumber}`
   }
 
@@ -46,7 +61,9 @@ export function ServicesSection() {
               <button
                 key={index}
                 type="button"
-                onClick={triggerEmergencyCall}
+                onClick={() => {
+                  void triggerEmergencyCall()
+                }}
                 className="flex items-center gap-3 rounded-md border p-3 hover:shadow-sm transition text-left"
               >
                 <div className="rounded-full bg-primary/10 p-3 text-2xl">{service.icon}</div>
