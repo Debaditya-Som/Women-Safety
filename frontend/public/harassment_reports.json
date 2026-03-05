@@ -1312,6 +1312,19 @@
             "witnessInfo": "",
             "latitude": 22.569763516558172,
             "longitude": 88.29404408468913
+        },
+        {
+            "type": "harassment",
+            "severity": "medium",
+            "description": "adaas",
+            "date": "2026-03-05",
+            "time": "11:11",
+            "isAnonymous": "no",
+            "contactInfo": "",
+            "hasWitnesses": "no",
+            "witnessInfo": "",
+            "latitude": 23.0902239399147,
+            "longitude": 88.27531279148674
         }
     ]
 }

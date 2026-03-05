@@ -3,16 +3,24 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { MapPin, Check, AlertTriangle, Navigation, Shield, Ambulance } from "lucide-react"
+import { Capacitor } from "@capacitor/core"
 
 export function ServicesSection() {
+  const emergencyNumber = "+919007226977"
+  const isAndroidNative = Capacitor.isNativePlatform() && Capacitor.getPlatform() === "android"
+
   const services = [
     { icon: <MapPin className="h-6 w-6 text-primary" />, title: "Map", link: "/map" },
     { icon: <Check className="h-6 w-6 text-primary" />, title: "Safe arrival", link: "/safe-arrival" },
     { icon: <AlertTriangle className="h-6 w-6 text-primary" />, title: "Report Incident", link: "/report" },
     { icon: <Navigation className="h-6 w-6 text-primary" />, title: "Walk With Me", link: "/walk-with-me" },
-    { icon: <Shield className="h-6 w-6 text-primary" />, title: "Police", link: "/police" },
-    { icon: <Ambulance className="h-6 w-6 text-primary" />, title: "Medical", link: "/hospitals" },
+    { icon: <Shield className="h-6 w-6 text-primary" />, title: "Police", link: "/police", callOnAndroid: true },
+    { icon: <Ambulance className="h-6 w-6 text-primary" />, title: "Medical", link: "/hospitals", callOnAndroid: true },
   ]
+
+  const triggerEmergencyCall = () => {
+    window.location.href = `tel:${emergencyNumber}`
+  }
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
@@ -34,10 +42,22 @@ export function ServicesSection() {
 
         <div className="mx-auto grid max-w-4xl grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 gap-6 py-8 items-center justify-center">
           {services.map((service, index) => (
-            <Link key={index} href={service.link} className="flex items-center gap-3 rounded-md border p-3 hover:shadow-sm transition">
-              <div className="rounded-full bg-primary/10 p-3 text-2xl">{service.icon}</div>
-              <span className="font-medium">{service.title}</span>
-            </Link>
+            service.callOnAndroid && isAndroidNative ? (
+              <button
+                key={index}
+                type="button"
+                onClick={triggerEmergencyCall}
+                className="flex items-center gap-3 rounded-md border p-3 hover:shadow-sm transition text-left"
+              >
+                <div className="rounded-full bg-primary/10 p-3 text-2xl">{service.icon}</div>
+                <span className="font-medium">{service.title}</span>
+              </button>
+            ) : (
+              <Link key={index} href={service.link} className="flex items-center gap-3 rounded-md border p-3 hover:shadow-sm transition">
+                <div className="rounded-full bg-primary/10 p-3 text-2xl">{service.icon}</div>
+                <span className="font-medium">{service.title}</span>
+              </Link>
+            )
           ))}
         </div>
       </div>

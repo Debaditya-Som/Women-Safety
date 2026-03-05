@@ -39,6 +39,7 @@
 
     <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <!-- Location (required for Safe Arrival GPS tracking) -->
