@@ -39,7 +39,7 @@ const NOTIF_CHECK_ID = 1001;
 const NOTIF_WARNING_ID = 1002;
 const NOTIF_SOS_ID = 1003;
 
-const SOS_EMERGENCY_NUMBER = '+918617795062';
+const SOS_EMERGENCY_NUMBER = '+919674733379';
 
 // ---------------------------------------------------------------------------
 // Environment helpers

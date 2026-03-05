@@ -143,7 +143,7 @@ export default function SelfDefensePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold">Self-Defense for Women</h1>
+        <h1 className="text-3xl font-bold">Empowering Women</h1>
         <p className="text-muted-foreground">
           Learn essential self-defense techniques, find local workshops, and access safety resources designed
           specifically for women.

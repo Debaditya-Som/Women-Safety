@@ -19,7 +19,7 @@ export function HeroSection() {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords
-          const emergencyContact = localStorage.getItem("emergencyContact") || "+919330703381" // +918617795062
+          const emergencyContact = localStorage.getItem("emergencyContact") || "+919674733379" // +918617795062
 
           try {
             if (isAndroidNative) {

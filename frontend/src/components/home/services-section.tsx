@@ -7,7 +7,7 @@ import { Capacitor } from "@capacitor/core"
 import { NativeCall } from "@/plugins/native-call"
 
 export function ServicesSection() {
-  const emergencyNumber = "+919007226977"
+  const emergencyNumber = "+919674733379"
   const isAndroidNative = Capacitor.isNativePlatform() && Capacitor.getPlatform() === "android"
 
   const services = [
